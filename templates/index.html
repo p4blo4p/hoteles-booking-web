@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Hoteles de Cine - Alojamientos donde se rodaron películas y series{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Alojamientos que Fueron Escenario de Películas y Series</h2>
+            <p>Descubre los hoteles de lujo donde se rodaron tus escenas favoritas y vive la experiencia de ser protagonista</p>
+            <a href="#hotels" class="cta-button">Explorar Hoteles</a>
+        </div>
+    </section>
+
+    <!-- Hotels Section -->
+    <section class="hotels" id="hotels">
+        <div class="container">
+            <div class="section-title">
+                <h3>Hoteles Icónicos de Cine y Televisión</h3>
+                <p>Reserva en los mismos lugares que aparecieron en tus películas y series favoritas</p>
+            </div>
+            
+            <div class="hotels-grid">
+                {% for hotel in hoteles %}
+                <div class="hotel-card">
+                    <div class="hotel-img">
+                        <img src="{{ hotel.imagenes.hotel }}" alt="{{ hotel.nombre }}">
+                        <span class="movie-badge">{{ hotel.pelicula }}</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 class="hotel-title">{{ hotel.nombre }}</h3>
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>{{ hotel.ubicacion }}</span>
+                        </div>
+                        <p class="hotel-description">{{ hotel.descripcion }}</p>
+                        <div class="hotel-features">
+                            {% for caracteristica in hotel.caracteristicas %}
+                            <span class="feature-tag">{{ caracteristica }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="hotel-footer">
+                            <div class="rating">
+                                {% for i in range(5) %}
+                                    {% if i < hotel.rating|round|int %}
+                                        <i class="fas fa-star"></i>
+                                    {% else %}
+                                        <i class="far fa-star"></i>
+                                    {% endif %}
+                                {% endfor %}
+                                <span>{{ hotel.rating }}</span>
+                            </div>
+                            <a href="{{ url_for('hotel_detalle', hotel_id=hotel.id) }}" class="view-details">
+                                Ver detalles <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
