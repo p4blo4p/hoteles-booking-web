@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoteles de Cine - Alojamientos donde se rodaron películas y series</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', serif;
+        }
+        
+        :root {
+            --primary: #1a3a52;
+            --secondary: #d4af37;
+            --accent: #e25822;
+            --light: #f8f8f8;
+            --dark: #1a1a1a;
+            --text: #333;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(rgba(26, 58, 82, 0.9), rgba(26, 58, 82, 0.8)), url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: normal;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 5px;
+        }
+        
+        nav a:hover {
+            border-bottom-color: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* Hotels Section */
+        .hotels {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .hotels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .hotel-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .hotel-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .hotel-img {
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hotel-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .hotel-card:hover .hotel-img img {
+            transform: scale(1.05);
+        }
+        
+        .movie-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .hotel-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .hotel-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .hotel-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .hotel-description {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .hotel-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-tag {
+            background-color: rgba(26, 58, 82, 0.1);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .hotel-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .rating {
+            color: var(--secondary);
+        }
+        
+        .view-details {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .view-details:hover {
+            background-color: #0d2838;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hotels-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-film"></i>
+                <h1>Hoteles de Cine</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#hotels">Hoteles</a></li>
+                    <li><a href="#about">Sobre Nosotros</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Alojamientos que Fueron Escenario de Películas y Series</h2>
+            <p>Descubre los hoteles de lujo donde se rodaron tus escenas favoritas y vive la experiencia de ser protagonista</p>
+            <a href="#hotels" class="cta-button">Explorar Hoteles</a>
+        </div>
+    </section>
+
+    <!-- Hotels Section -->
+    <section class="hotels" id="hotels">
+        <div class="container">
+            <div class="section-title">
+                <h3>Hoteles Icónicos de Cine y Televisión</h3>
+                <p>Reserva en los mismos lugares que aparecieron en tus películas y series favoritas</p>
+            </div>
+            
+            <div class="hotels-grid">
+                <!-- Hotel 1: Four Seasons Resort Bali at Sayan -->
+                <div class="hotel-card">
+                    <div class="hotel-img">
+                        <img src="https://images.unsplash.com/photo-1574680096145-d0b6c799f9b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Four Seasons Resort Bali at Sayan">
+                        <span class="movie-badge">Eat Pray Love</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 class="hotel-title">Four Seasons Resort Bali at Sayan</h3>
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ubud, Bali, Indonesia</span>
+                        </div>
+                        <p class="hotel-description">Resort de lujo en la selva tropical donde Julia Roberts encontró la paz en "Eat Pray Love". Spa flotante sobre el río y villas privadas con vistas impresionantes.</p>
+                        <div class="hotel-features">
+                            <span class="feature-tag">Spa de lujo</span>
+                            <span class="feature-tag">Villas privadas</span>
+                            <span class="feature-tag">Gastronomía</span>
+                        </div>
+                        <div class="hotel-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>9.2</span>
+                            </div>
+                            <a href="four-seasons-bali.html" class="view-details">
+                                Ver detalles <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hotel 2: Grand Hotel Excelsior -->
+                <div class="hotel-card">
+                    <div class="hotel-img">
+                        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Grand Hotel Excelsior">
+                        <span class="movie-badge">Game of Thrones</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 class="hotel-title">Grand Hotel Excelsior</h3>
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Valletta, Malta</span>
+                        </div>
+                        <p class="hotel-description">Hotel histórico con vistas al mar que sirvió como escenario para los Jardines de Agua de los Lannister en "Game of Thrones". Elegancia clásica europea con servicios modernos.</p>
+                        <div class="hotel-features">
+                            <span class="feature-tag">Vistas al mar</span>
+                            <span class="feature-tag">Piscina olímpica</span>
+                            <span class="feature-tag">Historia</span>
+                        </div>
+                        <div class="hotel-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>8.7</span>
+                            </div>
+                            <a href="grand-hotel-excelsior.html" class="view-details">
+                                Ver detalles <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hotel 3: The St. Regis Mexico City -->
+                <div class="hotel-card">
+                    <div class="hotel-img">
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="The St. Regis Mexico City">
+                        <span class="movie-badge">Roma</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 class="hotel-title">The St. Regis Mexico City</h3>
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ciudad de México, México</span>
+                        </div>
+                        <p class="hotel-description">Lujoso hotel de diseño Art Decó que apareció en "Roma" de Alfonso Cuarón. Ubicado en el corazón de la ciudad con acceso a las mejores zonas culturales.</p>
+                        <div class="hotel-features">
+                            <span class="feature-tag">Diseño Art Decó</span>
+                            <span class="feature-tag">Spa de lujo</span>
+                            <span class="feature-tag">Céntrico</span>
+                        </div>
+                        <div class="hotel-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>9.0</span>
+                            </div>
+                            <a href="st-regis-mexico.html" class="view-details">
+                                Ver detalles <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hotel 4: Ashford Castle -->
+                <div class="hotel-card">
+                    <div class="hotel-img">
+                        <img src="https://images.unsplash.com/photo-1582562690819-0a5a5c7d98a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ashford Castle">
+                        <span class="movie-badge">The Crown</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 class="hotel-title">Ashford Castle</h3>
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>County Mayo, Irlanda</span>
+                        </div>
+                        <p class="hotel-description">Castillo medieval del siglo XIII que apareció en "The Crown" y "The Quiet Man". Experimenta la historia irlandesa en un entorno de lujo con actividades de cetrería y campo de golf.</p>
+                        <div class="hotel-features">
+                            <span class="feature-tag">Castillo histórico</span>
+                            <span class="feature-tag">Cetrería</span>
+                            <span class="feature-tag">Golf</span>
+                        </div>
+                        <div class="hotel-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>9.5</span>
+                            </div>
+                            <a href="ashford-castle.html" class="view-details">
+                                Ver detalles <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hotel 5: Hotel Punta Islita -->
+                <div class="hotel-card">
+                    <div class="hotel-img">
+                        <img src="https://images.unsplash.com/photo-1574227488958-009048826034?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hotel Punta Islita">
+                        <span class="movie-badge">Jurassic Park</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 class="hotel-title">Hotel Punta Islita</h3>
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Guanacaste, Costa Rica</span>
+                        </div>
+                        <p class="hotel-description">Ecolodge de lujo en la costa del Pacífico que sirvió de escenario para las escenas de selva en "Jurassic Park". Playa privada y acceso a reservas naturales.</p>
+                        <div class="hotel-features">
+                            <span class="feature-tag">Ecolodge</span>
+                            <span class="feature-tag">Playa privada</span>
+                            <span class="feature-tag">Canopy</span>
+                        </div>
+                        <div class="hotel-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>8.8</span>
+                            </div>
+                            <a href="punta-islita.html" class="view-details">
+                                Ver detalles <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hotel 6: Fairmont Le Château Frontenac -->
+                <div class="hotel-card">
+                    <div class="hotel-img">
+                        <img src="https://images.unsplash.com/photo-1582562690819-0a5a5c7d98a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fairmont Le Château Frontenac">
+                        <span class="movie-badge">Catch Me If You Can</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 class="hotel-title">Fairmont Le Château Frontenac</h3>
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Quebec, Canadá</span>
+                        </div>
+                        <p class="hotel-description">Iconico hotel castillo en Quebec que apareció en "Catch Me If You Can" y "The Simpsons". Arquitectura de cuento de hadas con vistas al río San Lorenzo.</p>
+                        <div class="hotel-features">
+                            <span class="feature-tag">Arquitectura icónica</span>
+                            <span class="feature-tag">Spa con vistas</span>
+                            <span class="feature-tag">Histórico</span>
+                        </div>
+                        <div class="hotel-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>9.1</span>
+                            </div>
+                            <a href="chateau-frontenac.html" class="view-details">
+                                Ver detalles <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hotel 7: The Gritti Palace -->
+                <div class="hotel-card">
+                    <div class="hotel-img">
+                        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="The Gritti Palace">
+                        <span class="movie-badge">Casino Royale</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 class="hotel-title">The Gritti Palace</h3>
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Venecia, Italia</span>
+                        </div>
+                        <p class="hotel-description">Hotel de lujo de 500 años en el Gran Canal de Venecia que apareció en "Casino Royale" y "Spider-Man: Far From Home". Terraza con vistas icónicas y servicio de góndola privado.</p>
+                        <div class="hotel-features">
+                            <span class="feature-tag">Gran Canal</span>
+                            <span class="feature-tag">Historia</span>
+                            <span class="feature-tag">Góndolas</span>
+                        </div>
+                        <div class="hotel-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>9.4</span>
+                            </div>
+                            <a href="gritti-palace.html" class="view-details">
+                                Ver detalles <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hotel 8: Hotel Plaza Athénée -->
+                <div class="hotel-card">
+                    <div class="hotel-img">
+                        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hotel Plaza Athénée">
+                        <span class="movie-badge">Sex and the City</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 class="hotel-title">Hotel Plaza Athénée</h3>
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>París, Francia</span>
+                        </div>
+                        <p class="hotel-description">Lujoso hotel parisino donde Carrie Bradshaw se hospedó en "Sex and the City" y apareció en "The Devil Wears Prada". Vistas a la Torre Eiffel y restaurante con 3 estrellas Michelin.</p>
+                        <div class="hotel-features">
+                            <span class="feature-tag">Torre Eiffel</span>
+                            <span class="feature-tag">Alain Ducasse</span>
+                            <span class="feature-tag">Moda</span>
+                        </div>
+                        <div class="hotel-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>9.3</span>
+                            </div>
+                            <a href="plaza-athenee.html" class="view-details">
+                                Ver detalles <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hotel 9: Belmond Hotel das Cataratas -->
+                <div class="hotel-card">
+                    <div class="hotel-img">
+                        <img src="https://images.unsplash.com/photo-1564564267028-f0e28c3b42d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Belmond Hotel das Cataratas">
+                        <span class="movie-badge">Indiana Jones</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 class="hotel-title">Belmond Hotel das Cataratas</h3>
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Foz do Iguaçu, Brasil</span>
+                        </div>
+                        <p class="hotel-description">Único hotel dentro del Parque Nacional de Iguazú que apareció en "Indiana Jones y el Reino de la Calavera de Cristal". Acceso exclusivo a las cataratas al amanecer.</p>
+                        <div class="hotel-features">
+                            <span class="feature-tag">Dentro del parque</span>
+                            <span class="feature-tag">Cataratas</span>
+                            <span class="feature-tag">Exclusivo</span>
+                        </div>
+                        <div class="hotel-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>9.2</span>
+                            </div>
+                            <a href="belmond-iguazu.html" class="view-details">
+                                Ver detalles <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hotel 10: The Murray -->
+                <div class="hotel-card">
+                    <div class="hotel-img">
+                        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="The Murray">
+                        <span class="movie-badge">Transformers</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 class="hotel-title">The Murray</h3>
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Hong Kong</span>
+                        </div>
+                        <p class="hotel-description">Hotel de diseño arquitectónico premiado que apareció en "Transformers: Age of Extinction". Piscina en la azotea con vistas panorámicas al skyline de Hong Kong.</p>
+                        <div class="hotel-features">
+                            <span class="feature-tag">Diseño moderno</span>
+                            <span class="feature-tag">Piscina rooftop</span>
+                            <span class="feature-tag">Skyline</span>
+                        </div>
+                        <div class="hotel-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>9.0</span>
+                            </div>
+                            <a href="the-murray.html" class="view-details">
+                                Ver detalles <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Hoteles de Cine</h4>
+                    <p>Descubre los alojamientos más icónicos donde se rodaron tus películas y series favoritas. Vive la experiencia de ser protagonista en escenarios legendarios.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#hotels">Todos los Hoteles</a></li>
+                        <li><a href="#about">Sobre Nosotros</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Categorías</h4>
+                    <ul>
+                        <li><a href="#">Hoteles de Películas</a></li>
+                        <li><a href="#">Hoteles de Series</a></li>
+                        <li><a href="#">Destinos de Lujo</a></li>
+                        <li><a href="#">Experiencias Únicas</a></li>
+                        <li><a href="#">Ofertas Especiales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@hotelesdecine.com</li>
+                        <li><i class="fas fa-phone"></i> +34 900 123 456</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Madrid, España</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Hoteles de Cine. Todos los derechos reservados. Esta web es una demostración creativa de alojamientos icónicos de cine y televisión.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
