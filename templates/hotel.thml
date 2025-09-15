@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+
+{% block title %}{{ hotel.nombre }} - Hoteles de Cine{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{{ hotel.imagenes.hotel }}');">
+        <div class="hero-content">
+            <span class="movie-badge">{{ hotel.pelicula }} ({{ hotel.anio }})</span>
+            <h2>{{ hotel.nombre }}</h2>
+            <p>{{ hotel.descripcion }}</p>
+            <a href="#booking" class="cta-button">Reservar en Booking.com</a>
+        </div>
+    </section>
+
+    <!-- Movie Connection -->
+    <section class="movie-section" id="movie">
+        <div class="container">
+            <div class="section-title">
+                <h3>Escenario de {{ hotel.pelicula }}</h3>
+                <p>Descubre cómo este hotel se convirtió en el escenario perfecto para la película</p>
+            </div>
+            
+            <div class="movie-content">
+                <div class="movie-text">
+                    <h4>El Lugar que Inspiró {{ hotel.pelicula }}</h4>
+                    <p>En {{ hotel.anio }}, {{ hotel.nombre }} se convirtió en un escenario icónico para la película "{{ hotel.pelicula }}". Este hotel fue elegido por su ubicación única y su arquitectura impresionante, que proporcionó el telón de fondo perfecto para algunas de las escenas más memorables de la película.</p>
+                    <p>Los directores y productores quedaron fascinados por la belleza y el carácter único de este lugar, que ha inspirado a miles de viajeros a visitar y experimentar la magia de ser parte de la historia del cine.</p>
+                </div>
+                <div class="movie-images">
+                    <div class="movie-img main">
+                        <img src="{{ hotel.imagenes.pelicula }}" alt="Escena de {{ hotel.pelicula }}">
+                    </div>
+                    <div class="movie-img">
+                        <img src="{{ hotel.imagenes.galeria[0] }}" alt="{{ hotel.nombre }}">
+                    </div>
+                    <div class="movie-img">
+                        <img src="{{ hotel.imagenes.galeria[1] }}" alt="{{ hotel.nombre }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotel Details -->
+    <section class="hotel-details" id="details">
+        <div class="container">
+            <div class="section-title">
+                <h3>El Hotel</h3>
+                <p>Todo sobre este alojamiento icónico</p>
+            </div>
+            
+            <div class="details-grid">
+                <div class="hotel-info">
+                    <h4>{{ hotel.nombre }}</h4>
+                    <p>{{ hotel.descripcion }}</p>
+                    
+                    <div class="hotel-features">
+                        {% for caracteristica in hotel.caracteristicas %}
+                        <div class="feature-item">
+                            <i class="fas fa-star feature-icon"></i>
+                            <div class="feature-text">
+                                <h5>{{ caracteristica }}</h5>
+                                <p>Experimenta esta característica exclusiva durante tu estancia</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+                <div class="booking-card" id="booking">
+                    <div class="booking-img" style="background-image: url('{{ hotel.imagenes.hotel }}');"></div>
+                    <div class="booking-content">
+                        <h4>Reserva Tu Estancia</h4>
+                        <div class="price">Desde ${{ hotel.precio }}<small> / noche</small></div>
+                        
+                        <form class="booking-form" action="https://www.booking.com" method="get" target="_blank">
+                            <div class="form-group">
+                                <label for="checkin">Fecha de Entrada</label>
+                                <input type="date" id="checkin" name="checkin" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="checkout">Fecha de Salida</label>
+                                <input type="date" id="checkout" name="checkout" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="guests">Huéspedes</label>
+                                <select id="guests" name="group_adults">
+                                    <option value="1">1 Adulto</option>
+                                    <option value="2" selected>2 Adultos</option>
+                                    <option value="3">3 Adultos</option>
+                                    <option value="4">4 Adultos</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="booking-cta">
+                                <i class="fas fa-calendar-check"></i> Ver Disponibilidad
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h3>Galería</h3>
+                <p>Imágenes del hotel y escenas de {{ hotel.pelicula }}</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item large">
+                    <img src="{{ hotel.imagenes.hotel }}" alt="{{ hotel.nombre }}">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="{{ hotel.imagenes.pelicula }}" alt="Escena de {{ hotel.pelicula }}">
+                </div>
+                
+                <div class="gallery-item wide">
+                    <img src="{{ hotel.imagenes.galeria[0] }}" alt="{{ hotel.nombre }}">
+                </div>
+                
+                <div class="gallery-item tall">
+                    <img src="{{ hotel.imagenes.galeria[1] }}" alt="{{ hotel.nombre }}">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="{{ hotel.imagenes.galeria[2] if hotel.imagenes.galeria|length > 2 else hotel.imagenes.galeria[0] }}" alt="{{ hotel.nombre }}">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="{{ hotel.imagenes.hotel }}" alt="{{ hotel.nombre }}">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h3>Testimonios</h3>
+                <p>Experiencias de huéspedes que visitaron el hotel después de ver {{ hotel.pelicula }}</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                {% for testimonio in hotel.testimonios %}
+                <div class="testimonial-card">
+                    <p class="testimonial-text">{{ testimonio.texto }}</p>
+                    <div class="testimonial-author">
+                        <div class="author-img" style="background-image: url('{{ testimonio.avatar }}');"></div>
+                        <div class="author-info">
+                            <h5>{{ testimonio.autor }}</h5>
+                            <p>Estancia: {{ testimonio.fecha }}</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Location -->
+    <section class="location" id="location">
+        <div class="container">
+            <div class="section-title">
+                <h3>Ubicación</h3>
+                <p>Encuentra este hotel icónico en {{ hotel.ubicacion }}</p>
+            </div>
+            
+            <div class="location-content">
+                <div class="location-info">
+                    <h4>Cómo Llegar</h4>
+                    <div class="location-details">
+                        <div class="location-item">
+                            <i class="fas fa-map-marker-alt location-icon"></i>
+                            <div>
+                                <h5>Dirección</h5>
+                                <p>{{ hotel.ubicacion }}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-item">
+                            <i class="fas fa-film location-icon"></i>
+                            <div>
+                                <h5>Escenario de</h5>
+                                <p>{{ hotel.pelicula }} ({{ hotel.anio }})</p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-item">
+                            <i class="fas fa-star location-icon"></i>
+                            <div>
+                                <h5>Experiencia</h5>
+                                <p>Vive la magia del cine en este lugar icónico</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                    <p>Mapa interactivo de la ubicación del hotel</p>
+                    <small>En una implementación real, aquí se mostraría un mapa de Google Maps</small>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
