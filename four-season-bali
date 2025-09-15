@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four Seasons Resort Bali at Sayan - Hoteles de Cine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', serif;
+        }
+        
+        :root {
+            --primary: #2a5c3a;
+            --secondary: #d4af37;
+            --accent: #e25822;
+            --light: #f8f8f8;
+            --dark: #1a1a1a;
+            --text: #333;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(rgba(42, 92, 58, 0.9), rgba(42, 92, 58, 0.8)), url('https://images.unsplash.com/photo-1574680096145-d0b6c799f9b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: normal;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 5px;
+        }
+        
+        nav a:hover {
+            border-bottom-color: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1574680096145-d0b6c799f9b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+        
+        .movie-badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* Movie Connection */
+        .movie-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .movie-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .movie-text h4 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .movie-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        .movie-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .movie-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 200px;
+        }
+        
+        .movie-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .movie-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .movie-img.main {
+            grid-column: span 2;
+            height: 300px;
+        }
+        
+        /* Hotel Details */
+        .hotel-details {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+        }
+        
+        .hotel-info h4 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .hotel-info p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        .hotel-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .feature-icon {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+        
+        .feature-text h5 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .booking-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .booking-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .booking-content {
+            padding: 25px;
+        }
+        
+        .booking-content h4 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-size: 2rem;
+            color: var(--secondary);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .price small {
+            font-size: 1rem;
+            color: #666;
+            font-weight: normal;
+        }
+        
+        .booking-form {
+            margin-top: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .booking-cta {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .booking-cta:hover {
+            background-color: #1e3d29;
+            transform: translateY(-2px);
+        }
+        
+        /* Gallery */
+        .gallery {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 250px);
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 100%;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item.large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+        
+        .gallery-item.wide {
+            grid-column: span 2;
+        }
+        
+        .gallery-item.tall {
+            grid-row: span 2;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: """;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--secondary);
+            opacity: 0.2;
+            font-family: serif;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .author-info h5 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .rating {
+            color: var(--secondary);
+            margin-top: 10px;
+        }
+        
+        /* Location */
+        .location {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+        
+        .location-info h4 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .location-details {
+            margin-bottom: 30px;
+        }
+        
+        .location-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .location-icon {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .movie-content, .details-grid, .location-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+            
+            .gallery-item.large, .gallery-item.wide, .gallery-item.tall {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            
+            .booking-card {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-film"></i>
+                <h1>Hoteles de Cine</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#movie">Eat Pray Love</a></li>
+                    <li><a href="#details">Hotel</a></li>
+                    <li><a href="#gallery">Galería</a></li>
+                    <li><a href="#booking">Reservar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="movie-badge">Eat Pray Love (2010)</span>
+            <h2>Four Seasons Resort Bali at Sayan</h2>
+            <p>El paraíso tropical donde Julia Roberts encontró la paz interior</p>
+            <a href="#booking" class="cta-button">Reservar en Booking.com</a>
+        </div>
+    </section>
+
+    <!-- Movie Connection -->
+    <section class="movie-section" id="movie">
+        <div class="container">
+            <div class="section-title">
+                <h3>Escenario de Eat Pray Love</h3>
+                <p>Descubre cómo este resort se convirtió en el escenario perfecto para la película</p>
+            </div>
+            
+            <div class="movie-content">
+                <div class="movie-text">
+                    <h4>El Paraíso de Elizabeth Gilbert</h4>
+                    <p>En 2010, el Four Seasons Resort Bali at Sayan se convirtió en el escenario principal para las escenas de Bali en la película "Eat Pray Love", protagonizada por Julia Roberts. El resort fue elegido por su ubicación única en el corazón de la selva tropical de Ubud, ofreciendo un entorno sereno y espiritual que reflejaba perfectamente el viaje de transformación personal de Elizabeth Gilbert.</p>
+                    <p>Las escenas más memorables se rodaron en nuestro icónico spa flotante sobre el río Ayung, donde Julia Roberts experimenta tratamientos de bienestar balineses, y en las villas privadas con vistas al valle, que sirvieron como refugio para su personaje durante su búsqueda de equilibrio y felicidad.</p>
+                    <p>El director Ryan Murphy y el equipo de producción quedaron fascinados por la arquitectura del resort, que integra armoniosamente elementos tradicionales balineses con lujos modernos, creando un ambiente que ha inspirado a miles de viajeros a emprender su propio viaje transformador en Bali.</p>
+                </div>
+                <div class="movie-images">
+                    <div class="movie-img main">
+                        <img src="https://images.unsplash.com/photo-1574680096145-d0b6c799f9b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Escena de Eat Pray Love en Four Seasons Bali">
+                    </div>
+                    <div class="movie-img">
+                        <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Julia Roberts en Eat Pray Love">
+                    </div>
+                    <div class="movie-img">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Spa flotante Four Seasons Bali">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotel Details -->
+    <section class="hotel-details" id="details">
+        <div class="container">
+            <div class="section-title">
+                <h3>El Resort</h3>
+                <p>Lujoso refugio en la selva tropical de Bali</p>
+            </div>
+            
+            <div class="details-grid">
+                <div class="hotel-info">
+                    <h4>Four Seasons Resort Bali at Sayan</h4>
+                    <p>Ubicado en un valle sagrado junto al río Ayung, el Four Seasons Resort Bali at Sayan es un oasis de lujo y serenidad en el corazón de la selva tropical de Ubud. Diseñado para armonizar con su entorno natural, el resort ofrece una experiencia auténtica de Bali con todas las comodidades modernas.</p>
+                    <p>Desde su inauguración en 1998, el resort ha recibido numerosos premios internacionales por su diseño innovador, servicio excepcional y compromiso con la sostenibilidad. Cada elemento del resort, desde la arquitectura hasta los tratamientos de spa, está inspirado en la rica cultura y tradiciones balinesas.</p>
+                    
+                    <div class="hotel-features">
+                        <div class="feature-item">
+                            <i class="fas fa-spa feature-icon"></i>
+                            <div class="feature-text">
+                                <h5>Spa Sagrado</h5>
+                                <p>Tratamientos balineses tradicionales en un spa flotante sobre el río</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-swimming-pool feature-icon"></i>
+                            <div class="feature-text">
+                                <h5>Piscina Infinita</h5>
+                                <p>Piscina con vistas panorámicas al valle y la selva tropical</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-utensils feature-icon"></i>
+                            <div class="feature-text">
+                                <h5>Gastronomía</h5>
+                                <p>Restaurantes con cocina local e internacional usando ingredientes orgánicos</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-leaf feature-icon"></i>
+                            <div class="feature-text">
+                                <h5>Naturaleza</h5>
+                                <p>Jardines tropicales, arrozales y acceso a senderos en la selva</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="booking-card">
+                    <div class="booking-img" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="booking-content">
+                        <h4>Reserva Tu Estancia</h4>
+                        <div class="price">Desde $650<small> / noche</small></div>
+                        
+                        <form class="booking-form" action="https://www.booking.com/hotel/id/four-seasons-resort-bali-at-sayan.es.html" method="get" target="_blank">
+                            <div class="form-group">
+                                <label for="checkin">Fecha de Entrada</label>
+                                <input type="date" id="checkin" name="checkin" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="checkout">Fecha de Salida</label>
+                                <input type="date" id="checkout" name="checkout" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="guests">Huéspedes</label>
+                                <select id="guests" name="group_adults">
+                                    <option value="1">1 Adulto</option>
+                                    <option value="2" selected>2 Adultos</option>
+                                    <option value="3">3 Adultos</option>
+                                    <option value="4">4 Adultos</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="booking-cta">
+                                <i class="fas fa-calendar-check"></i> Ver Disponibilidad
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h3>Galería</h3>
+                <p>Imágenes del resort y escenas de Eat Pray Love</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item large">
+                    <img src="https://images.unsplash.com/photo-1574680096145-d0b6c799f9b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Villa con piscina Four Seasons Bali">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Julia Roberts en Eat Pray Love">
+                </div>
+                
+                <div class="gallery-item wide">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Spa flotante Four Seasons Bali">
+                </div>
+                
+                <div class="gallery-item tall">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Villa privada Four Seasons Bali">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Restaurante Four Seasons Bali">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1515248137880-45a999cd4e1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Comida balinesa Four Seasons">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h3>Testimonios</h3>
+                <p>Experiencias de huéspedes que visitaron el resort después de ver Eat Pray Love</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Después de ver Eat Pray Love, soñé con visitar este lugar. La realidad superó todas mis expectativas. El spa sobre el río es una experiencia transformadora, igual que en la película."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img" style="background-image: url('https://randomuser.me/api/portraits/women/44.jpg');"></div>
+                        <div class="author-info">
+                            <h5>Isabella Martínez</h5>
+                            <p>Estancia: Octubre 2023</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Nuestra luna de miel en Four Seasons Bali fue mágica. La villa privada con piscina nos dio la intimidad que buscábamos, y el servicio fue impecable en todo momento. Nos sentimos como en una película."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg');"></div>
+                        <div class="author-info">
+                            <h5>Carlos y Sofía Gómez</h5>
+                            <p>Estancia: Septiembre 2023</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Como fan de Eat Pray Love, venir aquí fue un sueño hecho realidad. Pude recrear algunas escenas de la película y la experiencia fue aún mejor de lo que imaginaba. El personal es increíblemente atento."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img" style="background-image: url('https://randomuser.me/api/portraits/women/68.jpg');"></div>
+                        <div class="author-info">
+                            <h5>Emma Thompson</h5>
+                            <p>Estancia: Agosto 2023</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location -->
+    <section class="location" id="location">
+        <div class="container">
+            <div class="section-title">
+                <h3>Ubicación</h3>
+                <p>En el corazón de la selva tropical de Ubud, Bali</p>
+            </div>
+            
+            <div class="location-content">
+                <div class="location-info">
+                    <h4>Cómo Llegar</h4>
+                    <div class="location-details">
+                        <div class="location-item">
+                            <i class="fas fa-plane location-icon"></i>
+                            <div>
+                                <h5>Aeropuerto</h5>
+                                <p>Aeropuerto Internacional Ngurah Rai (DPS) - 1 hora en coche</p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-item">
+                            <i class="fas fa-car location-icon"></i>
+                            <div>
+                                <h5>Traslado</h5>
+                                <p>Servicio de traslado privado disponible desde el aeropuerto</p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-item">
+                            <i class="fas fa-map-marker-alt location-icon"></i>
+                            <div>
+                                <h5>Dirección</h5>
+                                <p>Sayan, Ubud, Bali 80571, Indonesia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-item">
+                            <i class="fas fa-compass location-icon"></i>
+                            <div>
+                                <h5>Atracciones Cercanas</h5>
+                                <p>Centro de Ubud (15 min), Templo Tegallalang (20 min), Monkey Forest (25 min)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                    <p>Mapa interactivo de la ubicación del resort</p>
+                    <small>En una implementación real, aquí se mostraría un mapa de Google Maps</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Hoteles de Cine</h4>
+                    <p>Descubre los alojamientos más icónicos donde se rodaron tus películas y series favoritas. Vive la experiencia de ser protagonista en escenarios legendarios.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#hotels">Todos los Hoteles</a></li>
+                        <li><a href="#movie">Eat Pray Love</a></li>
+                        <li><a href="#details">Hotel</a></li>
+                        <li><a href="#booking">Reservar</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Experiencias</h4>
+                    <ul>
+                        <li><a href="#">Spa y Bienestar</a></li>
+                        <li><a href="#">Gastronomía</a></li>
+                        <li><a href="#">Aventuras</a></li>
+                        <li><a href="#">Cultura Local</a></li>
+                        <li><a href="#">Eventos Especiales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@hotelesdecine.com</li>
+                        <li><i class="fas fa-phone"></i> +34 900 123 456</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Madrid, España</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Hoteles de Cine. Todos los derechos reservados. Esta página es una demostración creativa inspirada en la película "Eat Pray Love".</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('checkin').setAttribute('min', today);
+        document.getElementById('checkout').setAttribute('min', today);
+        
+        // Update checkout min date when checkin changes
+        document.getElementById('checkin').addEventListener('change', function() {
+            const checkinDate = new Date(this.value);
+            checkinDate.setDate(checkinDate.getDate() + 1);
+            const minCheckout = checkinDate.toISOString().split('T')[0];
+            document.getElementById('checkout').setAttribute('min', minCheckout);
+            
+            // If checkout is before new min date, update it
+            if (document.getElementById('checkout').value < minCheckout) {
+                document.getElementById('checkout').value = minCheckout;
+            }
+        });
+    </script>
+</body>
+</html>
