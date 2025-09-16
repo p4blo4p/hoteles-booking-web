@@ -19,7 +19,7 @@ jobs:
       - name: Push to GitHub Pages Repo
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GH_PAGES_TOKEN }}
+          personal_token: ${{ secrets.GH_PAGES_TOKEN }}
           publish_dir: ./deploy
           external_repository: p4blo4p/hoteles-booking-web-pages
           publish_branch: gh-pages
