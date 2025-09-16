@@ -1,24 +1,26 @@
-name: Deploy 
+name: Deploy static to GitHub Pages repo
+
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
-    
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    
- 
+      - name: Checkout source repo
+        uses: actions/checkout@v3
+
+      - name: Copy static files to a temp directory
+        run: |
+          mkdir deploy
+          cp -r static/* deploy/
+
+      - name: Push to GitHub Pages Repo
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GH_PAGES_TOKEN }}
+          publish_dir: ./deploy
+          external_repository: p4blo4p/hoteles-booking-web-pages
+          publish_branch: gh-pages
+          force_orphan: true # Borra el historial previo de la rama destino (opcional)
