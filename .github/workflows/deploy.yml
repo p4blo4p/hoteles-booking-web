@@ -1,6 +1,10 @@
-name: Deploy static to GitHub Pages repo
+name: Deploy to External GitHub Pages Repo
 
 on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -11,10 +15,23 @@ jobs:
       - name: Checkout source repo
         uses: actions/checkout@v3
 
-      - name: Copy static files to a temp directory
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install jinja2
+
+      - name: Generate site
+        run: python generate.py
+
+      - name: Copy all files to a temp directory
         run: |
           mkdir deploy
-          cp -r static/* deploy/
+          cp -r index.html hotel static deploy/
 
       - name: Push to GitHub Pages Repo
         uses: peaceiris/actions-gh-pages@v4
@@ -23,4 +40,4 @@ jobs:
           publish_dir: ./deploy
           external_repository: p4blo4p/hoteles-booking-web-pages
           publish_branch: gh-pages
-          force_orphan: true # Borra el historial previo de la rama destino (opcional)
+          force_orphan: true
