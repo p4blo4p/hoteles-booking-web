@@ -7,7 +7,7 @@ from jinja2 import Environment, FileSystemLoader
 TEMPLATES_DIR = 'templates'
 STATIC_DIR = 'static'
 DATA_DIR = 'data'
-OUTPUT_DIR = '.'
+OUTPUT_DIR = '.'  # Directorio raíz del proyecto
 
 # Cargar el entorno de plantillas
 env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
