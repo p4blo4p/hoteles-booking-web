@@ -23,11 +23,16 @@ for dir_path in [TEMPLATES_DIR, STATIC_DIR, DATA_DIR]:
         print(f"ERROR: El directorio {dir_path} no existe")
         exit(1)
 
+# Listar archivos en el directorio de plantillas
+print("Archivos en el directorio de plantillas:")
+for file in os.listdir(TEMPLATES_DIR):
+    print(f"  - {file}")
+
 # Cargar el entorno de plantillas
 env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
 
 # Cargar datos de hoteles
-hoteles_json_path = os.path.join(DATA_DIR, 'hotels.json')
+hoteles_json_path = os.path.join(DATA_DIR, 'hoteles.json')
 print(f"Buscando archivo de hoteles en: {hoteles_json_path}")
 
 if not os.path.exists(hoteles_json_path):
@@ -40,6 +45,7 @@ with open(hoteles_json_path, 'r', encoding='utf-8') as f:
 print(f"Cargados {len(hoteles)} hoteles")
 
 # Renderizar index.html
+print("Renderizando index.html...")
 index_template = env.get_template('index.html')
 index_html = index_template.render(hoteles=hoteles)
 index_output_path = os.path.join(OUTPUT_DIR, 'index.html')
@@ -54,6 +60,7 @@ if not os.path.exists(hotels_dir):
     print(f"Creado directorio: {hotels_dir}")
 
 # Renderizar cada hotel
+print("Renderizando páginas de hoteles...")
 hotel_template = env.get_template('hotel.html')
 for hotel in hoteles:
     hotel_html = hotel_template.render(hotel=hotel)
