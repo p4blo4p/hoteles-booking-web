@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [ main ]
   workflow_dispatch:
+    inputs:
+      domain:
+        description: 'Dominio personalizado (dejar vacío para usar GitHub Pages)'
+        required: false
+        default: ''
 
 jobs:
   deploy:
@@ -38,8 +43,22 @@ jobs:
           echo "Contenido del directorio static:"
           ls -la static/
 
+      - name: Set BASE_URL for GitHub Pages
+        if: github.event.inputs.domain == ''
+        run: |
+          echo "BASE_URL=https://p4blo4p.github.io/hoteles-booking-web-pages" >> $GITHUB_ENV
+
+      - name: Set BASE_URL for custom domain
+        if: github.event.inputs.domain != ''
+        run: |
+          echo "BASE_URL=${{ github.event.inputs.domain }}" >> $GITHUB_ENV
+
       - name: Generate site
-        run: python generate.py
+        env:
+          BASE_URL: ${{ env.BASE_URL }}
+        run: |
+          echo "Usando BASE_URL: $BASE_URL"
+          python generate.py
 
       - name: Verify generated files
         run: |
