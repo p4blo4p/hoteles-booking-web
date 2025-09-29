@@ -41,6 +41,13 @@ jobs:
       - name: Generate site
         run: python generate.py
 
+      - name: Verify generated files
+        run: |
+          echo "Verificando archivos generados..."
+          ls -la
+          echo "Contenido del directorio hotel:"
+          ls -la hotel/
+
       - name: Copy all files to a temp directory
         run: |
           mkdir deploy
