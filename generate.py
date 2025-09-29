@@ -32,7 +32,7 @@ for file in os.listdir(TEMPLATES_DIR):
 env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
 
 # Cargar datos de hoteles
-hoteles_json_path = os.path.join(DATA_DIR, 'hotels.json')
+hoteles_json_path = os.path.join(DATA_DIR, 'hoteles.json')
 print(f"Buscando archivo de hoteles en: {hoteles_json_path}")
 
 if not os.path.exists(hoteles_json_path):
@@ -44,10 +44,15 @@ with open(hoteles_json_path, 'r', encoding='utf-8') as f:
 
 print(f"Cargados {len(hoteles)} hoteles")
 
+# Obtener el dominio base desde la variable de entorno
+# Por defecto usar el de GitHub Pages
+BASE_URL = os.environ.get('BASE_URL', 'https://p4blo4p.github.io/hoteles-booking-web-pages')
+print(f"Usando BASE_URL: {BASE_URL}")
+
 # Renderizar index.html
 print("Renderizando index.html...")
 index_template = env.get_template('index.html')
-index_html = index_template.render(hoteles=hoteles)
+index_html = index_template.render(hoteles=hoteles, base_url=BASE_URL)
 index_output_path = os.path.join(OUTPUT_DIR, 'index.html')
 with open(index_output_path, 'w', encoding='utf-8') as f:
     f.write(index_html)
@@ -63,7 +68,7 @@ if not os.path.exists(hotels_dir):
 print("Renderizando páginas de hoteles...")
 hotel_template = env.get_template('hotel.html')
 for hotel in hoteles:
-    hotel_html = hotel_template.render(hotel=hotel)
+    hotel_html = hotel_template.render(hotel=hotel, base_url=BASE_URL)
     output_path = os.path.join(hotels_dir, f"{hotel['id']}.html")
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(hotel_html)
