@@ -8,7 +8,7 @@
         <div class="hero-content">
             <h2>Alojamientos que Fueron Escenario de Películas y Series</h2>
             <p>Descubre los hoteles de lujo donde se rodaron tus escenas favoritas y vive la experiencia de ser protagonista</p>
-            <a href="#hotels" class="cta-button">Explorar Hoteles</a>
+            <a href="{{ base_url }}/#hotels" class="cta-button">Explorar Hoteles</a>
         </div>
     </section>
 
@@ -50,7 +50,7 @@
                                 {% endfor %}
                                 <span>{{ hotel.rating }}</span>
                             </div>
-                            <a href="./hotel/{{ hotel.id }}.html" class="view-details">
+                            <a href="{{ base_url }}/hotel/{{ hotel.id }}.html" class="view-details">
                                 Ver detalles <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
