@@ -32,7 +32,7 @@ for file in os.listdir(TEMPLATES_DIR):
 env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
 
 # Cargar datos de hoteles
-hoteles_json_path = os.path.join(DATA_DIR, 'hoteles.json')
+hoteles_json_path = os.path.join(DATA_DIR, 'hotels.json')
 print(f"Buscando archivo de hoteles en: {hoteles_json_path}")
 
 if not os.path.exists(hoteles_json_path):
