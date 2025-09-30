@@ -4,54 +4,54 @@ import requests
 import re
 from pathlib import Path
 from urllib.parse import urlparse
+from PIL import Image
+import io
+
+# Configuración de optimización de imágenes
+MAX_WIDTH_LARGE = 1200  # Para imágenes principales
+MAX_WIDTH_MEDIUM = 800   # Para galería
+MAX_WIDTH_SMALL = 400    # Para miniaturas
+WEBP_QUALITY = 85       # Calidad WebP (0-100)
 
 # Función para limpiar nombres de archivos
 def sanitize_filename(filename):
-    # Eliminar caracteres inválidos y reemplazar espacios
     filename = re.sub(r'[\\/*?:"<>|]', "", filename)
     filename = filename.replace(" ", "_")
     return filename
 
 # Función para descargar una imagen
-def download_image(url, save_path):
+def download_image(url):
     try:
         response = requests.get(url, stream=True, timeout=10)
         response.raise_for_status()
-        
-        # Asegurar que el directorio existe
-        os.makedirs(os.path.dirname(save_path), exist_ok=True)
-        
-        with open(save_path, 'wb') as f:
-            for chunk in response.iter_content(chunk_size=8192):
-                f.write(chunk)
-        print(f"Descargada: {save_path}")
-        return True
+        return response.content
     except Exception as e:
         print(f"Error al descargar {url}: {e}")
-        return False
+        return None
 
-# Función para obtener la extensión de una URL
-def get_extension(url):
-    parsed = urlparse(url)
-    path = parsed.path
-    ext = os.path.splitext(path)[1]
-    if not ext:
-        # Si no hay extensión, intentar obtenerla del content-type
-        try:
-            response = requests.head(url, timeout=5)
-            content_type = response.headers.get('content-type', '')
-            if 'jpeg' in content_type or 'jpg' in content_type:
-                return '.jpg'
-            elif 'png' in content_type:
-                return '.png'
-            elif 'gif' in content_type:
-                return '.gif'
-            elif 'webp' in content_type:
-                return '.webp'
-        except:
-            pass
-        return '.jpg'  # Extensión por defecto
-    return ext
+# Función para optimizar y convertir a WebP
+def optimize_image(image_data, max_width, output_path):
+    try:
+        # Abrir la imagen desde los datos descargados
+        img = Image.open(io.BytesIO(image_data))
+        
+        # Convertir a RGB si es necesario (WebP no soporta RGBA con transparencia en algunos casos)
+        if img.mode in ('RGBA', 'P'):
+            img = img.convert('RGB')
+        
+        # Calcular nuevas dimensiones manteniendo la proporción
+        original_width, original_height = img.size
+        if original_width > max_width:
+            new_height = int(original_height * (max_width / original_width))
+            img = img.resize((max_width, new_height), Image.Resampling.LANCZOS)
+        
+        # Guardar como WebP con la calidad especificada
+        img.save(output_path, 'WEBP', quality=WEBP_QUALITY, optimize=True)
+        print(f"Optimizada: {output_path}")
+        return True
+    except Exception as e:
+        print(f"Error al optimizar imagen: {e}")
+        return False
 
 # Cargar el archivo JSON
 def load_hotels_json(file_path):
@@ -71,8 +71,8 @@ def process_hotels(hotels_data, base_dir):
         hotel_id = hotel['id']
         hotel_name = sanitize_filename(hotel['nombre'])
         
-        # Crear directorio para el hotel
-        hotel_dir = os.path.join(base_dir, hotel_id)
+        # Crear directorio para el hotel en static/images/hotels/
+        hotel_dir = os.path.join(base_dir, 'hotels', hotel_id)
         os.makedirs(hotel_dir, exist_ok=True)
         
         print(f"\nProcesando hotel: {hotel['nombre']} ({hotel_id})")
@@ -81,12 +81,13 @@ def process_hotels(hotels_data, base_dir):
         # Procesar imagen principal del hotel
         if 'imagenes' in hotel and 'hotel' in hotel['imagenes']:
             hotel_img_url = hotel['imagenes']['hotel']
-            ext = get_extension(hotel_img_url)
-            hotel_img_path = os.path.join(hotel_dir, f"hotel{ext}")
+            image_data = download_image(hotel_img_url)
             
-            if download_image(hotel_img_url, hotel_img_path):
-                # Actualizar la ruta en el JSON
-                hotel['imagenes']['hotel'] = f"data/img/{hotel_id}/hotel{ext}"
+            if image_data:
+                output_path = os.path.join(hotel_dir, "hotel.webp")
+                if optimize_image(image_data, MAX_WIDTH_LARGE, output_path):
+                    # Actualizar la ruta en el JSON para usar la nueva estructura
+                    hotel['imagenes']['hotel'] = f"static/images/hotels/{hotel_id}/hotel.webp"
         
         # Procesar imágenes de la película
         if 'imagenes' in hotel and 'pelicula' in hotel['imagenes']:
@@ -94,25 +95,28 @@ def process_hotels(hotels_data, base_dir):
             if isinstance(pelicula_imgs, list):
                 updated_pelicula_imgs = []
                 for i, img_url in enumerate(pelicula_imgs):
-                    ext = get_extension(img_url)
-                    img_path = os.path.join(hotel_dir, f"pelicula_{i+1}{ext}")
-                    if download_image(img_url, img_path):
-                        updated_pelicula_imgs.append(f"data/img/{hotel_id}/pelicula_{i+1}{ext}")
+                    image_data = download_image(img_url)
+                    if image_data:
+                        output_path = os.path.join(hotel_dir, f"pelicula_{i+1}.webp")
+                        if optimize_image(image_data, MAX_WIDTH_MEDIUM, output_path):
+                            updated_pelicula_imgs.append(f"static/images/hotels/{hotel_id}/pelicula_{i+1}.webp")
                 hotel['imagenes']['pelicula'] = updated_pelicula_imgs
             else:
-                ext = get_extension(pelicula_imgs)
-                img_path = os.path.join(hotel_dir, f"pelicula{ext}")
-                if download_image(pelicula_imgs, img_path):
-                    hotel['imagenes']['pelicula'] = f"data/img/{hotel_id}/pelicula{ext}"
+                image_data = download_image(pelicula_imgs)
+                if image_data:
+                    output_path = os.path.join(hotel_dir, "pelicula.webp")
+                    if optimize_image(image_data, MAX_WIDTH_MEDIUM, output_path):
+                        hotel['imagenes']['pelicula'] = f"static/images/hotels/{hotel_id}/pelicula.webp"
         
         # Procesar imágenes de la galería
         if 'imagenes' in hotel and 'galeria' in hotel['imagenes']:
             updated_galeria_imgs = []
             for i, img_url in enumerate(hotel['imagenes']['galeria']):
-                ext = get_extension(img_url)
-                img_path = os.path.join(hotel_dir, f"galeria_{i+1}{ext}")
-                if download_image(img_url, img_path):
-                    updated_galeria_imgs.append(f"data/img/{hotel_id}/galeria_{i+1}{ext}")
+                image_data = download_image(img_url)
+                if image_data:
+                    output_path = os.path.join(hotel_dir, f"galeria_{i+1}.webp")
+                    if optimize_image(image_data, MAX_WIDTH_MEDIUM, output_path):
+                        updated_galeria_imgs.append(f"static/images/hotels/{hotel_id}/galeria_{i+1}.webp")
             hotel['imagenes']['galeria'] = updated_galeria_imgs
         
         updated_hotels.append(hotel)
@@ -124,7 +128,7 @@ def main():
     # Rutas
     current_dir = Path(__file__).parent
     json_path = os.path.join(current_dir, 'data', 'hotels.json')
-    img_base_dir = os.path.join(current_dir, 'data', 'img')
+    img_base_dir = os.path.join(current_dir, 'static', 'images')
     
     # Crear directorio base para imágenes si no existe
     os.makedirs(img_base_dir, exist_ok=True)
