@@ -15,15 +15,8 @@
     "rating": 9.2,
     "imagenes": {
       "hotel": "https://images.unsplash.com/photo-1574680096145-d0b6c799f9b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "pelicula": [
-        "data/img/four-seasons-bali/pelicula_1.jpg",
-        "data/img/four-seasons-bali/pelicula_2.jpg"
-      ],
-      "galeria": [
-        "data/img/four-seasons-bali/galeria_1.jpg",
-        "data/img/four-seasons-bali/galeria_2.jpg",
-        "data/img/four-seasons-bali/galeria_3.jpg"
-      ]
+      "pelicula": [],
+      "galeria": []
     },
     "testimonios": [
       {
@@ -57,10 +50,7 @@
     "imagenes": {
       "hotel": "data/img/grand-hotel-excelsior/hotel.jpg",
       "pelicula": "data/img/grand-hotel-excelsior/pelicula.jpg",
-      "galeria": [
-        "data/img/grand-hotel-excelsior/galeria_1.jpg",
-        "data/img/grand-hotel-excelsior/galeria_2.jpg"
-      ]
+      "galeria": []
     },
     "testimonios": [
       {
@@ -88,10 +78,7 @@
     "imagenes": {
       "hotel": "data/img/st-regis-mexico/hotel.jpg",
       "pelicula": "data/img/st-regis-mexico/pelicula.jpg",
-      "galeria": [
-        "data/img/st-regis-mexico/galeria_1.jpg",
-        "data/img/st-regis-mexico/galeria_2.jpg"
-      ]
+      "galeria": []
     },
     "testimonios": [
       {
@@ -119,9 +106,7 @@
     "imagenes": {
       "hotel": "https://images.unsplash.com/photo-1582562690819-0a5a5c7d98a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "pelicula": "data/img/ashford-castle/pelicula.jpg",
-      "galeria": [
-        "data/img/ashford-castle/galeria_2.jpg"
-      ]
+      "galeria": []
     },
     "testimonios": [
       {
@@ -149,9 +134,7 @@
     "imagenes": {
       "hotel": "https://images.unsplash.com/photo-1574227488958-009048826034?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "pelicula": "data/img/punta-islita/pelicula.jpg",
-      "galeria": [
-        "data/img/punta-islita/galeria_2.jpg"
-      ]
+      "galeria": []
     },
     "testimonios": [
       {
@@ -179,9 +162,7 @@
     "imagenes": {
       "hotel": "https://images.unsplash.com/photo-1582562690819-0a5a5c7d98a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "pelicula": "data/img/chateau-frontenac/pelicula.jpg",
-      "galeria": [
-        "data/img/chateau-frontenac/galeria_2.jpg"
-      ]
+      "galeria": []
     },
     "testimonios": [
       {
@@ -209,10 +190,7 @@
     "imagenes": {
       "hotel": "data/img/gritti-palace/hotel.jpg",
       "pelicula": "data/img/gritti-palace/pelicula.jpg",
-      "galeria": [
-        "data/img/gritti-palace/galeria_1.jpg",
-        "data/img/gritti-palace/galeria_2.jpg"
-      ]
+      "galeria": []
     },
     "testimonios": [
       {
@@ -240,10 +218,7 @@
     "imagenes": {
       "hotel": "data/img/plaza-athenee/hotel.jpg",
       "pelicula": "data/img/plaza-athenee/pelicula.jpg",
-      "galeria": [
-        "data/img/plaza-athenee/galeria_1.jpg",
-        "data/img/plaza-athenee/galeria_2.jpg"
-      ]
+      "galeria": []
     },
     "testimonios": [
       {
@@ -271,9 +246,7 @@
     "imagenes": {
       "hotel": "https://images.unsplash.com/photo-1564564267028-f0e28c3b42d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "pelicula": "data/img/belmond-iguazu/pelicula.jpg",
-      "galeria": [
-        "data/img/belmond-iguazu/galeria_2.jpg"
-      ]
+      "galeria": []
     },
     "testimonios": [
       {
@@ -301,10 +274,7 @@
     "imagenes": {
       "hotel": "data/img/the-murray/hotel.jpg",
       "pelicula": "data/img/the-murray/pelicula.jpg",
-      "galeria": [
-        "data/img/the-murray/galeria_1.jpg",
-        "data/img/the-murray/galeria_2.jpg"
-      ]
+      "galeria": []
     },
     "testimonios": [
       {
