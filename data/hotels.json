@@ -16,13 +16,13 @@
     "imagenes": {
       "hotel": "https://images.unsplash.com/photo-1574680096145-d0b6c799f9b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "pelicula": [
-        "https://baliventur.com/wp-content/uploads/2019/10/eat-pray-love.jpg",
-        "https://baliventur.com/wp-content/uploads/2019/10/bali-was-eat-pray-love.jpg"
+        "data/img/four-seasons-bali/pelicula_1.jpg",
+        "data/img/four-seasons-bali/pelicula_2.jpg"
       ],
       "galeria": [
-        "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        "data/img/four-seasons-bali/galeria_1.jpg",
+        "data/img/four-seasons-bali/galeria_2.jpg",
+        "data/img/four-seasons-bali/galeria_3.jpg"
       ]
     },
     "testimonios": [
@@ -55,11 +55,11 @@
     "precio": 280,
     "rating": 8.7,
     "imagenes": {
-      "hotel": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "pelicula": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "hotel": "data/img/grand-hotel-excelsior/hotel.jpg",
+      "pelicula": "data/img/grand-hotel-excelsior/pelicula.jpg",
       "galeria": [
-        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        "data/img/grand-hotel-excelsior/galeria_1.jpg",
+        "data/img/grand-hotel-excelsior/galeria_2.jpg"
       ]
     },
     "testimonios": [
@@ -86,11 +86,11 @@
     "precio": 420,
     "rating": 9.0,
     "imagenes": {
-      "hotel": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "pelicula": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "hotel": "data/img/st-regis-mexico/hotel.jpg",
+      "pelicula": "data/img/st-regis-mexico/pelicula.jpg",
       "galeria": [
-        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        "data/img/st-regis-mexico/galeria_1.jpg",
+        "data/img/st-regis-mexico/galeria_2.jpg"
       ]
     },
     "testimonios": [
@@ -118,10 +118,9 @@
     "rating": 9.5,
     "imagenes": {
       "hotel": "https://images.unsplash.com/photo-1582562690819-0a5a5c7d98a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "pelicula": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "pelicula": "data/img/ashford-castle/pelicula.jpg",
       "galeria": [
-        "https://images.unsplash.com/photo-1582562690819-0a5a5c7d98a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        "data/img/ashford-castle/galeria_2.jpg"
       ]
     },
     "testimonios": [
@@ -149,10 +148,9 @@
     "rating": 8.8,
     "imagenes": {
       "hotel": "https://images.unsplash.com/photo-1574227488958-009048826034?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "pelicula": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "pelicula": "data/img/punta-islita/pelicula.jpg",
       "galeria": [
-        "https://images.unsplash.com/photo-1574227488958-009048826034?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        "data/img/punta-islita/galeria_2.jpg"
       ]
     },
     "testimonios": [
@@ -180,10 +178,9 @@
     "rating": 9.1,
     "imagenes": {
       "hotel": "https://images.unsplash.com/photo-1582562690819-0a5a5c7d98a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "pelicula": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "pelicula": "data/img/chateau-frontenac/pelicula.jpg",
       "galeria": [
-        "https://images.unsplash.com/photo-1582562690819-0a5a5c7d98a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        "data/img/chateau-frontenac/galeria_2.jpg"
       ]
     },
     "testimonios": [
@@ -210,11 +207,11 @@
     "precio": 950,
     "rating": 9.4,
     "imagenes": {
-      "hotel": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "pelicula": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "hotel": "data/img/gritti-palace/hotel.jpg",
+      "pelicula": "data/img/gritti-palace/pelicula.jpg",
       "galeria": [
-        "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        "data/img/gritti-palace/galeria_1.jpg",
+        "data/img/gritti-palace/galeria_2.jpg"
       ]
     },
     "testimonios": [
@@ -241,11 +238,11 @@
     "precio": 1200,
     "rating": 9.3,
     "imagenes": {
-      "hotel": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "pelicula": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "hotel": "data/img/plaza-athenee/hotel.jpg",
+      "pelicula": "data/img/plaza-athenee/pelicula.jpg",
       "galeria": [
-        "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        "data/img/plaza-athenee/galeria_1.jpg",
+        "data/img/plaza-athenee/galeria_2.jpg"
       ]
     },
     "testimonios": [
@@ -273,10 +270,9 @@
     "rating": 9.2,
     "imagenes": {
       "hotel": "https://images.unsplash.com/photo-1564564267028-f0e28c3b42d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "pelicula": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "pelicula": "data/img/belmond-iguazu/pelicula.jpg",
       "galeria": [
-        "https://images.unsplash.com/photo-1564564267028-f0e28c3b42d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        "data/img/belmond-iguazu/galeria_2.jpg"
       ]
     },
     "testimonios": [
@@ -303,11 +299,11 @@
     "precio": 480,
     "rating": 9.0,
     "imagenes": {
-      "hotel": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "pelicula": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "hotel": "data/img/the-murray/hotel.jpg",
+      "pelicula": "data/img/the-murray/pelicula.jpg",
       "galeria": [
-        "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        "data/img/the-murray/galeria_1.jpg",
+        "data/img/the-murray/galeria_2.jpg"
       ]
     },
     "testimonios": [
