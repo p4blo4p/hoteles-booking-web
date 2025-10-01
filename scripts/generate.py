@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 Script para generar el sitio web estático a partir de los datos y plantillas.
+Mejorado para manejar correctamente base_url y rutas de imágenes.
 """
-
 import json
 import os
 import sys
@@ -18,6 +18,16 @@ def load_hotel_data():
         with open(data_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
             print(f"📊 Datos cargados: {len(data)} hoteles")
+            
+            # Mostrar estructura del primer hotel para depuración
+            if data and len(data) > 0:
+                print("🔍 Estructura del primer hotel:")
+                for key, value in data[0].items():
+                    print(f"  {key}: {type(value).__name__}")
+                    if key == 'imagenes' and isinstance(value, dict):
+                        for img_key, img_value in value.items():
+                            print(f"    imagenes.{img_key}: {type(img_value).__name__}")
+            
             return data
     except FileNotFoundError:
         print(f"❌ Error: No se encontró el archivo {data_path}")
@@ -43,6 +53,7 @@ def copy_static_files():
         static_dest.mkdir(parents=True, exist_ok=True)
         
         # Copiar todo el contenido recursivamente
+        files_copied = 0
         for item in static_src.rglob('*'):
             if item.is_file():
                 # Calcular ruta relativa
@@ -54,9 +65,10 @@ def copy_static_files():
                 
                 # Copiar archivo
                 shutil.copy2(item, dest_path)
+                files_copied += 1
                 print(f"✅ Copiado: {relative_path}")
         
-        print(f"✅ Archivos estáticos copiados a {static_dest}")
+        print(f"✅ Archivos estáticos copiados a {static_dest} ({files_copied} archivos)")
         return True
         
     except Exception as e:
@@ -97,6 +109,10 @@ def generate_site():
         dist_dir.mkdir(exist_ok=True)
         print(f"📁 Directorio de salida: {dist_dir}")
         
+        # Obtener BASE_URL
+        base_url = os.environ.get('BASE_URL', '')
+        print(f"🌐 BASE_URL: {base_url}")
+        
         # Generar página principal
         try:
             print("📝 Generando página principal...")
@@ -104,7 +120,7 @@ def generate_site():
             # Preparar contexto para la plantilla
             context = {
                 'hoteles': hotels,
-                'base_url': os.environ.get('BASE_URL', '')
+                'base_url': base_url
             }
             
             index_content = template.render(**context)
@@ -128,15 +144,15 @@ def generate_site():
                     # Preparar contexto para la plantilla de hotel
                     hotel_context = {
                         'hotel': hotel,
-                        'base_url': os.environ.get('BASE_URL', '')
+                        'base_url': base_url
                     }
                     
                     hotel_content = hotel_template.render(**hotel_context)
                     
-                    # Crear nombre de archivo seguro
-                    hotel_name = hotel.get('nombre', f'hotel_{i}')
-                    safe_name = "".join(c for c in hotel_name if c.isalnum() or c in (' ', '-', '_')).rstrip()
-                    filename = f"hotel_{safe_name.replace(' ', '_').lower()}.html"
+                    # CORRECCIÓN: Usar el ID del hotel para el nombre de archivo
+                    hotel_id = hotel.get('id', f'hotel_{i}')
+                    safe_id = "".join(c for c in hotel_id if c.isalnum() or c in ('-', '_')).rstrip()
+                    filename = f"hotel_{safe_id}.html"
                     hotel_path = hotel_dir / filename
                     
                     with open(hotel_path, 'w', encoding='utf-8') as f:
@@ -206,6 +222,18 @@ def verify_generated_structure():
             print(f"✅ {key_file} ({size} bytes)")
         else:
             print(f"❌ {key_file} (no encontrado)")
+    
+    # Verificar páginas de hotel generadas
+    hotel_dir = dist_dir / 'hotel'
+    if hotel_dir.exists():
+        hotel_files = list(hotel_dir.glob('hotel_*.html'))
+        print(f"✅ Páginas de hotel generadas: {len(hotel_files)}")
+        for hotel_file in hotel_files[:3]:  # Mostrar primeras 3
+            print(f"  📄 {hotel_file.name}")
+        if len(hotel_files) > 3:
+            print(f"  ... y {len(hotel_files) - 3} más")
+    else:
+        print("❌ No se generaron páginas de hotel")
     
     return True
 

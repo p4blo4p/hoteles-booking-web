@@ -17,7 +17,7 @@
     <!-- Introduction Section -->
     <section class="intro-section">
         <h2>Hoteles Icónicos de Cine y Televisión</h2>
-        <p class="intro-text">Reserva en los mismos lugares que aparecieron en tus películas y series favoritas. Vive la experiencia de dormir donde dormieron las estrellas de Hollywood.</p>
+        <p class="intro-text">Reserva en los mismos lugares que aparecieron en tus películas y series favoritas. Vive la experiencia de dormir donde durmieron las estrellas de Hollywood.</p>
         <div class="stats-container">
             <div class="stat-item">
                 <span class="stat-number">50+</span>
@@ -50,10 +50,15 @@
             {% for hotel in hoteles %}
             <article class="hotel-card">
                 <div class="hotel-image-container">
+                    <!-- CORRECCIÓN: Usar base_url + ruta de imagen -->
                     {% if hotel.imagenes and hotel.imagenes.hotel %}
-                    <img src="{{ hotel.imagenes.hotel }}" alt="{{ hotel.nombre }}" class="hotel-image" loading="lazy">
+                        {% if hotel.imagenes.hotel.startswith('http') %}
+                            <img src="{{ hotel.imagenes.hotel }}" alt="{{ hotel.nombre }}" class="hotel-image" loading="lazy">
+                        {% else %}
+                            <img src="{{ base_url }}/{{ hotel.imagenes.hotel }}" alt="{{ hotel.nombre }}" class="hotel-image" loading="lazy">
+                        {% endif %}
                     {% else %}
-                    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="{{ hotel.nombre }}" class="hotel-image" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="{{ hotel.nombre }}" class="hotel-image" loading="lazy">
                     {% endif %}
                     <div class="hotel-badge">
                         <span class="movie-title">{{ hotel.pelicula }}</span>
@@ -103,7 +108,8 @@
                     </div>
                     
                     <div class="hotel-actions">
-                        <a href="/hotel/hotel_{{ loop.index }}.html" class="btn btn-primary">Ver detalles</a>
+                        <!-- CORRECCIÓN: Usar hotel.id en lugar de loop.index -->
+                        <a href="{{ base_url }}/hotel/hotel_{{ hotel.id }}.html" class="btn btn-primary">Ver detalles</a>
                     </div>
                 </div>
             </article>

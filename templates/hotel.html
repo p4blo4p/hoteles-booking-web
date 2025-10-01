@@ -6,16 +6,20 @@
 <section class="hotel-hero">
     <div class="hotel-hero-image">
         {% if hotel.imagenes and hotel.imagenes.hotel %}
-        <img src="{{ hotel.imagenes.hotel }}" alt="{{ hotel.nombre }}">
+            {% if hotel.imagenes.hotel.startswith('http') %}
+                <img src="{{ hotel.imagenes.hotel }}" alt="{{ hotel.nombre }}">
+            {% else %}
+                <img src="{{ base_url }}/{{ hotel.imagenes.hotel }}" alt="{{ hotel.nombre }}">
+            {% endif %}
         {% else %}
-        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="{{ hotel.nombre }}">
+            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="{{ hotel.nombre }}">
         {% endif %}
         <div class="hotel-hero-overlay"></div>
     </div>
     <div class="hotel-hero-content">
         <div class="container">
             <div class="hotel-breadcrumb">
-                <a href="/">Inicio</a> / <a href="/#hoteles">Hoteles</a> / <span>{{ hotel.nombre }}</span>
+                <a href="{{ base_url }}/">Inicio</a> / <a href="{{ base_url }}/#hoteles">Hoteles</a> / <span>{{ hotel.nombre }}</span>
             </div>
             <h1>{{ hotel.nombre }}</h1>
             <div class="hotel-meta">
@@ -110,14 +114,22 @@
                 <div class="hotel-gallery">
                     {% if hotel.imagenes and hotel.imagenes.hotel %}
                     <div class="gallery-main">
-                        <img src="{{ hotel.imagenes.hotel }}" alt="{{ hotel.nombre }}" id="gallery-main-image">
+                        {% if hotel.imagenes.hotel.startswith('http') %}
+                            <img src="{{ hotel.imagenes.hotel }}" alt="{{ hotel.nombre }}" id="gallery-main-image">
+                        {% else %}
+                            <img src="{{ base_url }}/{{ hotel.imagenes.hotel }}" alt="{{ hotel.nombre }}" id="gallery-main-image">
+                        {% endif %}
                     </div>
                     {% endif %}
                     
                     {% if hotel.imagenes and hotel.imagenes.pelicula %}
                     <div class="gallery-thumbnails">
                         {% for imagen in hotel.imagenes.pelicula %}
-                        <img src="{{ imagen }}" alt="Escena de {{ hotel.pelicula }}" class="gallery-thumbnail" onclick="changeMainImage(this.src)">
+                            {% if imagen.startswith('http') %}
+                                <img src="{{ imagen }}" alt="Escena de {{ hotel.pelicula }}" class="gallery-thumbnail" onclick="changeMainImage('{{ imagen }}')">
+                            {% else %}
+                                <img src="{{ base_url }}/{{ imagen }}" alt="Escena de {{ hotel.pelicula }}" class="gallery-thumbnail" onclick="changeMainImage('{{ base_url }}/{{ imagen }}')">
+                            {% endif %}
                         {% endfor %}
                     </div>
                     {% endif %}
@@ -128,7 +140,11 @@
                     <h3>Más Imágenes</h3>
                     <div class="gallery-grid">
                         {% for imagen in hotel.imagenes.galeria %}
-                        <img src="{{ imagen }}" alt="{{ hotel.nombre }}" class="gallery-grid-item">
+                            {% if imagen.startswith('http') %}
+                                <img src="{{ imagen }}" alt="{{ hotel.nombre }}" class="gallery-grid-item">
+                            {% else %}
+                                <img src="{{ base_url }}/{{ imagen }}" alt="{{ hotel.nombre }}" class="gallery-grid-item">
+                            {% endif %}
                         {% endfor %}
                     </div>
                 </div>
@@ -162,19 +178,6 @@
     </section>
     {% endif %}
     
-    <!-- Similar Hotels -->
-    <section class="similar-hotels">
-        <div class="hotel-card">
-            <h2>Hoteles Similares</h2>
-            <div class="similar-hotels-grid">
-                <!-- Aquí se podrían mostrar hoteles similares -->
-                <div class="similar-hotel-placeholder">
-                    <p>Más hoteles de cine próximamente...</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
     <!-- Booking CTA -->
     <section class="booking-cta">
         <div class="booking-cta-content">
@@ -182,7 +185,7 @@
             <p>Reserva ahora en {{ hotel.nombre }} y experimenta el lujo que vieron tus personajes favoritos.</p>
             <div class="booking-cta-actions">
                 <button class="btn btn-primary btn-large">Reservar Ahora</button>
-                <a href="/" class="btn btn-outline">Ver Más Hoteles</a>
+                <a href="{{ base_url }}/" class="btn btn-outline">Ver Más Hoteles</a>
             </div>
         </div>
     </section>
