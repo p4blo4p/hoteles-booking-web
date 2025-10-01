@@ -18,7 +18,7 @@ jobs:
       - name: Checkout source repo
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Asegurar que todos los archivos se descarguen
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -170,24 +170,22 @@ jobs:
           # Verificar index.html
           if [ ! -f "deploy/index.html" ]; then
             echo "❌ El archivo index.html no existe, creando versión básica..."
-            cat > deploy/index.html << 'EOF'
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoteles de Cine</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Hoteles de Cine</h1>
-        <p>Sitio en construcción. Por favor, vuelva más tarde.</p>
-    </div>
-    <script src="/static/js/scripts.js"></script>
-</body>
-</html>
-EOF
+            echo '<!DOCTYPE html>' > deploy/index.html
+            echo '<html lang="es">' >> deploy/index.html
+            echo '<head>' >> deploy/index.html
+            echo '    <meta charset="UTF-8">' >> deploy/index.html
+            echo '    <meta name="viewport" content="width=device-width, initial-scale=1.0">' >> deploy/index.html
+            echo '    <title>Hoteles de Cine</title>' >> deploy/index.html
+            echo '    <link rel="stylesheet" href="/static/css/styles.css">' >> deploy/index.html
+            echo '</head>' >> deploy/index.html
+            echo '<body>' >> deploy/index.html
+            echo '    <div class="container">' >> deploy/index.html
+            echo '        <h1>Hoteles de Cine</h1>' >> deploy/index.html
+            echo '        <p>Sitio en construcción. Por favor, vuelva más tarde.</p>' >> deploy/index.html
+            echo '    </div>' >> deploy/index.html
+            echo '    <script src="/static/js/scripts.js"></script>' >> deploy/index.html
+            echo '</body>' >> deploy/index.html
+            echo '</html>' >> deploy/index.html
             echo "✅ index.html básico creado"
           fi
 
