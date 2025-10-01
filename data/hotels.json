@@ -16,8 +16,8 @@
     "imagenes": {
       "hotel": "https://images.unsplash.com/photo-1574680096145-d0b6c799f9b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "pelicula": [
-        "static/images/hotels/four-seasons-bali/pelicula_1.webp",
-        "static/images/hotels/four-seasons-bali/pelicula_2.webp"
+        "static/images/hotels/four-seasons-bali/four-seasons-bali_pelicula_1.webp",
+        "static/images/hotels/four-seasons-bali/four-seasons-bali_pelicula_2.webp"
       ],
       "galeria": []
     },
@@ -52,7 +52,7 @@
     "rating": 8.7,
     "imagenes": {
       "hotel": "data/img/grand-hotel-excelsior/hotel.jpg",
-      "pelicula": "static/images/hotels/grand-hotel-excelsior/pelicula.webp",
+      "pelicula": [],
       "galeria": []
     },
     "testimonios": [
@@ -80,7 +80,7 @@
     "rating": 9.0,
     "imagenes": {
       "hotel": "data/img/st-regis-mexico/hotel.jpg",
-      "pelicula": "static/images/hotels/st-regis-mexico/pelicula.webp",
+      "pelicula": [],
       "galeria": []
     },
     "testimonios": [
