@@ -56,21 +56,34 @@ jobs:
           BASE_URL: ${{ env.BASE_URL }}
         run: |
           echo "Usando BASE_URL: $BASE_URL"
-          python scripts/generate.py  # ← CORREGIDO AQUÍ
+          python scripts/generate.py
 
       - name: Verify generated files
         run: |
           echo "Verificando archivos generados..."
           ls -la
-          echo "Contenido del directorio hotel:"
-          ls -la hotel/
+          echo "Contenido del directorio dist/:"
+          ls -la dist/
+          # Verificar si existe el directorio hotel dentro de dist/
+          if [ -d "dist/hotel" ]; then
+            echo "Contenido del directorio dist/hotel/:"
+            ls -la dist/hotel/
+          else
+            echo "El directorio dist/hotel/ no existe"
+          fi
 
       - name: Copy all files to a temp directory
         run: |
           mkdir deploy
-          cp -r index.html hotel static deploy/
-          echo "Archivos copiados:"
-          ls -la deploy/
+          # Copiar todo el contenido de dist/
+          if [ -d "dist" ]; then
+            cp -r dist/* deploy/
+            echo "Archivos copiados desde dist/:"
+            ls -la deploy/
+          else
+            echo "El directorio dist/ no existe, creando archivo index.html básico..."
+            echo "<html><body><h1>Sitio en construcción</h1></body></html>" > deploy/index.html
+          fi
 
       - name: Push to GitHub Pages Repo
         uses: peaceiris/actions-gh-pages@v4

@@ -64,14 +64,15 @@ def generate_site():
         # Crear directorio de salida si no existe
         dist_dir = Path('dist')
         dist_dir.mkdir(exist_ok=True)
+        print(f"📁 Directorio de salida: {dist_dir}")
         
         # Generar página principal
         try:
             print("📝 Generando página principal...")
             
-            # Preparar contexto para la plantilla - USAR 'hoteles' no 'hotels'
+            # Preparar contexto para la plantilla
             context = {
-                'hoteles': hotels,  # ← CAMBIADO: 'hoteles' en lugar de 'hotels'
+                'hoteles': hotels,
                 'base_url': os.environ.get('BASE_URL', '')
             }
             
@@ -88,6 +89,7 @@ def generate_site():
             # Crear directorio para páginas de hotel si no existe
             hotel_dir = dist_dir / 'hotel'
             hotel_dir.mkdir(exist_ok=True)
+            print(f"📁 Directorio de hotel: {hotel_dir}")
             
             # Generar páginas individuales para cada hotel
             for i, hotel in enumerate(hotels):
@@ -116,6 +118,16 @@ def generate_site():
                     print(f"❌ Error al generar página para hotel {i+1}: {e}")
                     continue
             
+            # Verificar archivos generados
+            print("\n📂 Verificando archivos generados:")
+            for item in dist_dir.iterdir():
+                if item.is_dir():
+                    print(f"  📁 {item.name}/")
+                    for subitem in item.iterdir():
+                        print(f"    📄 {subitem.name}")
+                else:
+                    print(f"  📄 {item.name}")
+            
             print("✅ ¡Sitio web generado exitosamente!")
             return True
             
@@ -129,6 +141,12 @@ def generate_site():
     except Exception as e:
         print(f"❌ Error al configurar Jinja2: {e}")
         return False
+    
+    # Después de generar todas las páginas
+    verify_generated_structure()
+    
+    return True
+
 
 def main():
     """Función principal."""
@@ -145,6 +163,32 @@ def main():
     else:
         print("\n💥 Generación fallida!")
         sys.exit(1)
+
+# Al final del script generate.py, añade esta verificación:
+
+def verify_generated_structure():
+    """Verifica la estructura generada y muestra información detallada."""
+    dist_dir = Path('dist')
+    
+    if not dist_dir.exists():
+        print("❌ El directorio dist/ no existe")
+        return False
+    
+    print("\n📂 Estructura generada:")
+    print(f"📁 {dist_dir}/")
+    
+    # Listar contenido del directorio dist
+    for item in dist_dir.iterdir():
+        if item.is_dir():
+            print(f"  📁 {item.name}/")
+            # Listar contenido de subdirectorios
+            for subitem in item.iterdir():
+                print(f"    📄 {subitem.name}")
+        else:
+            print(f"  📄 {item.name} ({item.stat().st_size} bytes)")
+    
+    return True
+
 
 if __name__ == "__main__":
     main()
