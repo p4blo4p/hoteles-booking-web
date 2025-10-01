@@ -1,5 +1,4 @@
 name: Deploy to External GitHub Pages Repo
-
 on:
   push:
     branches: [ main ]
@@ -15,7 +14,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout source repo
         uses: actions/checkout@v3
@@ -58,7 +56,7 @@ jobs:
           BASE_URL: ${{ env.BASE_URL }}
         run: |
           echo "Usando BASE_URL: $BASE_URL"
-          python generate.py
+          python scripts/generate.py  # ← CORREGIDO AQUÍ
 
       - name: Verify generated files
         run: |

@@ -1,5 +1,4 @@
 name: Download and Optimize Hotel Images
-
 on:
   workflow_dispatch:
     inputs:
@@ -18,39 +17,38 @@ permissions:
 jobs:
   download-images:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        persist-credentials: true
-        
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
-        
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install requests pillow
-        
-    - name: Clean existing images (if requested)
-      if: ${{ github.event.inputs.clean_existing == 'true' }}
-      run: |
-        echo "Eliminando imágenes existentes..."
-        rm -rf static/images/
-        mkdir -p static/images/hotels
-        mkdir -p static/images/common
-        
-    - name: Run download and optimize script
-      run: python download_hotel_images.py
-      
-    - name: Commit and push changes
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add static/images/ data/hotels.json
-        git diff --staged --quiet || git commit -m "Descargar y optimizar imágenes de hoteles en formato WebP"
-        git push origin main
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pillow
+
+      - name: Clean existing images (if requested)
+        if: ${{ github.event.inputs.clean_existing == 'true' }}
+        run: |
+          echo "Eliminando imágenes existentes..."
+          rm -rf static/images/
+          mkdir -p static/images/hotels
+          mkdir -p static/images/common
+
+      - name: Run download and optimize script
+        run: python scripts/download_hotel_images.py  # ← CORREGIDO AQUÍ
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add static/images/ data/hotels.json
+          git diff --staged --quiet || git commit -m "Descargar y optimizar imágenes de hoteles en formato WebP"
+          git push origin main
