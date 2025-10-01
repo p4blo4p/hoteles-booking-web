@@ -1,63 +1,152 @@
 {% extends "base.html" %}
-
 {% block title %}Hoteles de Cine - Alojamientos donde se rodaron películas y series{% endblock %}
-
 {% block content %}
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h2>Alojamientos que Fueron Escenario de Películas y Series</h2>
-            <p>Descubre los hoteles de lujo donde se rodaron tus escenas favoritas y vive la experiencia de ser protagonista</p>
-            <a href="{{ base_url }}/#hotels" class="cta-button">Explorar Hoteles</a>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 class="hero-title">Alojamientos que Fueron Escenario de Películas y Series</h1>
+        <p class="hero-subtitle">Descubre los hoteles de lujo donde se rodaron tus escenas favoritas y vive la experiencia de ser protagonista</p>
+        <a href="#hoteles" class="cta-button">Explorar Hoteles</a>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="container">
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <h2>Hoteles Icónicos de Cine y Televisión</h2>
+        <p class="intro-text">Reserva en los mismos lugares que aparecieron en tus películas y series favoritas. Vive la experiencia de dormir donde dormieron las estrellas de Hollywood.</p>
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Hoteles de Cine</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">25+</span>
+                <span class="stat-label">Países</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100+</span>
+                <span class="stat-label">Películas y Series</span>
+            </div>
         </div>
     </section>
 
-    <!-- Hotels Section -->
-    <section class="hotels" id="hotels">
-        <div class="container">
-            <div class="section-title">
-                <h3>Hoteles Icónicos de Cine y Televisión</h3>
-                <p>Reserva en los mismos lugares que aparecieron en tus películas y series favoritas</p>
+    <!-- Hotels Grid -->
+    <section id="hoteles" class="hotels-section">
+        <div class="section-header">
+            <h2>Nuestra Colección de Hoteles de Cine</h2>
+            <div class="filters">
+                <button class="filter-btn active">Todos</button>
+                <button class="filter-btn">Películas</button>
+                <button class="filter-btn">Series</button>
+                <button class="filter-btn">Más Recientes</button>
             </div>
-            
-            <div class="hotels-grid">
-                {% for hotel in hoteles %}
-                <div class="hotel-card">
-                    <div class="hotel-img">
-                        <img src="{{ hotel.imagenes.hotel }}" alt="{{ hotel.nombre }}">
-                        <span class="movie-badge">{{ hotel.pelicula }}</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3 class="hotel-title">{{ hotel.nombre }}</h3>
-                        <div class="hotel-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>{{ hotel.ubicacion }}</span>
-                        </div>
-                        <p class="hotel-description">{{ hotel.descripcion }}</p>
-                        <div class="hotel-features">
-                            {% for caracteristica in hotel.caracteristicas %}
-                            <span class="feature-tag">{{ caracteristica }}</span>
-                            {% endfor %}
-                        </div>
-                        <div class="hotel-footer">
-                            <div class="rating">
-                                {% for i in range(5) %}
-                                    {% if i < hotel.rating|round|int %}
-                                        <i class="fas fa-star"></i>
-                                    {% else %}
-                                        <i class="far fa-star"></i>
-                                    {% endif %}
-                                {% endfor %}
-                                <span>{{ hotel.rating }}</span>
-                            </div>
-                            <a href="{{ base_url }}/hotel/{{ hotel.id }}.html" class="view-details">
-                                Ver detalles <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
+        </div>
+        
+        <div class="hotels-grid">
+            {% for hotel in hoteles %}
+            <article class="hotel-card">
+                <div class="hotel-image-container">
+                    {% if hotel.imagenes and hotel.imagenes.hotel %}
+                    <img src="{{ hotel.imagenes.hotel }}" alt="{{ hotel.nombre }}" class="hotel-image" loading="lazy">
+                    {% else %}
+                    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="{{ hotel.nombre }}" class="hotel-image" loading="lazy">
+                    {% endif %}
+                    <div class="hotel-badge">
+                        <span class="movie-title">{{ hotel.pelicula }}</span>
+                        <span class="movie-year">{{ hotel.anio }}</span>
                     </div>
                 </div>
-                {% endfor %}
-            </div>
+                
+                <div class="hotel-content">
+                    <div class="hotel-header">
+                        <h3 class="hotel-name">{{ hotel.nombre }}</h3>
+                        <div class="hotel-location">
+                            <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>{{ hotel.ubicacion }}</span>
+                        </div>
+                    </div>
+                    
+                    <p class="hotel-description">{{ hotel.descripcion }}</p>
+                    
+                    <div class="hotel-features">
+                        {% for caracteristica in hotel.caracteristicas %}
+                        <span class="feature-tag">{{ caracteristica }}</span>
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="hotel-footer">
+                        <div class="hotel-rating">
+                            <div class="stars">
+                                {% for i in range(5) %}
+                                    {% if i < hotel.rating|float|int %}
+                                        <span class="star filled">★</span>
+                                    {% else %}
+                                        <span class="star">☆</span>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <span class="rating-value">{{ hotel.rating }}</span>
+                        </div>
+                        
+                        <div class="hotel-price">
+                            <span class="price-currency">$</span>
+                            <span class="price-amount">{{ hotel.precio }}</span>
+                            <span class="price-period">/ noche</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hotel-actions">
+                        <a href="/hotel/hotel_{{ loop.index }}.html" class="btn btn-primary">Ver detalles</a>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
         </div>
     </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <h2>Experiencias de Cinefilos</h2>
+        <div class="testimonials-grid">
+            {% for hotel in hoteles %}
+                {% if hotel.testimonios %}
+                    {% for testimonio in hotel.testimonios %}
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"{{ testimonio.texto }}"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="{{ testimonio.avatar }}" alt="{{ testimonio.autor }}" class="author-avatar">
+                            <div class="author-info">
+                                <h4>{{ testimonio.autor }}</h4>
+                                <p>{{ testimonio.fecha }} • {{ hotel.nombre }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-content">
+            <h2>Recibe Nuestras Ofertas de Cine</h2>
+            <p>Suscríbete para recibir información sobre nuevos hoteles de cine y ofertas exclusivas.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Tu email" required>
+                <button type="submit" class="btn btn-primary">Suscribirse</button>
+            </form>
+        </div>
+    </section>
+</main>
+
 {% endblock %}

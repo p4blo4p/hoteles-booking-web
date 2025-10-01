@@ -4,64 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Hoteles de Cine{% endblock %}</title>
-    <meta name="description" content="{% block description %}Descubre los alojamientos más icónicos donde se rodaron tus películas y series favoritas{% endblock %}">
-    <meta name="keywords" content="{% block keywords %}hoteles de cine, películas, series, alojamientos icónicos{% endblock %}">
+    <meta name="description" content="Descubre los alojamientos más icónicos donde se rodaron tus películas y series favoritas.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ base_url or '' }}">
+    <meta property="og:title" content="{% block og_title %}Hoteles de Cine - Alojamientos donde se rodaron películas y series{% endblock %}">
+    <meta property="og:description" content="Descubre los alojamientos más icónicos donde se rodaron tus películas y series favoritas.">
+    <meta property="og:image" content="{{ base_url or '' }}/static/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ base_url or '' }}">
+    <meta property="twitter:title" content="{% block twitter_title %}Hoteles de Cine - Alojamientos donde se rodaron películas y series{% endblock %}">
+    <meta property="twitter:description" content="Descubre los alojamientos más icónicos donde se rodaron tus películas y series favoritas.">
+    <meta property="twitter:image" content="{{ base_url or '' }}/static/images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ base_url or '' }}/static/images/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ base_url or '' }}/static/css/styles.css">
+    
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ base_url }}/static/css/styles.css">
-    <link rel="icon" href="{{ base_url }}/static/images/common/favicon.ico" type="image/x-icon">
+    
+    {% block head %}{% endblock %}
 </head>
 <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
     <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <i class="fas fa-film"></i>
-                <h1>Hoteles de Cine</h1>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="{{ base_url or '' }}/">
+                        <img src="{{ base_url or '' }}/static/images/logo.png" alt="Hoteles de Cine" class="logo-img">
+                        <span class="logo-text">Hoteles de Cine</span>
+                    </a>
+                </div>
+                
+                <nav class="main-nav" id="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="{{ base_url or '' }}/" class="nav-link">Inicio</a></li>
+                        <li class="nav-item"><a href="{{ base_url or '' }}/#hoteles" class="nav-link">Hoteles</a></li>
+                        <li class="nav-item"><a href="{{ base_url or '' }}/sobre-nosotros" class="nav-link">Sobre Nosotros</a></li>
+                        <li class="nav-item"><a href="{{ base_url or '' }}/contacto" class="nav-link">Contacto</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="{{ base_url }}/">Inicio</a></li>
-                    <li><a href="{{ base_url }}/#hotels">Hoteles</a></li>
-                    <li><a href="{{ base_url }}/#about">Sobre Nosotros</a></li>
-                    <li><a href="{{ base_url }}/#contact">Contacto</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
-
-    <!-- Content -->
-    <main>
+    
+    <!-- Main Content -->
+    <main id="main-content">
         {% block content %}{% endblock %}
     </main>
-
+    
     <!-- Footer -->
-    <footer id="contact">
+    <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Hoteles de Cine</h4>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hoteles de Cine</h3>
                     <p>Descubre los alojamientos más icónicos donde se rodaron tus películas y series favoritas.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
-                <div class="footer-col">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul>
-                        <li><a href="{{ base_url }}/">Inicio</a></li>
-                        <li><a href="{{ base_url }}/#hotels">Todos los Hoteles</a></li>
-                        <li><a href="{{ base_url }}/#about">Sobre Nosotros</a></li>
-                        <li><a href="{{ base_url }}/#contact">Contacto</a></li>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="{{ base_url or '' }}/">Inicio</a></li>
+                        <li><a href="{{ base_url or '' }}/#hoteles">Todos los Hoteles</a></li>
+                        <li><a href="{{ base_url or '' }}/sobre-nosotros">Sobre Nosotros</a></li>
+                        <li><a href="{{ base_url or '' }}/contacto">Contacto</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-col">
-                    <h4>Categorías</h4>
-                    <ul>
+                <div class="footer-section">
+                    <h3>Categorías</h3>
+                    <ul class="footer-links">
                         <li><a href="#">Hoteles de Películas</a></li>
                         <li><a href="#">Hoteles de Series</a></li>
                         <li><a href="#">Destinos de Lujo</a></li>
@@ -69,22 +104,43 @@
                     </ul>
                 </div>
                 
-                <div class="footer-col">
-                    <h4>Contacto</h4>
-                    <ul>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul class="contact-info">
                         <li><i class="fas fa-envelope"></i> info@hotelesdecine.com</li>
                         <li><i class="fas fa-phone"></i> +34 900 123 456</li>
                         <li><i class="fas fa-map-marker-alt"></i> Madrid, España</li>
                     </ul>
+                    <div class="newsletter">
+                        <h4>Boletín Informativo</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Tu email" required>
+                            <button type="submit">Suscribirse</button>
+                        </form>
+                    </div>
                 </div>
             </div>
             
-            <div class="copyright">
-                <p>&copy; 2023 Hoteles de Cine. Todos los derechos reservados.</p>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2023 Hoteles de Cine. Todos los derechos reservados.</p>
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos de Servicio</a>
+                    <a href="#">Cookies</a>
+                </div>
             </div>
         </div>
     </footer>
-
-    <script src="{{ base_url }}/static/js/scripts.js"></script>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- JavaScript -->
+    <script src="{{ base_url or '' }}/static/js/scripts.js"></script>
+    {% block scripts %}{% endblock %}
 </body>
 </html>
