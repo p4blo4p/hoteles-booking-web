@@ -32,14 +32,20 @@ jobs:
 
       - name: Verify file structure
         run: |
-          echo "Verificando estructura de archivos..."
+          echo "=== Verificando estructura de archivos origen ==="
           ls -la
-          echo "Contenido del directorio data:"
+          echo ""
+          echo "=== Contenido del directorio data/ ==="
           ls -la data/
-          echo "Contenido del directorio templates:"
+          echo ""
+          echo "=== Contenido del directorio templates/ ==="
           ls -la templates/
-          echo "Contenido del directorio static:"
+          echo ""
+          echo "=== Contenido del directorio static/ ==="
           ls -la static/
+          echo ""
+          echo "=== Contenido del directorio scripts/ ==="
+          ls -la scripts/
 
       - name: Set BASE_URL for GitHub Pages
         if: github.event.inputs.domain == ''
@@ -60,30 +66,144 @@ jobs:
 
       - name: Verify generated files
         run: |
-          echo "Verificando archivos generados..."
+          echo "=== Verificando archivos generados ==="
           ls -la
-          echo "Contenido del directorio dist/:"
-          ls -la dist/
-          # Verificar si existe el directorio hotel dentro de dist/
-          if [ -d "dist/hotel" ]; then
-            echo "Contenido del directorio dist/hotel/:"
-            ls -la dist/hotel/
+          echo ""
+          if [ -d "dist" ]; then
+            echo "=== Contenido del directorio dist/ ==="
+            ls -la dist/
+            echo ""
+            if [ -d "dist/hotel" ]; then
+              echo "=== Contenido del directorio dist/hotel/ ==="
+              ls -la dist/hotel/
+            else
+              echo "⚠️ El directorio dist/hotel/ no existe"
+            fi
+            if [ -d "dist/static" ]; then
+              echo "=== Contenido del directorio dist/static/ ==="
+              ls -la dist/static/
+              echo ""
+              echo "=== Contenido del directorio dist/static/css/ ==="
+              ls -la dist/static/css/ 2>/dev/null || echo "⚠️ El directorio dist/static/css/ no existe"
+              echo ""
+              echo "=== Contenido del directorio dist/static/js/ ==="
+              ls -la dist/static/js/ 2>/dev/null || echo "⚠️ El directorio dist/static/js/ no existe"
+              echo ""
+              echo "=== Contenido del directorio dist/static/images/ ==="
+              ls -la dist/static/images/ 2>/dev/null || echo "⚠️ El directorio dist/static/images/ no existe"
+            else
+              echo "⚠️ El directorio dist/static/ no existe"
+            fi
           else
-            echo "El directorio dist/hotel/ no existe"
+            echo "❌ El directorio dist/ no existe"
+            exit 1
           fi
 
-      - name: Copy all files to a temp directory
+      - name: Copy all files to deploy directory
         run: |
-          mkdir deploy
-          # Copiar todo el contenido de dist/
-          if [ -d "dist" ]; then
-            cp -r dist/* deploy/
-            echo "Archivos copiados desde dist/:"
-            ls -la deploy/
-          else
-            echo "El directorio dist/ no existe, creando archivo index.html básico..."
-            echo "<html><body><h1>Sitio en construcción</h1></body></html>" > deploy/index.html
+          echo "=== Preparando directorio de despliegue ==="
+          mkdir -p deploy
+          
+          # Verificar que dist/ existe y tiene contenido
+          if [ ! -d "dist" ]; then
+            echo "❌ El directorio dist/ no existe"
+            exit 1
           fi
+          
+          # Copiar todo el contenido de dist/ recursivamente
+          echo "=== Copiando archivos desde dist/ a deploy/ ==="
+          cp -r dist/* deploy/
+          
+          echo "=== Verificando archivos copiados ==="
+          ls -la deploy/
+          echo ""
+          
+          # Verificar estructura en deploy/
+          if [ -d "deploy/static" ]; then
+            echo "=== Estructura static/ en deploy/ ==="
+            ls -la deploy/static/
+            if [ -d "deploy/static/css" ]; then
+              echo "=== Archivos CSS en deploy/static/css/ ==="
+              ls -la deploy/static/css/
+            fi
+            if [ -d "deploy/static/js" ]; then
+              echo "=== Archivos JS en deploy/static/js/ ==="
+              ls -la deploy/static/js/
+            fi
+            if [ -d "deploy/static/images" ]; then
+              echo "=== Archivos de imágenes en deploy/static/images/ ==="
+              ls -la deploy/static/images/
+            fi
+          else
+            echo "⚠️ El directorio static/ no se copió correctamente"
+          fi
+          
+          if [ -d "deploy/hotel" ]; then
+            echo "=== Páginas de hotel en deploy/hotel/ ==="
+            ls -la deploy/hotel/
+          else
+            echo "⚠️ El directorio hotel/ no se copió correctamente"
+          fi
+
+      - name: Create fallback files if missing
+        run: |
+          echo "=== Creando archivos de respaldo si faltan ==="
+          
+          # Crear directorio static si no existe
+          mkdir -p deploy/static/css deploy/static/js deploy/static/images
+          
+          # Crear CSS básico si no existe
+          if [ ! -f "deploy/static/css/styles.css" ]; then
+            echo "/* Estilos básicos de respaldo */" > deploy/static/css/styles.css
+            echo "body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }" >> deploy/static/css/styles.css
+            echo ".container { max-width: 1200px; margin: 0 auto; }" >> deploy/static/css/styles.css
+            echo "✅ CSS básico creado"
+          fi
+          
+          # Crear JS básico si no existe
+          if [ ! -f "deploy/static/js/scripts.js" ]; then
+            echo "// Scripts básicos de respaldo" > deploy/static/js/scripts.js
+            echo "console.log('Sitio cargado correctamente');" >> deploy/static/js/scripts.js
+            echo "✅ JS básico creado"
+          fi
+          
+          # Verificar index.html
+          if [ ! -f "deploy/index.html" ]; then
+            echo "❌ El archivo index.html no existe, creando versión básica..."
+            cat > deploy/index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoteles de Cine</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hoteles de Cine</h1>
+        <p>Sitio en construcción. Por favor, vuelva más tarde.</p>
+    </div>
+    <script src="/static/js/scripts.js"></script>
+</body>
+</html>
+EOF
+            echo "✅ index.html básico creado"
+          fi
+
+      - name: Final verification
+        run: |
+          echo "=== Verificación final antes del despliegue ==="
+          echo "Estructura final del directorio deploy/:"
+          find deploy/ -type f | head -20
+          echo ""
+          echo "Tamaño del directorio deploy/:"
+          du -sh deploy/
+          echo ""
+          echo "Archivos principales:"
+          echo "- index.html: $(ls -la deploy/index.html 2>/dev/null || echo 'No existe')"
+          echo "- static/css/styles.css: $(ls -la deploy/static/css/styles.css 2>/dev/null || echo 'No existe')"
+          echo "- static/js/scripts.js: $(ls -la deploy/static/js/scripts.js 2>/dev/null || echo 'No existe')"
 
       - name: Push to GitHub Pages Repo
         uses: peaceiris/actions-gh-pages@v4

@@ -6,6 +6,7 @@ Script para generar el sitio web estático a partir de los datos y plantillas.
 import json
 import os
 import sys
+import shutil
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 
@@ -17,13 +18,6 @@ def load_hotel_data():
         with open(data_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
             print(f"📊 Datos cargados: {len(data)} hoteles")
-            
-            # Mostrar estructura del primer hotel para depuración
-            if data and len(data) > 0:
-                print("🔍 Estructura del primer hotel:")
-                for key, value in data[0].items():
-                    print(f"  {key}: {type(value).__name__}")
-            
             return data
     except FileNotFoundError:
         print(f"❌ Error: No se encontró el archivo {data_path}")
@@ -31,6 +25,43 @@ def load_hotel_data():
     except json.JSONDecodeError as e:
         print(f"❌ Error al decodificar el archivo JSON: {e}")
         return []
+
+def copy_static_files():
+    """Copia los archivos estáticos al directorio de salida."""
+    print("📁 Copiando archivos estáticos...")
+    
+    # Directorios origen y destino
+    static_src = Path('static')
+    static_dest = Path('dist/static')
+    
+    if not static_src.exists():
+        print(f"⚠️ El directorio origen {static_src} no existe")
+        return False
+    
+    try:
+        # Crear directorio destino si no existe
+        static_dest.mkdir(parents=True, exist_ok=True)
+        
+        # Copiar todo el contenido recursivamente
+        for item in static_src.rglob('*'):
+            if item.is_file():
+                # Calcular ruta relativa
+                relative_path = item.relative_to(static_src)
+                dest_path = static_dest / relative_path
+                
+                # Crear directorios padre si no existen
+                dest_path.parent.mkdir(parents=True, exist_ok=True)
+                
+                # Copiar archivo
+                shutil.copy2(item, dest_path)
+                print(f"✅ Copiado: {relative_path}")
+        
+        print(f"✅ Archivos estáticos copiados a {static_dest}")
+        return True
+        
+    except Exception as e:
+        print(f"❌ Error al copiar archivos estáticos: {e}")
+        return False
 
 def generate_site():
     """Genera el sitio web estático."""
@@ -76,8 +107,6 @@ def generate_site():
                 'base_url': os.environ.get('BASE_URL', '')
             }
             
-            print(f"📋 Contexto para plantilla: {list(context.keys())}")
-            
             index_content = template.render(**context)
             
             # Guardar página principal
@@ -118,22 +147,19 @@ def generate_site():
                     print(f"❌ Error al generar página para hotel {i+1}: {e}")
                     continue
             
-            # Verificar archivos generados
-            print("\n📂 Verificando archivos generados:")
-            for item in dist_dir.iterdir():
-                if item.is_dir():
-                    print(f"  📁 {item.name}/")
-                    for subitem in item.iterdir():
-                        print(f"    📄 {subitem.name}")
-                else:
-                    print(f"  📄 {item.name}")
+            # Copiar archivos estáticos
+            print("\n📁 Copiando archivos estáticos...")
+            if not copy_static_files():
+                print("⚠️ Advertencia: No se pudieron copiar todos los archivos estáticos")
+            
+            # Verificar estructura final
+            verify_generated_structure()
             
             print("✅ ¡Sitio web generado exitosamente!")
             return True
             
         except Exception as e:
             print(f"❌ Error al generar el contenido: {e}")
-            print(f"   Tipo de error: {type(e).__name__}")
             import traceback
             traceback.print_exc()
             return False
@@ -141,12 +167,47 @@ def generate_site():
     except Exception as e:
         print(f"❌ Error al configurar Jinja2: {e}")
         return False
+
+def verify_generated_structure():
+    """Verifica la estructura generada y muestra información detallada."""
+    dist_dir = Path('dist')
     
-    # Después de generar todas las páginas
-    verify_generated_structure()
+    if not dist_dir.exists():
+        print("❌ El directorio dist/ no existe")
+        return False
+    
+    print("\n📂 Estructura generada:")
+    print(f"📁 {dist_dir}/")
+    
+    # Función recursiva para mostrar estructura
+    def show_structure(path, indent=0):
+        for item in sorted(path.iterdir()):
+            if item.is_dir():
+                print(f"{'  ' * indent}📁 {item.name}/")
+                show_structure(item, indent + 1)
+            else:
+                size = item.stat().st_size
+                print(f"{'  ' * indent}📄 {item.name} ({size} bytes)")
+    
+    show_structure(dist_dir)
+    
+    # Verificar archivos clave
+    key_files = [
+        'index.html',
+        'static/css/styles.css',
+        'static/js/scripts.js'
+    ]
+    
+    print("\n🔍 Verificación de archivos clave:")
+    for key_file in key_files:
+        file_path = dist_dir / key_file
+        if file_path.exists():
+            size = file_path.stat().st_size
+            print(f"✅ {key_file} ({size} bytes)")
+        else:
+            print(f"❌ {key_file} (no encontrado)")
     
     return True
-
 
 def main():
     """Función principal."""
@@ -163,32 +224,6 @@ def main():
     else:
         print("\n💥 Generación fallida!")
         sys.exit(1)
-
-# Al final del script generate.py, añade esta verificación:
-
-def verify_generated_structure():
-    """Verifica la estructura generada y muestra información detallada."""
-    dist_dir = Path('dist')
-    
-    if not dist_dir.exists():
-        print("❌ El directorio dist/ no existe")
-        return False
-    
-    print("\n📂 Estructura generada:")
-    print(f"📁 {dist_dir}/")
-    
-    # Listar contenido del directorio dist
-    for item in dist_dir.iterdir():
-        if item.is_dir():
-            print(f"  📁 {item.name}/")
-            # Listar contenido de subdirectorios
-            for subitem in item.iterdir():
-                print(f"    📄 {subitem.name}")
-        else:
-            print(f"  📄 {item.name} ({item.stat().st_size} bytes)")
-    
-    return True
-
 
 if __name__ == "__main__":
     main()
