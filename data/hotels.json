@@ -6,20 +6,20 @@
     "pelicula": "Eat Pray Love",
     "anio": 2010,
     "descripcion": "Resort de lujo en la selva tropical donde Julia Roberts encontró la paz en 'Eat Pray Love'. Spa flotante sobre el río y villas privadas con vistas impresionantes.",
-    "caracteristicas": [
-      "Spa de lujo",
-      "Villas privadas",
-      "Gastronomía"
-    ],
+    "caracteristicas": ["Spa de lujo", "Villas privadas", "Gastronomía"],
     "precio": 650,
     "rating": 9.2,
     "imagenes": {
-      "hotel": "https://images.unsplash.com/photo-1574680096145-d0b6c799f9b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "hotel": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       "pelicula": [
-        "static/images/hotels/four-seasons-bali/four-seasons-bali_pelicula_1.webp",
-        "static/images/hotels/four-seasons-bali/four-seasons-bali_pelicula_2.webp"
+        "https://images.unsplash.com/photo-1574680096145-d0b6c799f9b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
       ],
-      "galeria": []
+      "galeria": [
+        "https://images.unsplash.com/photo-1574680096145-d0b6c799f9b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ]
     },
     "testimonios": [
       {
@@ -43,20 +43,19 @@
     "pelicula": "Game of Thrones",
     "anio": 2011,
     "descripcion": "Hotel histórico con vistas al mar que sirvió como escenario para los Jardines de Agua de los Lannister en 'Game of Thrones'.",
-    "caracteristicas": [
-      "Vistas al mar",
-      "Piscina olímpica",
-      "Historia"
-    ],
+    "caracteristicas": ["Vistas al mar", "Piscina olímpica", "Historia"],
     "precio": 280,
     "rating": 8.7,
     "imagenes": {
-      "hotel": "data/img/grand-hotel-excelsior/hotel.jpg",
-      "pelicula": [],
+      "hotel": "https://images.unsplash.com/photo-1566079073918-7b6c22f1d2b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "pelicula": [
+        "https://images.unsplash.com/photo-1566079073918-7b6c22f1d2b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99e2c8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
       "galeria": [
-        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_1.webp",
-        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_2.webp",
-        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_3.webp"
+        "https://images.unsplash.com/photo-1566079073918-7b6c22f1d2b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99e2c8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1552465011-b4e21bf1e09f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
       ]
     },
     "testimonios": [
@@ -70,241 +69,218 @@
   },
   {
     "id": "st-regis-mexico",
-    "nombre": "The St. Regis Mexico City",
+    "nombre": "St. Regis Mexico City",
     "ubicacion": "Ciudad de México, México",
     "pelicula": "Roma",
     "anio": 2018,
     "descripcion": "Lujoso hotel de diseño Art Decó que apareció en 'Roma' de Alfonso Cuarón.",
-    "caracteristicas": [
-      "Diseño Art Decó",
-      "Spa de lujo",
-      "Céntrico"
-    ],
-    "precio": 420,
+    "caracteristicas": ["Diseño Art Decó", "Spa de lujo", "Céntrico"],
+    "precio": 450,
     "rating": 9.0,
     "imagenes": {
-      "hotel": "data/img/st-regis-mexico/hotel.jpg",
-      "pelicula": [],
+      "hotel": "https://images.unsplash.com/photo-1552428653-7addc53ea5fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "pelicula": [
+        "https://images.unsplash.com/photo-1552425019-b2ee4ab3f295?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1552425019-b2ee4ab3f295?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
       "galeria": [
-        "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_1.webp",
-        "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_2.webp",
-        "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_3.webp"
+        "https://images.unsplash.com/photo-1552425019-b2ee4ab3f295?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1552425019-b2ee4ab3f295?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
       ]
     },
     "testimonios": [
       {
-        "texto": "Reconocí el pasillo principal de la película Roma. El hotel es tan elegante como en la pantalla.",
-        "autor": "Ana López",
-        "fecha": "Mayo 2023",
-        "avatar": "https://randomuser.me/api/portraits/women/28.jpg"
+        "texto": "La arquitectura Art Decó de este hotel es espectacular. Me sentí como en la película Roma.",
+        "autor": "Ana García",
+        "fecha": "Julio 2023",
+        "avatar": "https://randomuser.me/api/portraits/women/67.jpg"
       }
     ]
   },
   {
     "id": "ashford-castle",
     "nombre": "Ashford Castle",
-    "ubicacion": "County Mayo, Irlanda",
+    "ubicacion": "Condado de Mayo, Irlanda",
     "pelicula": "The Crown",
     "anio": 2019,
     "descripcion": "Castillo medieval del siglo XIII que apareció en 'The Crown' y 'The Quiet Man'.",
-    "caracteristicas": [
-      "Castillo histórico",
-      "Cetrería",
-      "Golf"
-    ],
-    "precio": 750,
+    "caracteristicas": ["Castillo histórico", "Cetrería", "Golf"],
+    "precio": 520,
     "rating": 9.5,
     "imagenes": {
-      "hotel": "https://images.unsplash.com/photo-1582562690819-0a5a5c7d98a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "pelicula": "static/images/hotels/ashford-castle/pelicula.webp",
-      "galeria": []
+      "hotel": "https://images.unsplash.com/photo-1584132967334-10e0ebd6d89d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "pelicula": [
+        "https://images.unsplash.com/photo-1584132967334-10e0ebd6d89d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
+      "galeria": [
+        "https://images.unsplash.com/photo-1584132967334-10e0ebd6d89d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ]
     },
     "testimonios": [
       {
-        "texto": "Sentí como si estuviera en un episodio de The Crown. El castillo es impresionante y el servicio es de otro mundo.",
+        "texto": "Dormir en un castillo real donde filmaron The Crown fue una experiencia inolvidable.",
         "autor": "James Wilson",
-        "fecha": "Julio 2023",
-        "avatar": "https://randomuser.me/api/portraits/men/67.jpg"
+        "fecha": "Agosto 2023",
+        "avatar": "https://randomuser.me/api/portraits/men/52.jpg"
       }
     ]
   },
   {
-    "id": "punta-islita",
-    "nombre": "Hotel Punta Islita",
-    "ubicacion": "Guanacaste, Costa Rica",
+    "id": "costa-rica-resort",
+    "nombre": "Manuel Antonio National Park Resort",
+    "ubicacion": "Quepos, Costa Rica",
     "pelicula": "Jurassic Park",
     "anio": 1993,
     "descripcion": "Ecolodge de lujo en la costa del Pacífico que sirvió de escenario para las escenas de selva en 'Jurassic Park'.",
-    "caracteristicas": [
-      "Ecolodge",
-      "Playa privada",
-      "Canopy"
-    ],
-    "precio": 320,
+    "caracteristicas": ["Ecolodge", "Playa privada", "Canopy"],
+    "precio": 380,
     "rating": 8.8,
     "imagenes": {
-      "hotel": "https://images.unsplash.com/photo-1574227488958-009048826034?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "pelicula": "static/images/hotels/punta-islita/pelicula.webp",
-      "galeria": []
+      "hotel": "https://images.unsplash.com/photo-1584132967334-10e0ebd6d89d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "pelicula": [
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1584132967334-10e0ebd6d89d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
+      "galeria": [
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1584132967334-10e0ebd6d89d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1544551763-46a0cbb72cd0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ]
     },
     "testimonios": [
       {
-        "texto": "¡Jurassic Park fue filmado aquí! La selva es tan exuberante como en la película. Increíble experiencia.",
+        "texto": "La vista al océano desde la habitación era exactamente como en Jurassic Park. Increíble experiencia.",
         "autor": "Laura Chen",
-        "fecha": "Agosto 2023",
-        "avatar": "https://randomuser.me/api/portraits/women/52.jpg"
+        "fecha": "Mayo 2023",
+        "avatar": "https://randomuser.me/api/portraits/women/31.jpg"
       }
     ]
   },
   {
-    "id": "chateau-frontenac",
+    "id": "fairmont-chateau",
     "nombre": "Fairmont Le Château Frontenac",
     "ubicacion": "Quebec, Canadá",
     "pelicula": "Catch Me If You Can",
     "anio": 2002,
     "descripcion": "Iconico hotel castillo en Quebec que apareció en 'Catch Me If You Can' y 'The Simpsons'.",
-    "caracteristicas": [
-      "Arquitectura icónica",
-      "Spa con vistas",
-      "Histórico"
-    ],
-    "precio": 380,
+    "caracteristicas": ["Arquitectura icónica", "Spa con vistas", "Histórico"],
+    "precio": 350,
     "rating": 9.1,
     "imagenes": {
-      "hotel": "https://images.unsplash.com/photo-1582562690819-0a5a5c7d98a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "pelicula": "static/images/hotels/chateau-frontenac/pelicula.webp",
-      "galeria": []
-    },
-    "testimonios": [
-      {
-        "texto": "Reconocí este hotel de inmediato. Es aún más impresionante en persona que en las películas.",
-        "autor": "Robert Kim",
-        "fecha": "Septiembre 2023",
-        "avatar": "https://randomuser.me/api/portraits/men/29.jpg"
-      }
-    ]
-  },
-  {
-    "id": "gritti-palace",
-    "nombre": "The Gritti Palace",
-    "ubicacion": "Venecia, Italia",
-    "pelicula": "Casino Royale",
-    "anio": 2006,
-    "descripcion": "Hotel de lujo de 500 años en el Gran Canal de Venecia que apareció en 'Casino Royale' y 'Spider-Man: Far From Home'.",
-    "caracteristicas": [
-      "Gran Canal",
-      "Historia",
-      "Góndolas"
-    ],
-    "precio": 950,
-    "rating": 9.4,
-    "imagenes": {
-      "hotel": "data/img/gritti-palace/hotel.jpg",
-      "pelicula": "static/images/hotels/gritti-palace/pelicula.webp",
+      "hotel": "https://images.unsplash.com/photo-1590596164204-fd0d5faccf2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "pelicula": [
+        "https://images.unsplash.com/photo-1590596164204-fd0d5faccf2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
       "galeria": [
-        "static/images/hotels/gritti-palace/gritti-palace_galeria_1.webp",
-        "static/images/hotels/gritti-palace/gritti-palace_galeria_2.webp",
-        "static/images/hotels/gritti-palace/gritti-palace_galeria_3.webp"
+        "https://images.unsplash.com/photo-1590596164204-fd0d5faccf2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
       ]
     },
     "testimonios": [
       {
-        "texto": "James Bond se hospedó aquí. La experiencia es tan elegante como en la película. Vistas inolvidables al Gran Canal.",
-        "autor": "Sophie Martin",
-        "fecha": "Octubre 2023",
-        "avatar": "https://randomuser.me/api/portraits/women/36.jpg"
-      }
-    ]
-  },
-  {
-    "id": "plaza-athenee",
-    "nombre": "Hotel Plaza Athénée",
-    "ubicacion": "París, Francia",
-    "pelicula": "Sex and the City",
-    "anio": 2008,
-    "descripcion": "Lujoso hotel parisino donde Carrie Bradshaw se hospedó en 'Sex and the City' y apareció en 'The Devil Wears Prada'.",
-    "caracteristicas": [
-      "Torre Eiffel",
-      "Alain Ducasse",
-      "Moda"
-    ],
-    "precio": 1200,
-    "rating": 9.3,
-    "imagenes": {
-      "hotel": "data/img/plaza-athenee/hotel.jpg",
-      "pelicula": "static/images/hotels/plaza-athenee/pelicula.webp",
-      "galeria": [
-        "static/images/hotels/plaza-athenee/plaza-athenee_galeria_1.webp",
-        "static/images/hotels/plaza-athenee/plaza-athenee_galeria_2.webp",
-        "static/images/hotels/plaza-athenee/plaza-athenee_galeria_3.webp"
-      ]
-    },
-    "testimonios": [
-      {
-        "texto": "¡Me sentí como Carrie Bradshaw! El hotel es tan glamouroso como en la serie. Las vistas a la Torre Eiffel son mágicas.",
-        "autor": "Emily Johnson",
+        "texto": "Este castillo-hotel es impresionante. Me sentí como en una película de Hollywood.",
+        "autor": "Robert Dubois",
         "fecha": "Junio 2023",
-        "avatar": "https://randomuser.me/api/portraits/women/44.jpg"
-      }
-    ]
-  },
-  {
-    "id": "belmond-iguazu",
-    "nombre": "Belmond Hotel das Cataratas",
-    "ubicacion": "Foz do Iguaçu, Brasil",
-    "pelicula": "Indiana Jones",
-    "anio": 2008,
-    "descripcion": "Único hotel dentro del Parque Nacional de Iguazú que apareció en 'Indiana Jones y el Reino de la Calavera de Cristal'.",
-    "caracteristicas": [
-      "Dentro del parque",
-      "Cataratas",
-      "Exclusivo"
-    ],
-    "precio": 550,
-    "rating": 9.2,
-    "imagenes": {
-      "hotel": "https://images.unsplash.com/photo-1564564267028-f0e28c3b42d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "pelicula": "static/images/hotels/belmond-iguazu/pelicula.webp",
-      "galeria": []
-    },
-    "testimonios": [
-      {
-        "texto": "¡Indiana Jones estuvo aquí! Poder ver las cataratas sin multitudes es una experiencia única.",
-        "autor": "Carlos Silva",
-        "fecha": "Julio 2023",
         "avatar": "https://randomuser.me/api/portraits/men/38.jpg"
       }
     ]
   },
   {
-    "id": "the-murray",
-    "nombre": "The Murray",
-    "ubicacion": "Hong Kong",
-    "pelicula": "Transformers",
-    "anio": 2014,
-    "descripcion": "Hotel de diseño arquitectónico premiado que apareció en 'Transformers: Age of Extinction'.",
-    "caracteristicas": [
-      "Diseño moderno",
-      "Piscina rooftop",
-      "Skyline"
-    ],
-    "precio": 480,
-    "rating": 9.0,
+    "id": "hotel-danieli",
+    "nombre": "Hotel Danieli",
+    "ubicacion": "Venecia, Italia",
+    "pelicula": "Casino Royale",
+    "anio": 2006,
+    "descripcion": "Hotel de lujo de 500 años en el Gran Canal de Venecia que apareció en 'Casino Royale' y 'Spider-Man: Far From Home'.",
+    "caracteristicas": ["Gran Canal", "Historia", "Góndolas"],
+    "precio": 750,
+    "rating": 9.3,
     "imagenes": {
-      "hotel": "data/img/the-murray/hotel.jpg",
-      "pelicula": "static/images/hotels/the-murray/pelicula.webp",
+      "hotel": "https://images.unsplash.com/photo-1513326738652-0d37d3e27624?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "pelicula": [
+        "https://images.unsplash.com/photo-1513326738652-0d37d3e27624?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1544551763-46a0cbb72cd0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
       "galeria": [
-        "static/images/hotels/the-murray/the-murray_galeria_1.webp",
-        "static/images/hotels/the-murray/the-murray_galeria_2.webp",
-        "static/images/hotels/the-murray/the-murray_galeria_3.webp"
+        "https://images.unsplash.com/photo-1513326738652-0d37d3e27624?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1544551763-46a0cbb72cd0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
       ]
     },
     "testimonios": [
       {
-        "texto": "El edificio es icónico. Las vistas desde la piscina rooftop son espectaculares, especialmente al atardecer.",
-        "autor": "David Park",
+        "texto": " despertar con vistas al Gran Canal es una experiencia que nunca olvidaré. Pura magia veneciana.",
+        "autor": "Sophie Laurent",
+        "fecha": "Julio 2023",
+        "avatar": "https://randomuser.me/api/portraits/women/45.jpg"
+      }
+    ]
+  },
+  {
+    "id": "plaza-athenee",
+    "nombre": "Plaza Athénée",
+    "ubicacion": "París, Francia",
+    "pelicula": "Sex and the City",
+    "anio": 2008,
+    "descripcion": "Lujoso hotel parisino donde Carrie Bradshaw se hospedó en 'Sex and the City' y apareció en 'The Devil Wears Prada'.",
+    "caracteristicas": ["Torre Eiffel", "Alain Ducasse", "Moda"],
+    "precio": 680,
+    "rating": 9.0,
+    "imagenes": {
+      "hotel": "https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "pelicula": [
+        "https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1502602898538-4a6530e8a0a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
+      "galeria": [
+        "https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1502602898538-4a6530e8a0a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1544551763-46a0cbb72cd0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    "testimonios": [
+      {
+        "texto": "Como fan de Sex and the City, fue increíble hospedarme en el mismo hotel que Carrie Bradshaw.",
+        "autor": "María Rodriguez",
+        "fecha": "Septiembre 2023",
+        "avatar": "https://randomuser.me/api/portraits/women/29.jpg"
+      }
+    ]
+  },
+  {
+    "id": "belmond-das-cataras",
+    "nombre": "Belmond Hotel das Cataratas",
+    "ubicacion": "Foz do Iguaçu, Brasil",
+    "pelicula": "Indiana Jones",
+    "anio": 2008,
+    "descripcion": "Único hotel dentro del Parque Nacional de Iguazú que apareció en 'Indiana Jones y el Reino de la Calavera de Cristal'.",
+    "caracteristicas": ["Dentro del parque", "Cataratas", "Exclusivo"],
+    "precio": 420,
+    "rating": 8.9,
+    "imagenes": {
+      "hotel": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "pelicula": [
+        "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
+      "galeria": [
+        "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1544551763-46a0cbb72cd0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    "testimonios": [
+      {
+        "texto": "Despertar con el sonido de las cataratas es una experiencia mágica. Vale cada centavo.",
+        "autor": "Pedro Silva",
         "fecha": "Agosto 2023",
-        "avatar": "https://randomuser.me/api/portraits/men/67.jpg"
+        "avatar": "https://randomuser.me/api/portraits/men/41.jpg"
       }
     ]
   }
