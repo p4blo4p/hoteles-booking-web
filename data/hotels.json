@@ -53,7 +53,11 @@
     "imagenes": {
       "hotel": "data/img/grand-hotel-excelsior/hotel.jpg",
       "pelicula": [],
-      "galeria": []
+      "galeria": [
+        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_1.webp",
+        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_2.webp",
+        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_3.webp"
+      ]
     },
     "testimonios": [
       {
@@ -81,7 +85,11 @@
     "imagenes": {
       "hotel": "data/img/st-regis-mexico/hotel.jpg",
       "pelicula": [],
-      "galeria": []
+      "galeria": [
+        "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_1.webp",
+        "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_2.webp",
+        "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_3.webp"
+      ]
     },
     "testimonios": [
       {
@@ -193,7 +201,11 @@
     "imagenes": {
       "hotel": "data/img/gritti-palace/hotel.jpg",
       "pelicula": "static/images/hotels/gritti-palace/pelicula.webp",
-      "galeria": []
+      "galeria": [
+        "static/images/hotels/gritti-palace/gritti-palace_galeria_1.webp",
+        "static/images/hotels/gritti-palace/gritti-palace_galeria_2.webp",
+        "static/images/hotels/gritti-palace/gritti-palace_galeria_3.webp"
+      ]
     },
     "testimonios": [
       {
@@ -221,7 +233,11 @@
     "imagenes": {
       "hotel": "data/img/plaza-athenee/hotel.jpg",
       "pelicula": "static/images/hotels/plaza-athenee/pelicula.webp",
-      "galeria": []
+      "galeria": [
+        "static/images/hotels/plaza-athenee/plaza-athenee_galeria_1.webp",
+        "static/images/hotels/plaza-athenee/plaza-athenee_galeria_2.webp",
+        "static/images/hotels/plaza-athenee/plaza-athenee_galeria_3.webp"
+      ]
     },
     "testimonios": [
       {
@@ -277,7 +293,11 @@
     "imagenes": {
       "hotel": "data/img/the-murray/hotel.jpg",
       "pelicula": "static/images/hotels/the-murray/pelicula.webp",
-      "galeria": []
+      "galeria": [
+        "static/images/hotels/the-murray/the-murray_galeria_1.webp",
+        "static/images/hotels/the-murray/the-murray_galeria_2.webp",
+        "static/images/hotels/the-murray/the-murray_galeria_3.webp"
+      ]
     },
     "testimonios": [
       {
