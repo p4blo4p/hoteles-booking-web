@@ -3,7 +3,6 @@
 Script para descargar y optimizar imágenes de hoteles.
 Versión mejorada que respeta la estructura JSON existente y llena correctamente la galería.
 """
-
 import os
 import json
 import requests
@@ -17,19 +16,16 @@ import io
 MAX_WIDTH_LARGE = 1200  # Para imágenes principales
 MAX_WIDTH_MEDIUM = 800  # Para galería
 MAX_WIDTH_SMALL = 400   # Para miniaturas
-WEBP_QUALITY = 85      # Calidad WebP (0-100)
+WEBP_QUALITY = 85       # Calidad WebP (0-100)
 
 def load_hotel_data():
     """Carga los datos de hoteles desde el archivo JSON."""
     json_path = Path('data/hotels.json')
-    
     print(f"📖 Buscando archivo en: {json_path.absolute()}")
-    
     try:
         with open(json_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
             print(f"✅ Datos cargados: {len(data)} hoteles")
-            
             # Mostrar estructura de imágenes del primer hotel para depuración
             if data and len(data) > 0:
                 first_hotel = data[0]
@@ -37,7 +33,6 @@ def load_hotel_data():
                     print("🔍 Estructura de imágenes del primer hotel:")
                     for key, value in first_hotel['imagenes'].items():
                         print(f"  {key}: {type(value).__name__} = {value}")
-            
             return data
     except FileNotFoundError:
         print(f"❌ Error: No se encontró el archivo {json_path}")
@@ -58,7 +53,6 @@ def load_hotel_data():
 def get_safe_filename(hotel_id, image_type, index=None):
     """Genera un nombre de archivo seguro para las imágenes."""
     safe_id = re.sub(r'[^a-zA-Z0-9-]', '-', hotel_id.lower())
-    
     if index is not None:
         return f"{safe_id}_{image_type}_{index + 1}.webp"
     else:
@@ -87,10 +81,8 @@ def download_and_convert_image(url, save_path, max_size=None):
         
         # Guardar como WebP
         img.save(save_path, 'WEBP', quality=WEBP_QUALITY, optimize=True)
-        
         print(f"✅ Imagen guardada: {save_path}")
         return save_path  # Devolver la ruta para usarla en el JSON
-        
     except Exception as e:
         print(f"❌ Error al procesar {url}: {e}")
         return None
@@ -99,8 +91,27 @@ def process_hotel_images(hotel):
     """Procesa todas las imágenes de un hotel."""
     hotel_id = hotel.get('id', 'unknown')
     hotel_name = hotel.get('nombre', 'Hotel sin nombre')
-    
     print(f"\n🏨 Procesando hotel: {hotel_name} (ID: {hotel_id})")
+    
+    # CORRECCIÓN: Manejar la URL del hotel
+    hotel_url = hotel.get('url', '')
+    
+    # Si la URL es una lista, tomar el primer elemento
+    if isinstance(hotel_url, list):
+        if hotel_url:
+            hotel_url = hotel_url[0]
+            print(f"ℹ️ URL convertida de lista a string: {hotel_url}")
+        else:
+            hotel_url = ''
+            print(f"⚠️ Lista de URLs vacía para {hotel_id}")
+    
+    # Validar URL
+    if not hotel_url or not isinstance(hotel_url, str):
+        print(f"⚠️ URL inválida para {hotel_id}: {hotel_url}")
+        hotel_url = ''
+    
+    # Actualizar la URL en el hotel si se corrigió
+    hotel['url'] = hotel_url
     
     # Crear directorio base para el hotel
     hotel_dir = Path(f'static/images/hotels/{hotel_id}')
@@ -116,12 +127,11 @@ def process_hotel_images(hotel):
     
     # 1. Procesar imagen principal del hotel
     if hotel['imagenes'].get('hotel'):
-        hotel_url = hotel['imagenes']['hotel']
-        if hotel_url.startswith('http'):
+        hotel_img_url = hotel['imagenes']['hotel']
+        if hotel_img_url.startswith('http'):
             # Es una URL externa, descargarla y convertirla
             local_path = hotel_dir / f"{hotel_id}_hotel.webp"
-            converted_path = download_and_convert_image(hotel_url, local_path, (MAX_WIDTH_LARGE, MAX_WIDTH_LARGE))
-            
+            converted_path = download_and_convert_image(hotel_img_url, local_path, (MAX_WIDTH_LARGE, MAX_WIDTH_LARGE))
             if converted_path:
                 # Actualizar ruta local en el JSON
                 relative_path = str(converted_path).replace('\\', '/')  # Para Windows
@@ -131,13 +141,11 @@ def process_hotel_images(hotel):
     # 2. Procesar imágenes de película
     if hotel['imagenes'].get('pelicula') and isinstance(hotel['imagenes']['pelicula'], list):
         pelicula_paths = []
-        
         for i, pelicula_url in enumerate(hotel['imagenes']['pelicula']):
             if pelicula_url.startswith('http'):
                 # Es una URL externa, descargarla y convertirla
                 local_path = hotel_dir / f"{hotel_id}_pelicula_{i + 1}.webp"
                 converted_path = download_and_convert_image(pelicula_url, local_path, (MAX_WIDTH_MEDIUM, MAX_WIDTH_MEDIUM))
-                
                 if converted_path:
                     relative_path = str(converted_path).replace('\\', '/')  # Para Windows
                     pelicula_paths.append(relative_path)
@@ -145,7 +153,6 @@ def process_hotel_images(hotel):
             else:
                 # Ya es una ruta local, mantenerla
                 pelicula_paths.append(pelicula_url)
-        
         # Actualizar la lista de imágenes de película
         hotel['imagenes']['pelicula'] = pelicula_paths
     
@@ -164,7 +171,6 @@ def process_hotel_images(hotel):
                 # Es una URL externa, descargarla y convertirla
                 local_path = hotel_dir / f"{hotel_id}_galeria_{i + 1}.webp"
                 converted_path = download_and_convert_image(galeria_url, local_path, (MAX_WIDTH_MEDIUM, MAX_WIDTH_MEDIUM))
-                
                 if converted_path:
                     relative_path = str(converted_path).replace('\\', '/')  # Para Windows
                     galeria_paths.append(relative_path)
@@ -183,11 +189,10 @@ def process_hotel_images(hotel):
                 for i in range(3):
                     local_path = hotel_dir / f"{hotel_id}_galeria_{i + 1}.webp"
                     converted_path = download_and_convert_image(
-                        hotel['imagenes']['hotel'], 
-                        local_path, 
+                        hotel['imagenes']['hotel'],
+                        local_path,
                         (MAX_WIDTH_MEDIUM, MAX_WIDTH_MEDIUM)
                     )
-                    
                     if converted_path:
                         relative_path = str(converted_path).replace('\\', '/')  # Para Windows
                         galeria_paths.append(relative_path)
@@ -203,7 +208,6 @@ def process_hotel_images(hotel):
                             img = Image.open(main_image_path)
                             img.thumbnail((MAX_WIDTH_MEDIUM, MAX_WIDTH_MEDIUM), Image.Resampling.LANCZOS)
                             img.save(local_path, 'WEBP', quality=WEBP_QUALITY, optimize=True)
-                            
                             relative_path = str(local_path).replace('\\', '/')  # Para Windows
                             galeria_paths.append(relative_path)
                             print(f"📝 Creada ruta de galería desde imagen principal: {relative_path}")
@@ -227,7 +231,6 @@ def download_hotel_images():
         return
     
     processed_hotels = []
-    
     for hotel in hotels:
         processed_hotel = process_hotel_images(hotel)
         processed_hotels.append(processed_hotel)
@@ -242,7 +245,6 @@ def download_hotel_images():
         # Mostrar resumen final
         total_galeria_images = sum(len(hotel.get('imagenes', {}).get('galeria', [])) for hotel in processed_hotels)
         print(f"📊 Total de imágenes de galería creadas: {total_galeria_images}")
-        
     except Exception as e:
         print(f"❌ Error al guardar el JSON: {e}")
 
