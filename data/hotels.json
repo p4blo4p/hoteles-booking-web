@@ -21,397 +21,206 @@
     "direccion": "Sayan, Ubud, Gianyar Regency, Bali 80571, Indonesia",
     "telefono": "+62 361 977577",
     "email": "res.bali@fourseasons.com",
-    "servicios_adicionales": [
-      "Spa de clase mundial",
-      "Restaurante premiado Ayung Terrace",
-      "Actividades culturales balinesas",
-      "Excursiones en bicicleta por la jungla",
-      "Ceremonias de bendición balinesas"
-    ],
     "imagenes": {
-      "hotel": "/workspace/imgs/four_seasons_bali_sayan_resort_lobby_reception.jpg",
-      "hotel_2": "/workspace/imgs/four-seasons-bali-sayan-resort-lobby-lounge-jungle-view.jpg",
-      "hotel_3": "/workspace/imgs/four_seasons_bali_sayan_resort_main_building_lobby_entrance.jpg",
+      "hotel": "static/images/hotels/four-seasons-bali/four-seasons-bali_hotel.webp",
       "pelicula": [
-        "/workspace/imgs/four-seasons-resort-bali-at-sayan-entrance-sign.jpg",
-        "/workspace/imgs/four_seasons_bali_sayan_resort_lobby_entrance_staircase.jpg"
+        "static/images/hotels/four-seasons-bali/four-seasons-bali_pelicula_2.webp"
       ],
       "galeria": [
-        "/workspace/imgs/four-seasons-resort-bali-sayan-luxury-hotel-jungle-view.jpg",
-        "/workspace/imgs/four_seasons_bali_sayan_luxury_resort_pool_jungle_view.jpg",
-        "/workspace/imgs/tropical_jungle_luxury_resort_villa_spa.jpg",
-        "/workspace/imgs/luxury_tropical_jungle_spa_ocean_view_massage.jpg",
-        "/workspace/imgs/four-seasons-bali-sayan-resort-lobby-lounge-jungle-view.jpg",
-        "/workspace/imgs/four_seasons_bali_sayan_resort_main_building_lobby_entrance.jpg",
-        "/workspace/imgs/four_seasons_bali_sayan_resort_lobby_reception.jpg"
+        "static/images/hotels/four-seasons-bali/four-seasons-bali_galeria_1.webp",
+        "static/images/hotels/four-seasons-bali/four-seasons-bali_galeria_2.webp",
+        "static/images/hotels/four-seasons-bali/four-seasons-bali_galeria_3.webp",
+        "static/images/hotels/four-seasons-bali/four-seasons-bali_galeria_4.webp",
+        "static/images/hotels/four-seasons-bali/four-seasons-bali_galeria_5.webp",
+        "static/images/hotels/four-seasons-bali/four-seasons-bali_galeria_6.webp"
       ]
-    },
-    "testimonios": [
-      {
-        "texto": "Después de ver Eat Pray Love, soñé con visitar este lugar. La realidad superó todas mis expectativas. El spa flotante es una experiencia única.",
-        "autor": "Isabella Martínez",
-        "fecha": "Octubre 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/women/44.jpg"
-      },
-      {
-        "texto": "Nuestra luna de miel en Four Seasons Bali fue mágica. La villa privada con piscina nos dio la intimidad que buscábamos y el servicio fue impecable.",
-        "autor": "Carlos y Sofía Gómez",
-        "fecha": "Septiembre 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
-      },
-      {
-        "texto": "El lotus pond es exactamente como en la película. Despertar con los sonidos de la jungla fue una experiencia transformadora.",
-        "autor": "Jennifer Chen",
-        "fecha": "Agosto 2024",
-        "rating": 9,
-        "avatar": "https://randomuser.me/api/portraits/women/67.jpg"
-      },
-      {
-        "texto": "Las clases de yoga al amanecer y las ceremonias balinesas hicieron de esta estancia algo espiritual. Definitivamente regresaré.",
-        "autor": "Mark Williams",
-        "fecha": "Julio 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/men/58.jpg"
-      }
-    ]
+    }
   },
   {
     "id": "grand-hotel-excelsior",
-    "nombre": "Grand Hotel Excelsior",
-    "ubicacion": "Valletta, Malta",
-    "pelicula": "Game of Thrones",
-    "anio": 2011,
-    "descripcion": "Hotel histórico de 5 estrellas con vistas espectaculares al puerto de Marsamxett que sirvió como escenario para los Jardines de Agua de los Lannister en 'Game of Thrones'. Ubicado en las fortificaciones del siglo XVI de Valletta.",
+    "nombre": "Grand Hotel Excelsior Vittoria",
+    "ubicacion": "Sorrento, Italia",
+    "pelicula": "Under the Tuscan Sun",
+    "anio": 2003,
+    "descripcion": "Elegante hotel histórico con vistas panorámicas a la bahía de Nápoles, donde se filmaron escenas de 'Under the Tuscan Sun'. Jardines espectaculares y terrazas románticas con vista al Vesubio. Tradición hotelera desde 1834.",
     "caracteristicas": [
-      "Vistas panorámicas al puerto",
-      "Piscina olímpica exterior",
-      "Historia medieval",
-      "Playa privada",
-      "Marina privada",
-      "Spa de lujo"
+      "Vistas al Golfo de Nápoles",
+      "Jardines históricos",
+      "Terraza panorámica",
+      "Spa con tratamientos mediterráneos",
+      "Gastronomía italiana auténtica",
+      "Bodega de vinos premium"
     ],
-    "precio": 320,
-    "rating": 8.9,
-    "url": "https://excelsior.com.mt/",
-    "booking_url": "https://www.booking.com/hotel/mt/excelsior-grand-malta.html",
-    "direccion": "Great Siege Road, Floriana FRN 1023, Malta",
-    "telefono": "+356 2125 0520",
-    "email": "reservations@excelsior.com.mt",
-    "servicios_adicionales": [
-      "Centro de bienestar y spa",
-      "Múltiples restaurantes",
-      "Centro de conferencias",
-      "Actividades acuáticas",
-      "Tours por Malta"
-    ],
+    "precio": 450,
+    "rating": 9.1,
+    "url": "https://www.exvitt.it/",
+    "booking_url": "https://www.booking.com/hotel/it/grand-hotel-excelsior-vittoria.html",
+    "direccion": "Piazza Tasso, 34, 80067 Sorrento NA, Italia",
+    "telefono": "+39 081 877 7111",
+    "email": "info@exvitt.it",
     "imagenes": {
-      "hotel": "/workspace/imgs/grand_hotel_excelsior_malta_valletta_harbor_view_pool_day.jpg",
-      "hotel_2": "/workspace/imgs/grand_hotel_excelsior_malta_valletta_harbor_view_balcony.jpg",
+      "hotel": "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_hotel.webp",
       "pelicula": [
-        "/workspace/imgs/grand_hotel_excelsior_malta_valletta_harbor_view_pool.jpg",
-        "/workspace/imgs/grand_hotel_excelsior_malta_valletta_harbor_night_aerial.jpg"
+        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_pelicula_1.webp",
+        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_pelicula_2.webp"
       ],
       "galeria": [
-        "/workspace/imgs/luxury_hotel_lobby_grand_marble_cleaner.jpg",
-        "/workspace/imgs/grand_hotel_excelsior_malta_valletta_harbor_view_balcony.jpg",
-        "/workspace/imgs/grand-hotel-excelsior-malta-valletta-harbor-view-twilight-aerial.jpg",
-        "/workspace/imgs/grand_hotel_excelsior_malta_valletta_harbor_view_pool_day.jpg"
-      ],
-      "hotel_3": "/workspace/imgs/grand-hotel-excelsior-malta-valletta-harbor-view-twilight-aerial.jpg"
-    },
-    "testimonios": [
-      {
-        "texto": "Como fan de Game of Thrones, fue increíble hospedarme en el lugar donde filmaron escenas de Desembarco del Rey. La vista al puerto es espectacular.",
-        "autor": "Miguel Fernández",
-        "fecha": "Junio 2024",
-        "rating": 9,
-        "avatar": "https://randomuser.me/api/portraits/men/45.jpg"
-      },
-      {
-        "texto": "La piscina con vista al puerto de Marsamxett es simplemente perfecta. El personal fue muy atento y conocedor de la historia del lugar.",
-        "autor": "Sarah Johnson",
-        "fecha": "Mayo 2024",
-        "rating": 9,
-        "avatar": "https://randomuser.me/api/portraits/women/23.jpg"
-      },
-      {
-        "texto": "Excelente ubicación para explorar Valletta. El desayuno con vista al puerto es inolvidable. Definitivamente Westeros en la vida real.",
-        "autor": "David Martinez",
-        "fecha": "Abril 2024",
-        "rating": 8,
-        "avatar": "https://randomuser.me/api/portraits/men/67.jpg"
-      }
-    ]
+        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_1.webp",
+        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_2.webp",
+        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_3.webp",
+        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_4.webp",
+        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_5.webp",
+        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_6.webp"
+      ]
+    }
   },
   {
     "id": "st-regis-mexico",
     "nombre": "The St. Regis Mexico City",
     "ubicacion": "Ciudad de México, México",
-    "pelicula": "Roma",
-    "anio": 2018,
-    "descripcion": "Lujoso hotel de diseño contemporáneo en Paseo de la Reforma que apareció en 'Roma' de Alfonso Cuarón. Combina elegancia moderna con la hospitalidad mexicana tradicional en el corazón de la capital.",
+    "pelicula": "Casa de mi Padre",
+    "anio": 2012,
+    "descripcion": "Hotel de lujo ubicado en el corazón de la elegante Colonia Juárez, cerca de la Zona Rosa. Combina el lujo contemporáneo con el arte y la cultura mexicana. Reconocido por su servicio butler personalizado y gastronomía de clase mundial.",
     "caracteristicas": [
-      "Diseño contemporáneo elegante",
-      "Spa St. Regis",
-      "Ubicación céntrica premium",
       "Butler service personalizado",
-      "Restaurantes gourmet",
-      "Vista panorámica de la ciudad"
-    ],
-    "precio": 480,
-    "rating": 9.2,
-    "url": "https://www.marriott.com/en-us/hotels/mexxr-the-st-regis-mexico-city/overview/",
-    "booking_url": "https://www.booking.com/hotel/mx/st-regis-mexico-city.html",
-    "direccion": "Paseo de la Reforma 439, Cuauhtémoc, 06500 Ciudad de México, CDMX, México",
-    "telefono": "+52 55 5228 1818",
-    "email": "thereserve@stregis.com",
-    "servicios_adicionales": [
-      "Spa de clase mundial",
+      "Spa Remède exclusivo",
+      "Restaurante Diana de alta cocina",
+      "Bar King Cole con cocteles artesanales",
       "Centro de fitness 24/7",
-      "Salones para eventos",
-      "Concierge especializado",
-      "Servicio de mayordomo St. Regis"
+      "Terraza con vistas a la ciudad"
     ],
+    "precio": 400,
+    "rating": 9.0,
+    "url": "https://www.marriott.com/hotels/travel/mexrx-the-st-regis-mexico-city/",
+    "booking_url": "https://www.booking.com/hotel/mx/the-st-regis-mexico-city.html",
+    "direccion": "Av. Paseo de la Reforma 439, Cuauhtémoc, 06500 Ciudad de México, CDMX",
+    "telefono": "+52 55 5228 1818",
+    "email": "mexrx@stregis.com",
     "imagenes": {
-      "hotel": "/workspace/imgs/St_Regis_Mexico_City_Hotel_Lobby_Luxury_Floral_Arrangement.jpg",
-      "hotel_2": "/workspace/imgs/St_Regis_Mexico_City_Hotel_Lobby_Luxury_Floral_Arrangement.jpg",
-      "hotel_3": "/workspace/imgs/St_Regis_Mexico_City_Hotel_Lobby_Luxury_Floral_Arrangement.jpg",
+      "hotel": "static/images/hotels/st-regis-mexico/st-regis-mexico_hotel.webp",
       "pelicula": [
-        "/workspace/imgs/film_production_behind_the_scenes_dancers_city_skyline.jpg"
+        "static/images/hotels/st-regis-mexico/st-regis-mexico_pelicula_2.webp"
       ],
       "galeria": [
-        "/workspace/imgs/st-regis-mexico-city-luxury-meeting-conference-room.jpg"
+        "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_1.webp",
+        "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_2.webp",
+        "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_3.webp",
+        "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_4.webp",
+        "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_5.webp",
+        "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_6.webp"
       ]
-    },
-    "testimonios": [
-      {
-        "texto": "Reconocí el lobby principal de la película Roma. El hotel es tan elegante como en la pantalla. El servicio de mayordomo es excepcional.",
-        "autor": "Ana López",
-        "fecha": "Mayo 2024",
-        "rating": 9,
-        "avatar": "https://randomuser.me/api/portraits/women/28.jpg"
-      },
-      {
-        "texto": "La ubicación en Reforma es perfecta. Las vistas desde la habitación ejecutiva son impresionantes y el spa es de otro nivel.",
-        "autor": "Roberto García",
-        "fecha": "Marzo 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/men/41.jpg"
-      },
-      {
-        "texto": "El nivel de atención al detalle es extraordinario. Me sentí como en una película desde el momento en que entré.",
-        "autor": "Carmen Rodriguez",
-        "fecha": "Febrero 2024",
-        "rating": 9,
-        "avatar": "https://randomuser.me/api/portraits/women/52.jpg"
-      }
-    ]
+    }
   },
   {
     "id": "ashford-castle",
     "nombre": "Ashford Castle",
-    "ubicacion": "County Mayo, Irlanda",
-    "pelicula": "The Crown",
-    "anio": 2019,
-    "descripcion": "Castillo medieval del siglo XIII convertido en hotel de lujo de 5 estrellas que apareció en 'The Crown' y 'The Quiet Man'. Forbes Five Star Hotel y antigua residencia de la familia Guinness en las orillas del Lago Corrib.",
+    "ubicacion": "Cong, Mayo, Irlanda",
+    "pelicula": "The Quiet Man",
+    "anio": 1952,
+    "descripcion": "Castillo medieval del siglo XIII convertido en hotel de lujo, escenario principal de 'The Quiet Man' con John Wayne y Maureen O'Hara. Situado en 350 acres junto al lago Corrib, ofrece experiencias únicas como cetrería, golf y pesca.",
     "caracteristicas": [
-      "Castillo histórico del siglo XIII",
-      "Escuela de cetrería",
+      "Castillo auténtico del siglo XIII",
+      "Cetrería con aves rapaces",
       "Campo de golf de 9 hoyos",
-      "Spa ESPA premiado",
-      "Deportes acuáticos en el lago",
-      "Jardines victorianos"
+      "Pesca en el lago Corrib",
+      "Spa de lujo",
+      "Restaurante con estrella Michelin"
     ],
-    "precio": 950,
-    "rating": 9.7,
-    "url": "https://ashfordcastle.com/",
-    "booking_url": "https://www.booking.com/landmark/ie/ashford-castle1.html",
-    "direccion": "Cong, Co. Mayo, F31 CA48, Irlanda",
+    "precio": 800,
+    "rating": 9.5,
+    "url": "https://www.ashfordcastle.com/",
+    "booking_url": "https://www.booking.com/hotel/ie/ashford-castle.html",
+    "direccion": "Ashford Castle Estate, Cong, Co. Mayo, F31 CA48, Irlanda",
     "telefono": "+353 94 954 6003",
-    "email": "lodge@ashfordcastle.com",
-    "servicios_adicionales": [
-      "Escuela de cetrería histórica",
-      "Actividades ecuestres",
-      "Pesca de salmón y trucha",
-      "Tours en barco por el lago",
-      "Experiencias gastronómicas únicas"
-    ],
+    "email": "info@ashfordcastle.com",
     "imagenes": {
-      "hotel": "/workspace/imgs/ashford_castle_ireland_medieval_exterior_grounds_sunset.jpg",
-      "hotel_2": "/workspace/imgs/Ashford_Castle_Ireland_Medieval_Exterior_View.jpg",
-      "hotel_3": "/workspace/imgs/Ashford-Castle-Ireland-medieval-exterior-grounds-fountain.jpg",
+      "hotel": "static/images/hotels/ashford-castle/ashford-castle_hotel.webp",
       "pelicula": [
-        "/workspace/imgs/ashford_castle_ireland_medieval_exterior_grounds.jpg",
-        "/workspace/imgs/Ashford_Castle_Ireland_Medieval_Exterior_View.jpg"
+        "static/images/hotels/ashford-castle/ashford-castle_pelicula_2.webp"
       ],
       "galeria": [
-        "/workspace/imgs/Ashford_Castle_Ireland_Exterior_Majestic_Luxury.jpg",
-        "/workspace/imgs/neuschwanstein_castle_exterior_alpine_medieval_luxury.jpg",
-        "/workspace/imgs/grand_luxury_hotel_lobby_elegant_interior_design.jpg",
-        "/workspace/imgs/luxury_hotel_restaurant_elegant_dining_interior.jpg",
-        "/workspace/imgs/Ashford_Castle_Ireland_Medieval_Exterior_View.jpg",
-        "/workspace/imgs/Ashford-Castle-Ireland-medieval-exterior-grounds-fountain.jpg",
-        "/workspace/imgs/ashford_castle_ireland_medieval_exterior_grounds_sunset.jpg"
+        "static/images/hotels/ashford-castle/ashford-castle_galeria_1.webp",
+        "static/images/hotels/ashford-castle/ashford-castle_galeria_2.webp",
+        "static/images/hotels/ashford-castle/ashford-castle_galeria_3.webp",
+        "static/images/hotels/ashford-castle/ashford-castle_galeria_4.webp",
+        "static/images/hotels/ashford-castle/ashford-castle_galeria_5.webp",
+        "static/images/hotels/ashford-castle/ashford-castle_galeria_6.webp"
       ]
-    },
-    "testimonios": [
-      {
-        "texto": "Sentí como si estuviera en un episodio de The Crown. El castillo es impresionante y el servicio es de otro mundo. Una experiencia verdaderamente real.",
-        "autor": "James Wilson",
-        "fecha": "Julio 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/men/67.jpg"
-      },
-      {
-        "texto": "La escuela de cetrería fue una experiencia única. Los jardines son dignos de la realeza y cada detalle está perfectamente cuidado.",
-        "autor": "Elizabeth Murphy",
-        "fecha": "Junio 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/women/34.jpg"
-      },
-      {
-        "texto": "Vale cada euro. La cena en el George V fue excepcional y despertar en un castillo de verdad no tiene precio.",
-        "autor": "Patrick O'Connor",
-        "fecha": "Mayo 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/men/29.jpg"
-      }
-    ]
+    }
   },
   {
     "id": "taj-lake-palace",
     "nombre": "Taj Lake Palace",
-    "ubicacion": "Udaipur, India",
+    "ubicacion": "Udaipur, Rajastán, India",
     "pelicula": "Octopussy",
     "anio": 1983,
-    "descripcion": "Palacio flotante del siglo XVIII en medio del lago Pichola que apareció en la película de James Bond 'Octopussy'. Construido completamente en mármol blanco, es considerado uno de los hoteles más románticos del mundo.",
+    "descripcion": "Palacio flotante del siglo XVIII en el lago Pichola, mundialmente famoso por aparecer en la película de James Bond 'Octopussy'. Una maravilla arquitectural mogol convertida en hotel de ultra lujo con vistas espectaculares a la ciudad blanca de Udaipur.",
     "caracteristicas": [
-      "Palacio flotante de mármol blanco",
-      "Ubicación en lago Pichola",
+      "Palacio flotante en el lago",
       "Arquitectura mogol auténtica",
-      "Spa Jiva tradicional",
-      "Restaurantes con vista al lago",
-      "Transporte exclusivo en bote"
+      "Llegada en lancha privada",
+      "Spa Jiva con tratamientos ayurvédicos",
+      "Restaurantes con cocina real",
+      "Mayordomo personal 24/7"
     ],
-    "precio": 950,
-    "rating": 9.8,
-    "url": "https://www.tajhotels.com/en-in/taj-lake-palace-udaipur/",
+    "precio": 650,
+    "rating": 9.3,
+    "url": "https://www.tajhotels.com/en-in/hotels/taj-lake-palace-udaipur/",
     "booking_url": "https://www.booking.com/hotel/in/taj-lake-palace.html",
     "direccion": "Pichola Lake, Udaipur, Rajasthan 313001, India",
     "telefono": "+91 294 242 8800",
     "email": "lakepalace.udaipur@tajhotels.com",
-    "servicios_adicionales": [
-      "Jiva Spa tradicional",
-      "Experiencias culturales rajasthanies",
-      "Cenas privadas en el lago",
-      "Shows de danza clásica",
-      "Tours por la ciudad histórica"
-    ],
     "imagenes": {
-      "hotel": "/workspace/imgs/taj_lake_palace_udaipur_india_lake_pichola_aerial.jpg",
-      "hotel_2": "/workspace/imgs/taj_lake_palace_udaipur_marble_pavilion_lake_pichola_boat.jpg",
-      "hotel_3": "/workspace/imgs/taj-lake-palace-udaipur-india-white-floating-hotel-lake-pichola.jpg",
+      "hotel": "static/images/hotels/taj-lake-palace/taj-lake-palace_hotel.webp",
       "pelicula": [
-        "/workspace/imgs/taj_lake_palace_udaipur_india_lake_pichola_boat_petals.jpg",
-        "/workspace/imgs/taj_lake_palace_udaipur_india_lake_pichola_boats_morning.jpg"
+        "static/images/hotels/taj-lake-palace/taj-lake-palace_pelicula_2.webp"
       ],
       "galeria": [
-        "/workspace/imgs/taj_lake_palace_udaipur_lake_pichola_daytime.jpg",
-        "/workspace/imgs/modern_luxury_floating_architecture_palace.jpg",
-        "/workspace/imgs/luxury_five_star_hotel_infinity_pool_ocean_view_resort.jpg",
-        "/workspace/imgs/elegant_luxury_hotel_suite_city_night_view.jpg",
-        "/workspace/imgs/taj_lake_palace_udaipur_marble_pavilion_lake_pichola_boat.jpg",
-        "/workspace/imgs/taj-lake-palace-udaipur-india-white-floating-hotel-lake-pichola.jpg",
-        "/workspace/imgs/taj_lake_palace_udaipur_india_lake_pichola_aerial.jpg"
+        "static/images/hotels/taj-lake-palace/taj-lake-palace_galeria_1.webp",
+        "static/images/hotels/taj-lake-palace/taj-lake-palace_galeria_2.webp",
+        "static/images/hotels/taj-lake-palace/taj-lake-palace_galeria_3.webp",
+        "static/images/hotels/taj-lake-palace/taj-lake-palace_galeria_4.webp",
+        "static/images/hotels/taj-lake-palace/taj-lake-palace_galeria_5.webp",
+        "static/images/hotels/taj-lake-palace/taj-lake-palace_galeria_6.webp"
       ]
-    },
-    "testimonios": [
-      {
-        "texto": "Sentí como James Bond en este palacio flotante. La experiencia es simplemente mágica, especialmente el atardecer desde la terraza.",
-        "autor": "Raj Patel",
-        "fecha": "Noviembre 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/men/12.jpg"
-      },
-      {
-        "texto": "El palacio más romántico donde he estado. La cena a la luz de las velas en el lago fue perfecta para nuestra luna de miel.",
-        "autor": "Priya Sharma",
-        "fecha": "Octubre 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/women/18.jpg"
-      },
-      {
-        "texto": "Cada rincón del palacio cuenta una historia. El Jiva Spa fue una experiencia transformadora y el servicio impecable.",
-        "autor": "William Thompson",
-        "fecha": "Septiembre 2024",
-        "rating": 9,
-        "avatar": "https://randomuser.me/api/portraits/men/55.jpg"
-      }
-    ]
+    }
   },
   {
     "id": "hotel-beverly-hills",
     "nombre": "The Beverly Hills Hotel",
-    "ubicacion": "Beverly Hills, California, USA",
+    "ubicacion": "Beverly Hills, California, Estados Unidos",
     "pelicula": "Pretty Woman",
     "anio": 1990,
-    "descripcion": "Hotel icónico de Los Angeles conocido como 'The Pink Palace' que apareció en 'Pretty Woman' y innumerables otras películas de Hollywood. Símbolo de glamour y lujo en el corazón de Beverly Hills desde 1912.",
+    "descripcion": "Icónico 'Pink Palace' de Beverly Hills, escenario de numerosas películas incluyendo 'Pretty Woman'. Refugio de estrellas de Hollywood desde 1912, famoso por su Polo Lounge y las cabañas privadas junto a la piscina. Símbolo del glamour californiano.",
     "caracteristicas": [
-      "The Pink Palace icónico",
+      "Icónico 'Pink Palace'",
       "Polo Lounge legendario",
-      "Historia de Hollywood",
-      "Spa de lujo",
-      "Piscina exclusiva",
-      "Cabanas VIP"
+      "Cabañas privadas de piscina",
+      "Spa exclusivo",
+      "Jardines tropicales de 12 acres",
+      "Historia de Hollywood"
     ],
-    "precio": 1200,
-    "rating": 9.3,
-    "url": "https://www.dorchestercollection.com/beverly-hills-hotel/",
+    "precio": 700,
+    "rating": 9.2,
+    "url": "https://www.dorchestercollection.com/en/los-angeles/the-beverly-hills-hotel/",
     "booking_url": "https://www.booking.com/hotel/us/the-beverly-hills.html",
-    "direccion": "9641 Sunset Boulevard, Beverly Hills, CA 90210, USA",
+    "direccion": "9641 Sunset Blvd, Beverly Hills, CA 90210, Estados Unidos",
     "telefono": "+1 310 276 2251",
-    "email": "reservations@dorchestercollection.com",
-    "servicios_adicionales": [
-      "Polo Lounge histórico",
-      "Spa by La Prairie",
-      "Boutiques de lujo",
-      "Servicio de conserjería 24/7",
-      "Cabanas privadas en la piscina"
-    ],
+    "email": "info@thebeverlyhillshotel.com",
     "imagenes": {
-      "hotel": "/workspace/imgs/beverly_hills_hotel_pink_facade_entrance_red_carpet.jpg",
+      "hotel": "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_hotel.webp",
       "pelicula": [
-        "/workspace/imgs/film_production_behind_the_scenes_dancers_city_skyline.jpg"
+        "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_pelicula_2.webp"
       ],
       "galeria": [
-        "/workspace/imgs/luxury_hotel_lobby_grand_marble_cleaner.jpg"
+        "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_galeria_1.webp",
+        "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_galeria_2.webp",
+        "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_galeria_3.webp",
+        "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_galeria_4.webp",
+        "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_galeria_5.webp",
+        "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_galeria_6.webp"
       ]
-    },
-    "testimonios": [
-      {
-        "texto": "¡Como en Pretty Woman! El hotel es tan glamouroso como en la pantalla. El Polo Lounge es simplemente icónico.",
-        "autor": "Jessica Brown",
-        "fecha": "Diciembre 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/women/65.jpg"
-      },
-      {
-        "texto": "El Pink Palace no decepciona. Cada detalle respira historia de Hollywood. Me sentí como una estrella de cine.",
-        "autor": "Michael Davis",
-        "fecha": "Noviembre 2024",
-        "rating": 9,
-        "avatar": "https://randomuser.me/api/portraits/men/42.jpg"
-      },
-      {
-        "texto": "La piscina con las cabanas es el lugar perfecto para relajarse. El servicio es excepcional y la ubicación inmejorable.",
-        "autor": "Sandra Wilson",
-        "fecha": "Octubre 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/women/31.jpg"
-      }
-    ]
+    }
   },
   {
     "id": "gritti-palace",
@@ -419,66 +228,36 @@
     "ubicacion": "Venecia, Italia",
     "pelicula": "Casino Royale",
     "anio": 2006,
-    "descripcion": "Hotel de lujo de 500 años en el Gran Canal de Venecia que apareció en 'Casino Royale' y 'Spider-Man: Far From Home'. Palacio histórico del siglo XV convertido en uno de los hoteles más elegantes del mundo.",
+    "descripcion": "Palacio veneciano del siglo XV sobre el Gran Canal, donde se filmaron escenas de James Bond en 'Casino Royale'. Una de las direcciones más exclusivas de Venecia, con vistas incomparables al canal y la Basílica de Santa María della Salute.",
     "caracteristicas": [
-      "Palacio del siglo XV en Gran Canal",
-      "Vistas espectaculares al canal",
-      "Historia veneciana auténtica",
+      "Palacio del siglo XV",
+      "Vistas al Gran Canal",
+      "Terraza con vista panorámica",
       "Restaurante Club del Doge",
       "Spa Gritti Epicurean",
-      "Servicio de góndola privada"
+      "Colección de arte veneciano"
     ],
-    "precio": 1400,
-    "rating": 9.6,
-    "url": "https://www.marriott.com/en-us/hotels/vcegl-the-gritti-palace-a-luxury-collection-hotel-venice/overview/",
+    "precio": 900,
+    "rating": 9.4,
+    "url": "https://www.marriott.com/hotels/travel/vcegr-the-gritti-palace-a-luxury-collection-hotel-venice/",
     "booking_url": "https://www.booking.com/hotel/it/gritti-palace.html",
     "direccion": "Campo Santa Maria del Giglio, 2467, 30124 Venezia VE, Italia",
-    "telefono": "+39 041 794611",
-    "email": "info@thegrittipalace.com",
-    "servicios_adicionales": [
-      "Club del Doge restaurante",
-      "Gritti Epicurean School",
-      "Servicio de góndola privada",
-      "Spa de lujo",
-      "Concierge especializado"
-    ],
+    "telefono": "+39 041 794 611",
+    "email": "grittipalace@luxurycollection.com",
     "imagenes": {
-      "hotel": "/workspace/imgs/the_gritti_palace_venice_grand_canal_facade.jpg",
+      "hotel": "static/images/hotels/gritti-palace/gritti-palace_hotel.webp",
       "pelicula": [
-        "/workspace/imgs/the_gritti_palace_venice_grand_canal_facade_evening.jpg",
-        "/workspace/imgs/the_gritti_palace_venice_grand_canal_facade.jpg"
+        "static/images/hotels/gritti-palace/gritti-palace_pelicula_2.webp"
       ],
       "galeria": [
-        "/workspace/imgs/luxury_hotel_lobby_grand_marble_cleaner.jpg",
-        "/workspace/imgs/the_gritti_palace_venice_grand_canal_facade.jpg",
-        "/workspace/imgs/The-Gritti-Palace-Hotel-Venice-Grand-Canal-Facade-Palazzo.jpg"
-      ],
-      "hotel_2": "/workspace/imgs/The-Gritti-Palace-Hotel-Venice-Grand-Canal-Facade-Palazzo.jpg",
-      "hotel_3": "/workspace/imgs/gritti_palace_venice_grand_canal_facade_night_illuminated.jpg"
-    },
-    "testimonios": [
-      {
-        "texto": "James Bond se hospedó aquí y ahora entiendo por qué. La experiencia es tan elegante como en la película. Vistas inolvidables al Gran Canal.",
-        "autor": "Sophie Martin",
-        "fecha": "Octubre 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/women/36.jpg"
-      },
-      {
-        "texto": "El palacio más hermoso donde me he hospedado. Cada habitación es una obra de arte y el restaurante Club del Doge es excepcional.",
-        "autor": "Alessandro Rossi",
-        "fecha": "Septiembre 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/men/48.jpg"
-      },
-      {
-        "texto": "La terraza con vista al Gran Canal al atardecer es mágica. El servicio de góndola privada fue el toque perfecto.",
-        "autor": "Emily Anderson",
-        "fecha": "Agosto 2024",
-        "rating": 9,
-        "avatar": "https://randomuser.me/api/portraits/women/26.jpg"
-      }
-    ]
+        "static/images/hotels/gritti-palace/gritti-palace_galeria_1.webp",
+        "static/images/hotels/gritti-palace/gritti-palace_galeria_2.webp",
+        "static/images/hotels/gritti-palace/gritti-palace_galeria_3.webp",
+        "static/images/hotels/gritti-palace/gritti-palace_galeria_4.webp",
+        "static/images/hotels/gritti-palace/gritti-palace_galeria_5.webp",
+        "static/images/hotels/gritti-palace/gritti-palace_galeria_6.webp"
+      ]
+    }
   },
   {
     "id": "plaza-athenee",
@@ -486,198 +265,109 @@
     "ubicacion": "París, Francia",
     "pelicula": "Sex and the City",
     "anio": 2008,
-    "descripcion": "Lujoso hotel parisino en Avenue Montaigne donde Carrie Bradshaw se hospedó en 'Sex and the City' y apareció en 'The Devil Wears Prada'. Icono de la elegancia francesa y la alta costura parisina.",
+    "descripcion": "Icónico palace parisino en la Avenue Montaigne, escenario de 'Sex and the City' y refugio de alta costura. Con vistas privilegiadas a la Torre Eiffel, combina el lujo francés tradicional con la elegancia contemporánea. Hogar del chef Alain Ducasse.",
     "caracteristicas": [
-      "Vista directa a la Torre Eiffel",
-      "Avenue Montaigne fashion district",
-      "Alain Ducasse au Plaza Athénée",
-      "Dior Institut spa",
-      "Balcones con flores icónicos",
-      "Servicio de mayordomo"
+      "Vista icónica a la Torre Eiffel",
+      "Avenue Montaigne - distrito de alta costura",
+      "Restaurante Alain Ducasse",
+      "Spa Dior Institut",
+      "Balcones floridos característicos",
+      "Servicio de mayordomo francés"
     ],
-    "precio": 1600,
-    "rating": 9.5,
-    "url": "https://www.dorchestercollection.com/paris/hotel-plaza-athenee/",
-    "booking_url": "https://www.booking.com/hotel/fr/ha-tel-plaza-atha-c-na-c-e-paris.html",
-    "direccion": "25 Avenue Montaigne, 75008 Paris, Francia",
+    "precio": 800,
+    "rating": 9.3,
+    "url": "https://www.dorchestercollection.com/en/paris/hotel-plaza-athenee/",
+    "booking_url": "https://www.booking.com/hotel/fr/plaza-athenee.html",
+    "direccion": "25 Avenue Montaigne, 75008 París, Francia",
     "telefono": "+33 1 53 67 66 65",
-    "email": "reservations.plazaathenee@dorchestercollection.com",
-    "servicios_adicionales": [
-      "Alain Ducasse restaurante estrella Michelin",
-      "Dior Institut spa exclusivo",
-      "Boutiques de alta costura",
-      "Salón de té haute couture",
-      "Concierge personalizado"
-    ],
+    "email": "info@plaza-athenee-paris.com",
     "imagenes": {
-      "hotel": "/workspace/imgs/Hotel_Plaza_Athenee_Paris_Red_Awnings_Facade.jpg",
+      "hotel": "static/images/hotels/plaza-athenee/plaza-athenee_hotel.webp",
       "pelicula": [
-        "/workspace/imgs/hotel_plaza_athenee_paris_red_awnings_facade_exterior.jpg",
-        "/workspace/imgs/Hotel_Plaza_Athenee_Paris_Red_Awnings_Facade.jpg"
+        "static/images/hotels/plaza-athenee/plaza-athenee_pelicula_2.webp"
       ],
       "galeria": [
-        "/workspace/imgs/luxury_hotel_lobby_grand_marble_cleaner.jpg",
-        "/workspace/imgs/Hotel_Plaza_Athenee_Paris_Red_Awnings_Facade.jpg",
-        "/workspace/imgs/hotel-plaza-athenee-paris-red-awnings-facade-exterior.jpg"
-      ],
-      "hotel_2": "/workspace/imgs/hotel-plaza-athenee-paris-red-awnings-facade-exterior.jpg",
-      "hotel_3": "/workspace/imgs/Hotel_Plaza_Athenee_Paris_Red_Awnings_Facade_Exterior.jpg"
-    },
-    "testimonios": [
-      {
-        "texto": "¡Me sentí como Carrie Bradshaw! El hotel es tan glamouroso como en la serie. Las vistas a la Torre Eiffel son mágicas.",
-        "autor": "Emily Johnson",
-        "fecha": "Junio 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/women/44.jpg"
-      },
-      {
-        "texto": "La elegancia francesa en su máxima expresión. El restaurante de Alain Ducasse es una experiencia gastronómica única.",
-        "autor": "Laurent Dubois",
-        "fecha": "Mayo 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/men/37.jpg"
-      },
-      {
-        "texto": "Los balcones con geranios rojos son icónicos. El Dior Institut spa fue el complemento perfecto para mi estadía.",
-        "autor": "Charlotte Miller",
-        "fecha": "Abril 2024",
-        "rating": 9,
-        "avatar": "https://randomuser.me/api/portraits/women/53.jpg"
-      }
-    ]
+        "static/images/hotels/plaza-athenee/plaza-athenee_galeria_1.webp",
+        "static/images/hotels/plaza-athenee/plaza-athenee_galeria_2.webp",
+        "static/images/hotels/plaza-athenee/plaza-athenee_galeria_3.webp",
+        "static/images/hotels/plaza-athenee/plaza-athenee_galeria_4.webp",
+        "static/images/hotels/plaza-athenee/plaza-athenee_galeria_5.webp",
+        "static/images/hotels/plaza-athenee/plaza-athenee_galeria_6.webp"
+      ]
+    }
   },
   {
     "id": "waldorf-astoria",
     "nombre": "Waldorf Astoria New York",
-    "ubicacion": "Nueva York, USA",
-    "pelicula": "The Great Gatsby",
-    "anio": 2013,
-    "descripcion": "Hotel legendario de Manhattan que ha aparecido en numerosas películas incluyendo 'El Gran Gatsby'. Icono Art Déco de Park Avenue con 375 habitaciones y suites completamente renovadas en 2024.",
+    "ubicacion": "Nueva York, Estados Unidos",
+    "pelicula": "Coming to America",
+    "anio": 1988,
+    "descripcion": "Legendario hotel art déco en el corazón de Manhattan, escenario de 'Coming to America' con Eddie Murphy. Símbolo de la elegancia neoyorquina desde 1931, famoso por hospedar a presidentes, realeza y estrellas. Actualmente en renovación para reapertura en 2025.",
     "caracteristicas": [
-      "Arquitectura Art Déco icónica",
-      "Park Avenue ubicación premium",
-      "Historia legendaria de NYC",
-      "Peacock Alley famoso",
-      "Servicio de clase mundial",
-      "Suites presidenciales"
+      "Arquitectura art déco icónica",
+      "Peacock Alley histórico",
+      "Suite presidencial legendaria",
+      "Clock Tower exclusivo",
+      "Historia de 90 años",
+      "Ubicación en Park Avenue"
     ],
-    "precio": 1500,
-    "rating": 9.6,
-    "url": "https://www.waldorfastorianewyork.com/",
+    "precio": 650,
+    "rating": 9.1,
+    "url": "https://www.hilton.com/en/hotels/nycwawa-waldorf-astoria-new-york/",
     "booking_url": "https://www.booking.com/hotel/us/the-waldorf-astoria.html",
-    "direccion": "301 Park Avenue, New York, NY 10022, USA",
+    "direccion": "301 Park Ave, New York, NY 10022, Estados Unidos",
     "telefono": "+1 212 355 3000",
-    "email": "newyork@waldorfastoria.com",
-    "servicios_adicionales": [
-      "Spa y centro de bienestar",
-      "Múltiples restaurantes gourmet",
-      "Salones para eventos exclusivos",
-      "Servicio de conserjería 24/7",
-      "Centro de negocios ejecutivo"
-    ],
+    "email": "info@waldorfastoria.com",
     "imagenes": {
-      "hotel": "/workspace/imgs/waldorf_astoria_new_york_art_deco_lobby_grand_hall.jpg",
+      "hotel": "static/images/hotels/waldorf-astoria/waldorf-astoria_hotel.webp",
       "pelicula": [
-        "/workspace/imgs/waldorf_astoria_new_york_art_deco_grand_interior.jpg",
-        "/workspace/imgs/waldorf_astoria_new_york_art_deco_exterior_taxi.jpg"
+        "static/images/hotels/waldorf-astoria/waldorf-astoria_pelicula_2.webp"
       ],
       "galeria": [
-        "/workspace/imgs/luxury_hotel_lobby_grand_marble_cleaner.jpg",
-        "/workspace/imgs/waldorf_astoria_new_york_art_deco_lobby_grand_hall.jpg",
-        "/workspace/imgs/waldorf_astoria_new_york_grand_lobby_art_deco_interior.jpg"
-      ],
-      "hotel_2": "/workspace/imgs/waldorf_astoria_new_york_grand_lobby_art_deco_interior.jpg",
-      "hotel_3": "/workspace/imgs/waldorf_astoria_new_york_art_deco_lobby_clock.jpg"
-    },
-    "testimonios": [
-      {
-        "texto": "La elegancia de los años 20 vive en este hotel. Me sentí como en El Gran Gatsby. El Peacock Alley es simplemente espectacular.",
-        "autor": "Amanda White",
-        "fecha": "Febrero 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/women/33.jpg"
-      },
-      {
-        "texto": "Hotel icónico que respira historia. La renovación conservó toda la magia original. Una experiencia verdaderamente neoyorquina.",
-        "autor": "Jonathan Smith",
-        "fecha": "Enero 2024",
-        "rating": 9,
-        "avatar": "https://randomuser.me/api/portraits/men/61.jpg"
-      },
-      {
-        "texto": "El servicio es impecable y las habitaciones son elegantes. Despertar en este lugar histórico no tiene precio.",
-        "autor": "Catherine Brown",
-        "fecha": "Diciembre 2023",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/women/45.jpg"
-      }
-    ]
+        "static/images/hotels/waldorf-astoria/waldorf-astoria_galeria_1.webp",
+        "static/images/hotels/waldorf-astoria/waldorf-astoria_galeria_2.webp",
+        "static/images/hotels/waldorf-astoria/waldorf-astoria_galeria_3.webp",
+        "static/images/hotels/waldorf-astoria/waldorf-astoria_galeria_4.webp",
+        "static/images/hotels/waldorf-astoria/waldorf-astoria_galeria_5.webp",
+        "static/images/hotels/waldorf-astoria/waldorf-astoria_galeria_6.webp"
+      ]
+    }
   },
   {
     "id": "ritz-paris",
-    "nombre": "The Ritz Paris",
+    "nombre": "Ritz Paris",
     "ubicacion": "París, Francia",
     "pelicula": "The Devil Wears Prada",
     "anio": 2006,
-    "descripcion": "Hotel legendario en Place Vendôme que apareció en 'El Diablo Viste de Prada' y 'Midnight in Paris'. Donde vivió Coco Chanel por 37 años y símbolo del lujo parisino desde 1898.",
+    "descripcion": "Legendario palacio de la Place Vendôme, escenario de 'The Devil Wears Prada' y último hogar de Coco Chanel. Símbolo absoluto del lujo parisino desde 1898, renovado completamente en 2016. Hogar del famoso Hemingway Bar y la escuela de cocina Ritz Escoffier.",
     "caracteristicas": [
-      "Place Vendôme ubicación exclusiva",
-      "Suite Coco Chanel histórica",
-      "Lujo legendario francés",
-      "Jardines privados únicos",
-      "Bar Hemingway icónico",
-      "École Ritz Escoffier"
+      "Place Vendôme exclusiva",
+      "Hemingway Bar legendario",
+      "Spa Chanel au Ritz",
+      "Escuela de cocina Ritz Escoffier",
+      "Suites con historia centenaria",
+      "Jardín secreto interior"
     ],
-    "precio": 2000,
-    "rating": 9.8,
+    "precio": 950,
+    "rating": 9.5,
     "url": "https://www.ritzparis.com/",
-    "booking_url": "https://www.ritzparis.com/",
-    "direccion": "15 Place Vendôme, 75001 Paris, Francia",
+    "booking_url": "https://www.booking.com/hotel/fr/ritz-paris.html",
+    "direccion": "15 Place Vendôme, 75001 París, Francia",
     "telefono": "+33 1 43 16 30 30",
-    "email": "resa@ritzparis.com",
-    "servicios_adicionales": [
-      "Ritz Club exclusivo",
-      "École Ritz Escoffier cocina",
-      "Spa Chanel único",
-      "Bar Hemingway legendario",
-      "Jardines privados en París"
-    ],
+    "email": "reservation@ritzparis.com",
     "imagenes": {
-      "hotel": "/workspace/imgs/ritz_paris_place_vendome_facade_twilight_elegant_exterior.jpg",
+      "hotel": "static/images/hotels/ritz-paris/ritz-paris_hotel.webp",
       "pelicula": [
-        "/workspace/imgs/film_production_behind_the_scenes_dancers_city_skyline.jpg"
+        "static/images/hotels/ritz-paris/ritz-paris_pelicula_2.webp"
       ],
       "galeria": [
-        "/workspace/imgs/luxury_hotel_lobby_grand_marble_cleaner.jpg",
-        "/workspace/imgs/ritz_paris_place_vendome_facade_twilight_elegant_exterior.jpg",
-        "/workspace/imgs/ritz_paris_place_vendome_terrasse_exterieur_elegant.jpg"
-      ],
-      "hotel_2": "/workspace/imgs/ritz_paris_place_vendome_terrasse_exterieur_elegant.jpg",
-      "hotel_3": "/workspace/imgs/ritz_paris_place_vendome_facade_twilight_elegant_exterior.jpg"
-    },
-    "testimonios": [
-      {
-        "texto": "Donde Coco Chanel vivió por 37 años. La elegancia francesa en su máxima expresión. El Bar Hemingway es una experiencia única.",
-        "autor": "Sophie Laurent",
-        "fecha": "Abril 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/women/51.jpg"
-      },
-      {
-        "texto": "El lugar más elegante de París. Los jardines privados son un oasis en el corazón de la ciudad. Simplemente perfecto.",
-        "autor": "Henri Dubois",
-        "fecha": "Marzo 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/men/44.jpg"
-      },
-      {
-        "texto": "Una experiencia que no se puede describir con palabras. El Ritz redefine el concepto de lujo. Cada detalle es perfección.",
-        "autor": "Isabella Moreau",
-        "fecha": "Febrero 2024",
-        "rating": 10,
-        "avatar": "https://randomuser.me/api/portraits/women/38.jpg"
-      }
-    ]
+        "static/images/hotels/ritz-paris/ritz-paris_galeria_1.webp",
+        "static/images/hotels/ritz-paris/ritz-paris_galeria_2.webp",
+        "static/images/hotels/ritz-paris/ritz-paris_galeria_3.webp",
+        "static/images/hotels/ritz-paris/ritz-paris_galeria_4.webp",
+        "static/images/hotels/ritz-paris/ritz-paris_galeria_5.webp",
+        "static/images/hotels/ritz-paris/ritz-paris_galeria_6.webp"
+      ]
+    }
   }
 ]
