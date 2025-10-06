@@ -29,17 +29,21 @@
       "Ceremonias de bendición balinesas"
     ],
     "imagenes": {
-      "hotel": "https://images.unsplash.com/photo-1574680096145-d0b6c799f9b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "hotel_2": "/workspace/imgs/four_seasons_bali_sayan_jungle_aerial_lotus_pond.jpg",
-      "hotel_3": "/workspace/imgs/Four_Seasons_Resort_Bali_Sayan_Aerial_Lotus_Pond_Jungle_View.jpg",
+      "hotel": "/workspace/imgs/four_seasons_bali_sayan_resort_lobby_reception.jpg",
+      "hotel_2": "/workspace/imgs/four-seasons-bali-sayan-resort-lobby-lounge-jungle-view.jpg",
+      "hotel_3": "/workspace/imgs/four_seasons_bali_sayan_resort_main_building_lobby_entrance.jpg",
       "pelicula": [
-        "static/images/hotels/four-seasons-bali/four-seasons-bali_pelicula_1.webp",
-        "static/images/hotels/four-seasons-bali/four-seasons-bali_pelicula_2.webp"
+        "/workspace/imgs/four-seasons-resort-bali-at-sayan-entrance-sign.jpg",
+        "/workspace/imgs/four_seasons_bali_sayan_resort_lobby_entrance_staircase.jpg"
       ],
       "galeria": [
         "/workspace/imgs/four-seasons-resort-bali-sayan-luxury-hotel-jungle-view.jpg",
         "/workspace/imgs/four_seasons_bali_sayan_luxury_resort_pool_jungle_view.jpg",
-        "static/images/hotels/four-seasons-bali/four-seasons-bali_galeria_3.webp"
+        "/workspace/imgs/tropical_jungle_luxury_resort_villa_spa.jpg",
+        "/workspace/imgs/luxury_tropical_jungle_spa_ocean_view_massage.jpg",
+        "/workspace/imgs/four-seasons-bali-sayan-resort-lobby-lounge-jungle-view.jpg",
+        "/workspace/imgs/four_seasons_bali_sayan_resort_main_building_lobby_entrance.jpg",
+        "/workspace/imgs/four_seasons_bali_sayan_resort_lobby_reception.jpg"
       ]
     },
     "testimonios": [
@@ -103,15 +107,19 @@
       "Tours por Malta"
     ],
     "imagenes": {
-      "hotel": "/workspace/imgs/grand_hotel_excelsior_malta_harbor_pool_view.jpg",
-      "hotel_2": "/workspace/imgs/grand-hotel-excelsior-malta-harbor-view-valletta-dusk.jpg",
+      "hotel": "/workspace/imgs/grand_hotel_excelsior_malta_valletta_harbor_view_pool_day.jpg",
+      "hotel_2": "/workspace/imgs/grand_hotel_excelsior_malta_valletta_harbor_view_balcony.jpg",
       "pelicula": [
-        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_pelicula_1.webp"
+        "/workspace/imgs/grand_hotel_excelsior_malta_valletta_harbor_view_pool.jpg",
+        "/workspace/imgs/grand_hotel_excelsior_malta_valletta_harbor_night_aerial.jpg"
       ],
       "galeria": [
-        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_1.webp",
-        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_2.webp"
-      ]
+        "/workspace/imgs/luxury_hotel_lobby_grand_marble_cleaner.jpg",
+        "/workspace/imgs/grand_hotel_excelsior_malta_valletta_harbor_view_balcony.jpg",
+        "/workspace/imgs/grand-hotel-excelsior-malta-valletta-harbor-view-twilight-aerial.jpg",
+        "/workspace/imgs/grand_hotel_excelsior_malta_valletta_harbor_view_pool_day.jpg"
+      ],
+      "hotel_3": "/workspace/imgs/grand-hotel-excelsior-malta-valletta-harbor-view-twilight-aerial.jpg"
     },
     "testimonios": [
       {
@@ -167,16 +175,14 @@
       "Servicio de mayordomo St. Regis"
     ],
     "imagenes": {
-      "hotel": "/workspace/imgs/st_regis_mexico_city_luxury_hotel_exterior_sunset.jpg",
-      "hotel_2": "/workspace/imgs/st-regis-mexico-city-hotel-modern-exterior-skyline.jpg",
-      "hotel_3": "/workspace/imgs/st_regis_mexico_city_modern_luxury_lounge.jpg",
+      "hotel": "/workspace/imgs/St_Regis_Mexico_City_Hotel_Lobby_Luxury_Floral_Arrangement.jpg",
+      "hotel_2": "/workspace/imgs/St_Regis_Mexico_City_Hotel_Lobby_Luxury_Floral_Arrangement.jpg",
+      "hotel_3": "/workspace/imgs/St_Regis_Mexico_City_Hotel_Lobby_Luxury_Floral_Arrangement.jpg",
       "pelicula": [
-        "static/images/hotels/st-regis-mexico/st-regis-mexico_pelicula_2.webp"
+        "/workspace/imgs/film_production_behind_the_scenes_dancers_city_skyline.jpg"
       ],
       "galeria": [
-        "/workspace/imgs/st-regis-mexico-city-luxury-meeting-conference-room.jpg",
-        "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_2.webp",
-        "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_3.webp"
+        "/workspace/imgs/st-regis-mexico-city-luxury-meeting-conference-room.jpg"
       ]
     },
     "testimonios": [
@@ -233,15 +239,21 @@
       "Experiencias gastronómicas únicas"
     ],
     "imagenes": {
-      "hotel": "/workspace/imgs/ashford_castle_ireland_majestic_exterior_luxury_golden_hour.jpg",
-      "hotel_2": "/workspace/imgs/ashford_castle_ireland_exterior_majestic_luxury.jpg",
-      "hotel_3": "/workspace/imgs/ashford_castle_ireland_aerial_luxury_medieval_view.jpg",
+      "hotel": "/workspace/imgs/ashford_castle_ireland_medieval_exterior_grounds_sunset.jpg",
+      "hotel_2": "/workspace/imgs/Ashford_Castle_Ireland_Medieval_Exterior_View.jpg",
+      "hotel_3": "/workspace/imgs/Ashford-Castle-Ireland-medieval-exterior-grounds-fountain.jpg",
       "pelicula": [
-        "static/images/hotels/ashford-castle/ashford-castle_pelicula_2.webp"
+        "/workspace/imgs/ashford_castle_ireland_medieval_exterior_grounds.jpg",
+        "/workspace/imgs/Ashford_Castle_Ireland_Medieval_Exterior_View.jpg"
       ],
       "galeria": [
         "/workspace/imgs/Ashford_Castle_Ireland_Exterior_Majestic_Luxury.jpg",
-        "static/images/hotels/ashford-castle/ashford-castle_galeria_3.webp"
+        "/workspace/imgs/neuschwanstein_castle_exterior_alpine_medieval_luxury.jpg",
+        "/workspace/imgs/grand_luxury_hotel_lobby_elegant_interior_design.jpg",
+        "/workspace/imgs/luxury_hotel_restaurant_elegant_dining_interior.jpg",
+        "/workspace/imgs/Ashford_Castle_Ireland_Medieval_Exterior_View.jpg",
+        "/workspace/imgs/Ashford-Castle-Ireland-medieval-exterior-grounds-fountain.jpg",
+        "/workspace/imgs/ashford_castle_ireland_medieval_exterior_grounds_sunset.jpg"
       ]
     },
     "testimonios": [
@@ -298,15 +310,21 @@
       "Tours por la ciudad histórica"
     ],
     "imagenes": {
-      "hotel": "/workspace/imgs/taj-lake-palace-udaipur-lake-pichola-daylight-view.jpg",
-      "hotel_2": "/workspace/imgs/taj_lake_palace_udaipur_lake_pichola_daytime_aerial.jpg",
-      "hotel_3": "/workspace/imgs/taj_lake_palace_udaipur_boat_flower_petals_daytime.jpg",
+      "hotel": "/workspace/imgs/taj_lake_palace_udaipur_india_lake_pichola_aerial.jpg",
+      "hotel_2": "/workspace/imgs/taj_lake_palace_udaipur_marble_pavilion_lake_pichola_boat.jpg",
+      "hotel_3": "/workspace/imgs/taj-lake-palace-udaipur-india-white-floating-hotel-lake-pichola.jpg",
       "pelicula": [
-        "static/images/hotels/taj-lake-palace/taj-lake-palace_pelicula_1.webp"
+        "/workspace/imgs/taj_lake_palace_udaipur_india_lake_pichola_boat_petals.jpg",
+        "/workspace/imgs/taj_lake_palace_udaipur_india_lake_pichola_boats_morning.jpg"
       ],
       "galeria": [
         "/workspace/imgs/taj_lake_palace_udaipur_lake_pichola_daytime.jpg",
-        "static/images/hotels/taj-lake-palace/taj-lake-palace_galeria_3.webp"
+        "/workspace/imgs/modern_luxury_floating_architecture_palace.jpg",
+        "/workspace/imgs/luxury_five_star_hotel_infinity_pool_ocean_view_resort.jpg",
+        "/workspace/imgs/elegant_luxury_hotel_suite_city_night_view.jpg",
+        "/workspace/imgs/taj_lake_palace_udaipur_marble_pavilion_lake_pichola_boat.jpg",
+        "/workspace/imgs/taj-lake-palace-udaipur-india-white-floating-hotel-lake-pichola.jpg",
+        "/workspace/imgs/taj_lake_palace_udaipur_india_lake_pichola_aerial.jpg"
       ]
     },
     "testimonios": [
@@ -363,13 +381,12 @@
       "Cabanas privadas en la piscina"
     ],
     "imagenes": {
-      "hotel": "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_hotel.webp",
+      "hotel": "/workspace/imgs/beverly_hills_hotel_pink_facade_entrance_red_carpet.jpg",
       "pelicula": [
-        "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_pelicula_2.webp"
+        "/workspace/imgs/film_production_behind_the_scenes_dancers_city_skyline.jpg"
       ],
       "galeria": [
-        "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_galeria_1.webp",
-        "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_galeria_2.webp"
+        "/workspace/imgs/luxury_hotel_lobby_grand_marble_cleaner.jpg"
       ]
     },
     "testimonios": [
@@ -426,14 +443,18 @@
       "Concierge especializado"
     ],
     "imagenes": {
-      "hotel": "static/images/hotels/gritti-palace/gritti-palace_hotel.webp",
+      "hotel": "/workspace/imgs/the_gritti_palace_venice_grand_canal_facade.jpg",
       "pelicula": [
-        "static/images/hotels/gritti-palace/gritti-palace_pelicula_1.webp"
+        "/workspace/imgs/the_gritti_palace_venice_grand_canal_facade_evening.jpg",
+        "/workspace/imgs/the_gritti_palace_venice_grand_canal_facade.jpg"
       ],
       "galeria": [
-        "static/images/hotels/gritti-palace/gritti-palace_galeria_1.webp",
-        "static/images/hotels/gritti-palace/gritti-palace_galeria_2.webp"
-      ]
+        "/workspace/imgs/luxury_hotel_lobby_grand_marble_cleaner.jpg",
+        "/workspace/imgs/the_gritti_palace_venice_grand_canal_facade.jpg",
+        "/workspace/imgs/The-Gritti-Palace-Hotel-Venice-Grand-Canal-Facade-Palazzo.jpg"
+      ],
+      "hotel_2": "/workspace/imgs/The-Gritti-Palace-Hotel-Venice-Grand-Canal-Facade-Palazzo.jpg",
+      "hotel_3": "/workspace/imgs/gritti_palace_venice_grand_canal_facade_night_illuminated.jpg"
     },
     "testimonios": [
       {
@@ -489,14 +510,18 @@
       "Concierge personalizado"
     ],
     "imagenes": {
-      "hotel": "static/images/hotels/plaza-athenee/plaza-athenee_hotel.webp",
+      "hotel": "/workspace/imgs/Hotel_Plaza_Athenee_Paris_Red_Awnings_Facade.jpg",
       "pelicula": [
-        "static/images/hotels/plaza-athenee/plaza-athenee_pelicula_2.webp"
+        "/workspace/imgs/hotel_plaza_athenee_paris_red_awnings_facade_exterior.jpg",
+        "/workspace/imgs/Hotel_Plaza_Athenee_Paris_Red_Awnings_Facade.jpg"
       ],
       "galeria": [
-        "static/images/hotels/plaza-athenee/plaza-athenee_galeria_1.webp",
-        "static/images/hotels/plaza-athenee/plaza-athenee_galeria_2.webp"
-      ]
+        "/workspace/imgs/luxury_hotel_lobby_grand_marble_cleaner.jpg",
+        "/workspace/imgs/Hotel_Plaza_Athenee_Paris_Red_Awnings_Facade.jpg",
+        "/workspace/imgs/hotel-plaza-athenee-paris-red-awnings-facade-exterior.jpg"
+      ],
+      "hotel_2": "/workspace/imgs/hotel-plaza-athenee-paris-red-awnings-facade-exterior.jpg",
+      "hotel_3": "/workspace/imgs/Hotel_Plaza_Athenee_Paris_Red_Awnings_Facade_Exterior.jpg"
     },
     "testimonios": [
       {
@@ -552,14 +577,18 @@
       "Centro de negocios ejecutivo"
     ],
     "imagenes": {
-      "hotel": "static/images/hotels/waldorf-astoria/waldorf-astoria_hotel.webp",
+      "hotel": "/workspace/imgs/waldorf_astoria_new_york_art_deco_lobby_grand_hall.jpg",
       "pelicula": [
-        "static/images/hotels/waldorf-astoria/waldorf-astoria_pelicula_2.webp"
+        "/workspace/imgs/waldorf_astoria_new_york_art_deco_grand_interior.jpg",
+        "/workspace/imgs/waldorf_astoria_new_york_art_deco_exterior_taxi.jpg"
       ],
       "galeria": [
-        "static/images/hotels/waldorf-astoria/waldorf-astoria_galeria_1.webp",
-        "static/images/hotels/waldorf-astoria/waldorf-astoria_galeria_2.webp"
-      ]
+        "/workspace/imgs/luxury_hotel_lobby_grand_marble_cleaner.jpg",
+        "/workspace/imgs/waldorf_astoria_new_york_art_deco_lobby_grand_hall.jpg",
+        "/workspace/imgs/waldorf_astoria_new_york_grand_lobby_art_deco_interior.jpg"
+      ],
+      "hotel_2": "/workspace/imgs/waldorf_astoria_new_york_grand_lobby_art_deco_interior.jpg",
+      "hotel_3": "/workspace/imgs/waldorf_astoria_new_york_art_deco_lobby_clock.jpg"
     },
     "testimonios": [
       {
@@ -615,14 +644,17 @@
       "Jardines privados en París"
     ],
     "imagenes": {
-      "hotel": "static/images/hotels/ritz-paris/ritz-paris_hotel.webp",
+      "hotel": "/workspace/imgs/ritz_paris_place_vendome_facade_twilight_elegant_exterior.jpg",
       "pelicula": [
-        "static/images/hotels/ritz-paris/ritz-paris_pelicula_2.webp"
+        "/workspace/imgs/film_production_behind_the_scenes_dancers_city_skyline.jpg"
       ],
       "galeria": [
-        "static/images/hotels/ritz-paris/ritz-paris_galeria_1.webp",
-        "static/images/hotels/ritz-paris/ritz-paris_galeria_2.webp"
-      ]
+        "/workspace/imgs/luxury_hotel_lobby_grand_marble_cleaner.jpg",
+        "/workspace/imgs/ritz_paris_place_vendome_facade_twilight_elegant_exterior.jpg",
+        "/workspace/imgs/ritz_paris_place_vendome_terrasse_exterieur_elegant.jpg"
+      ],
+      "hotel_2": "/workspace/imgs/ritz_paris_place_vendome_terrasse_exterieur_elegant.jpg",
+      "hotel_3": "/workspace/imgs/ritz_paris_place_vendome_facade_twilight_elegant_exterior.jpg"
     },
     "testimonios": [
       {
