@@ -21,18 +21,51 @@
     "direccion": "Sayan, Ubud, Gianyar Regency, Bali 80571, Indonesia",
     "telefono": "+62 361 977577",
     "email": "res.bali@fourseasons.com",
+    "servicios_adicionales": [
+      "Spa de clase mundial",
+      "Restaurante premiado Ayung Terrace",
+      "Actividades culturales balinesas",
+      "Excursiones en bicicleta por la jungla",
+      "Ceremonias de bendición balinesas"
+    ],
     "imagenes": {
       "hotel": "static/images/hotels/four-seasons-bali/four-seasons-bali_hotel.webp",
       "pelicula": [
-        "static/images/hotels/four-seasons-bali/four-seasons-bali_pelicula_2.webp"
+        "static/images/hotels/four-seasons-bali/four-seasons-bali_pelicula_1.webp"
       ],
       "galeria": [
         "static/images/hotels/four-seasons-bali/four-seasons-bali_galeria_1.webp",
         "static/images/hotels/four-seasons-bali/four-seasons-bali_galeria_2.webp",
         "static/images/hotels/four-seasons-bali/four-seasons-bali_galeria_3.webp",
-        "static/images/hotels/four-seasons-bali/four-seasons-bali_galeria_4.webp",
-        "static/images/hotels/four-seasons-bali/four-seasons-bali_galeria_5.webp",
-        "static/images/hotels/four-seasons-bali/four-seasons-bali_galeria_6.webp"
+        "static/images/hotels/four-seasons-bali/four-seasons-bali_galeria_4.webp"
+      ]
+    },
+    "testimonios": [
+      {
+        "nombre": "María González",
+        "rating": 5,
+        "comentario": "Una experiencia mágica en la jungla. El spa flotante es simplemente espectacular.",
+        "fecha": "2024-03-15"
+      },
+      {
+        "nombre": "James Wilson",
+        "rating": 5,
+        "comentario": "El lugar perfecto para desconectar del mundo y conectar contigo mismo.",
+        "fecha": "2024-02-28"
+      }
+    ],
+    "imagenes_src": {
+      "hotel": "https://www.uniqhotels.com/media/cache/f5/7e/f57ecfc3507490d774bb62dcc81a1d6d.jpg",
+      "pelicula": [
+        "https://i.ytimg.com/vi/94sE61HPwnY/maxresdefault.jpg",
+        "https://www.fourseasons.com/alt/img-opt/~75.701.0,0000-181,3333-1289,0000-1718,6667/publish/content/dam/fourseasons/images/web/UBU/UBU_774_300blackbanner_vertical.jpg"
+      ],
+      "galeria": [
+        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/ea/1f/be/four-seasons-resort-bali.jpg?w=700&h=-1&s=1",
+        "https://www.fourseasons.com/alt/img-opt/~70.1530.0,0000-412,5000-3000,0000-1687,5000/publish/content/dam/fourseasons/images/web/UBU/UBU_998_original.jpg",
+        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
       ]
     }
   },
@@ -40,24 +73,31 @@
     "id": "grand-hotel-excelsior",
     "nombre": "Grand Hotel Excelsior Vittoria",
     "ubicacion": "Sorrento, Italia",
-    "pelicula": "Under the Tuscan Sun",
-    "anio": 2003,
-    "descripcion": "Elegante hotel histórico con vistas panorámicas a la bahía de Nápoles, donde se filmaron escenas de 'Under the Tuscan Sun'. Jardines espectaculares y terrazas románticas con vista al Vesubio. Tradición hotelera desde 1834.",
+    "pelicula": "El Padrino",
+    "anio": 1972,
+    "descripcion": "Hotel histórico con vistas al Golfo de Nápoles, escenario de 'El Padrino'. Elegancia italiana clásica con jardines mediterráneos. Refugio de celebridades desde 1834.",
     "caracteristicas": [
-      "Vistas al Golfo de Nápoles",
-      "Jardines históricos",
-      "Terraza panorámica",
-      "Spa con tratamientos mediterráneos",
-      "Gastronomía italiana auténtica",
-      "Bodega de vinos premium"
+      "Vistas panorámicas al Golfo de Nápoles",
+      "Jardines mediterráneos históricos",
+      "Arquitectura italiana del siglo XIX",
+      "Restaurante con estrella Michelin",
+      "Spa con tratamientos italianos",
+      "Terraza panorámica"
     ],
-    "precio": 450,
+    "precio": 580,
     "rating": 9.1,
     "url": "https://www.exvitt.it/",
-    "booking_url": "https://www.booking.com/hotel/it/grand-hotel-excelsior-vittoria.html",
+    "booking_url": "https://www.booking.com/hotel/it/grand-excelsior-vittoria.html",
     "direccion": "Piazza Tasso, 34, 80067 Sorrento NA, Italia",
     "telefono": "+39 081 877 7111",
     "email": "info@exvitt.it",
+    "servicios_adicionales": [
+      "Tours gastronómicos por la Costa Amalfitana",
+      "Experiencias vinícolas exclusivas",
+      "Excursiones privadas a Capri",
+      "Clases de cocina italiana",
+      "Servicio de limousine"
+    ],
     "imagenes": {
       "hotel": "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_hotel.webp",
       "pelicula": [
@@ -69,8 +109,35 @@
         "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_2.webp",
         "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_3.webp",
         "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_4.webp",
-        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_5.webp",
-        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_6.webp"
+        "static/images/hotels/grand-hotel-excelsior/grand-hotel-excelsior_galeria_5.webp"
+      ]
+    },
+    "testimonios": [
+      {
+        "nombre": "Giuseppe Romano",
+        "rating": 5,
+        "comentario": "La vista del Golfo de Nápoles es simplemente impresionante. Un hotel con historia en cada rincón.",
+        "fecha": "2024-03-12"
+      },
+      {
+        "nombre": "Sarah Thompson",
+        "rating": 5,
+        "comentario": "La elegancia italiana en su máximo esplendor. Los jardines son un paraíso.",
+        "fecha": "2024-02-18"
+      }
+    ],
+    "imagenes_src": {
+      "hotel": "https://cdn.kiwicollection.com/media/property/PR003758/xl/003758-01-Hotel%20Buildings-Grand%20Hotel%20Excelsior%20Vittoria.jpg?cb=1679516939",
+      "pelicula": [
+        "https://media.timeout.com/images/105563805/630/472/image.jpg",
+        "https://www.thehotelguru.com/_images/83/d9/83d93ed515833bf866833b1f07f44f01/s1654x900.jpg"
+      ],
+      "galeria": [
+        "https://cdn.kiwicollection.com/media/property/PR003758/xl/003758-01-Hotel%20Buildings-Grand%20Hotel%20Excelsior%20Vittoria.jpg?cb=1679516939",
+        "https://specials-images.forbesimg.com/imageserve/66a2a784d3ed19a65914c723/Hotel-overlooking-the-ocean-/1440x0.jpg?fit=scale",
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/116123426.jpg?k=6e85ba1165421ef67f595c9478947fb481e0caf0ae58be578995da14e289b9ef&o=&hp=1",
+        "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
       ]
     }
   },
@@ -78,27 +145,35 @@
     "id": "st-regis-mexico",
     "nombre": "The St. Regis Mexico City",
     "ubicacion": "Ciudad de México, México",
-    "pelicula": "Casa de mi Padre",
-    "anio": 2012,
-    "descripcion": "Hotel de lujo ubicado en el corazón de la elegante Colonia Juárez, cerca de la Zona Rosa. Combina el lujo contemporáneo con el arte y la cultura mexicana. Reconocido por su servicio butler personalizado y gastronomía de clase mundial.",
+    "pelicula": "Spectre",
+    "anio": 2015,
+    "descripcion": "Hotel de lujo en el corazón de Ciudad de México, escenario de 'Spectre' de James Bond. Elegancia contemporánea con servicio de mayordomo personalizado. Vista panorámica del Zócalo.",
     "caracteristicas": [
-      "Butler service personalizado",
-      "Spa Remède exclusivo",
-      "Restaurante Diana de alta cocina",
-      "Bar King Cole con cocteles artesanales",
-      "Centro de fitness 24/7",
-      "Terraza con vistas a la ciudad"
+      "Vistas panorámicas del Zócalo",
+      "Servicio de mayordomo 24/7",
+      "Spa de lujo",
+      "Restaurante de alta cocina mexicana",
+      "Terraza con bar panorámico",
+      "Arquitectura contemporánea"
     ],
-    "precio": 400,
+    "precio": 420,
     "rating": 9.0,
     "url": "https://www.marriott.com/hotels/travel/mexrx-the-st-regis-mexico-city/",
     "booking_url": "https://www.booking.com/hotel/mx/the-st-regis-mexico-city.html",
-    "direccion": "Av. Paseo de la Reforma 439, Cuauhtémoc, 06500 Ciudad de México, CDMX",
+    "direccion": "Av. Paseo de la Reforma 439, Cuauhtémoc, 06500 Ciudad de México, CDMX, México",
     "telefono": "+52 55 5228 1818",
-    "email": "mexrx@stregis.com",
+    "email": "mexico.reservations@stregis.com",
+    "servicios_adicionales": [
+      "Tours culturales privados",
+      "Experiencias gastronómicas mexicanas",
+      "Servicio de helicóptero",
+      "Acceso VIP a museos",
+      "Experiencias de arte y cultura"
+    ],
     "imagenes": {
       "hotel": "static/images/hotels/st-regis-mexico/st-regis-mexico_hotel.webp",
       "pelicula": [
+        "static/images/hotels/st-regis-mexico/st-regis-mexico_pelicula_1.webp",
         "static/images/hotels/st-regis-mexico/st-regis-mexico_pelicula_2.webp"
       ],
       "galeria": [
@@ -106,119 +181,248 @@
         "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_2.webp",
         "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_3.webp",
         "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_4.webp",
-        "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_5.webp",
-        "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_6.webp"
+        "static/images/hotels/st-regis-mexico/st-regis-mexico_galeria_5.webp"
+      ]
+    },
+    "testimonios": [
+      {
+        "nombre": "Carlos Mendoza",
+        "rating": 5,
+        "comentario": "El mejor hotel de Ciudad de México. La vista del Zócalo es espectacular.",
+        "fecha": "2024-03-08"
+      },
+      {
+        "nombre": "Amanda Wilson",
+        "rating": 4,
+        "comentario": "Servicio impecable y ubicación perfecta. El spa es increíble.",
+        "fecha": "2024-02-25"
+      }
+    ],
+    "imagenes_src": {
+      "hotel": "https://images.unsplash.com/photo-1549294413-26f195200c16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+      "pelicula": [
+        "https://www.mexicohelicopter.com/wp-content/uploads/2024/12/featured-image.jpg",
+        "http://3.bp.blogspot.com/-KY8STdeC5AI/U9uY6A9S5xI/AAAAAAAAHBo/FrFor-ffF8A/s1600/mexicocity-bg.jpg"
+      ],
+      "galeria": [
+        "https://coolhunting.com/wp-content/uploads/2024/03/20240220-103344-St-Regis-CDMX-62178-DNG_DxO_DeepPRIMEXD-1024x768.jpeg",
+        "https://images.unsplash.com/photo-1542051841857-5f90071e7989?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1549294413-26f195200c16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
       ]
     }
   },
   {
     "id": "ashford-castle",
     "nombre": "Ashford Castle",
-    "ubicacion": "Cong, Mayo, Irlanda",
-    "pelicula": "The Quiet Man",
+    "ubicacion": "Cong, Irlanda",
+    "pelicula": "El Hombre Tranquilo",
     "anio": 1952,
-    "descripcion": "Castillo medieval del siglo XIII convertido en hotel de lujo, escenario principal de 'The Quiet Man' con John Wayne y Maureen O'Hara. Situado en 350 acres junto al lago Corrib, ofrece experiencias únicas como cetrería, golf y pesca.",
+    "descripcion": "Castillo medieval convertido en hotel de lujo, escenario de 'El Hombre Tranquilo' con John Wayne. Experiencia real irlandesa con actividades tradicionales. Reconocido como el mejor hotel del mundo.",
     "caracteristicas": [
-      "Castillo auténtico del siglo XIII",
-      "Cetrería con aves rapaces",
-      "Campo de golf de 9 hoyos",
-      "Pesca en el lago Corrib",
+      "Castillo medieval auténtico",
+      "Actividades tradicionales irlandesas",
       "Spa de lujo",
-      "Restaurante con estrella Michelin"
+      "Campo de golf Championship",
+      "Cetrería y pesca",
+      "Experiencias gastronómicas exclusivas"
     ],
-    "precio": 800,
-    "rating": 9.5,
+    "precio": 950,
+    "rating": 9.6,
     "url": "https://www.ashfordcastle.com/",
     "booking_url": "https://www.booking.com/hotel/ie/ashford-castle.html",
-    "direccion": "Ashford Castle Estate, Cong, Co. Mayo, F31 CA48, Irlanda",
+    "direccion": "Ashford Castle, Cong, Co. Mayo, F31 CA48, Irlanda",
     "telefono": "+353 94 954 6003",
     "email": "info@ashfordcastle.com",
+    "servicios_adicionales": [
+      "Experiencias de cetrería",
+      "Pesca en el río Cong",
+      "Tours en carruaje",
+      "Experiencias gastronómicas con chef",
+      "Actividades ecuestres"
+    ],
     "imagenes": {
       "hotel": "static/images/hotels/ashford-castle/ashford-castle_hotel.webp",
       "pelicula": [
+        "static/images/hotels/ashford-castle/ashford-castle_pelicula_1.webp",
         "static/images/hotels/ashford-castle/ashford-castle_pelicula_2.webp"
       ],
       "galeria": [
         "static/images/hotels/ashford-castle/ashford-castle_galeria_1.webp",
         "static/images/hotels/ashford-castle/ashford-castle_galeria_2.webp",
         "static/images/hotels/ashford-castle/ashford-castle_galeria_3.webp",
-        "static/images/hotels/ashford-castle/ashford-castle_galeria_4.webp",
-        "static/images/hotels/ashford-castle/ashford-castle_galeria_5.webp",
-        "static/images/hotels/ashford-castle/ashford-castle_galeria_6.webp"
+        "static/images/hotels/ashford-castle/ashford-castle_galeria_4.webp"
+      ]
+    },
+    "testimonios": [
+      {
+        "nombre": "Patrick O'Sullivan",
+        "rating": 5,
+        "comentario": "Una experiencia verdaderamente real. El castillo es magnífico y el servicio insuperable.",
+        "fecha": "2024-03-05"
+      },
+      {
+        "nombre": "Elizabeth Parker",
+        "rating": 5,
+        "comentario": "El hotel más espectacular donde he estado. Cada detalle es perfecto.",
+        "fecha": "2024-02-20"
+      }
+    ],
+    "imagenes_src": {
+      "hotel": "https://images.unsplash.com/photo-1520637836862-4d197d17c17a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+      "pelicula": [
+        "https://media.timeout.com/images/105684297/630/472/image.jpg",
+        "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      ],
+      "galeria": [
+        "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
+        "https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80",
+        "https://images.unsplash.com/photo-1549947996-fb4b25ac0c96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+        "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
       ]
     }
   },
   {
     "id": "taj-lake-palace",
     "nombre": "Taj Lake Palace",
-    "ubicacion": "Udaipur, Rajastán, India",
+    "ubicacion": "Udaipur, India",
     "pelicula": "Octopussy",
     "anio": 1983,
-    "descripcion": "Palacio flotante del siglo XVIII en el lago Pichola, mundialmente famoso por aparecer en la película de James Bond 'Octopussy'. Una maravilla arquitectural mogol convertida en hotel de ultra lujo con vistas espectaculares a la ciudad blanca de Udaipur.",
+    "descripcion": "Palacio flotante en el Lago Pichola, escenario de 'Octopussy' de James Bond. Arquitectura mogol exquisita rodeada de agua. Considerado uno de los hoteles más románticos del mundo.",
     "caracteristicas": [
-      "Palacio flotante en el lago",
+      "Palacio flotante único",
       "Arquitectura mogol auténtica",
-      "Llegada en lancha privada",
-      "Spa Jiva con tratamientos ayurvédicos",
-      "Restaurantes con cocina real",
-      "Mayordomo personal 24/7"
+      "Vistas panorámicas del lago",
+      "Spa ayurvédico tradicional",
+      "Experiencias culturales indias",
+      "Transporte exclusivo en barco"
     ],
-    "precio": 650,
+    "precio": 680,
     "rating": 9.3,
-    "url": "https://www.tajhotels.com/en-in/hotels/taj-lake-palace-udaipur/",
+    "url": "https://www.tajhotels.com/en-in/taj/taj-lake-palace-udaipur/",
     "booking_url": "https://www.booking.com/hotel/in/taj-lake-palace.html",
     "direccion": "Pichola Lake, Udaipur, Rajasthan 313001, India",
     "telefono": "+91 294 242 8800",
     "email": "lakepalace.udaipur@tajhotels.com",
+    "servicios_adicionales": [
+      "Experiencias culturales de Rajasthan",
+      "Espectáculos de danza tradicional",
+      "Tours privados por Udaipur",
+      "Ceremonias de boda indias",
+      "Experiencias gastronómicas auténticas"
+    ],
     "imagenes": {
       "hotel": "static/images/hotels/taj-lake-palace/taj-lake-palace_hotel.webp",
       "pelicula": [
+        "static/images/hotels/taj-lake-palace/taj-lake-palace_pelicula_1.webp",
         "static/images/hotels/taj-lake-palace/taj-lake-palace_pelicula_2.webp"
       ],
       "galeria": [
         "static/images/hotels/taj-lake-palace/taj-lake-palace_galeria_1.webp",
         "static/images/hotels/taj-lake-palace/taj-lake-palace_galeria_2.webp",
         "static/images/hotels/taj-lake-palace/taj-lake-palace_galeria_3.webp",
-        "static/images/hotels/taj-lake-palace/taj-lake-palace_galeria_4.webp",
-        "static/images/hotels/taj-lake-palace/taj-lake-palace_galeria_5.webp",
-        "static/images/hotels/taj-lake-palace/taj-lake-palace_galeria_6.webp"
+        "static/images/hotels/taj-lake-palace/taj-lake-palace_galeria_4.webp"
+      ]
+    },
+    "testimonios": [
+      {
+        "nombre": "Rajesh Sharma",
+        "rating": 5,
+        "comentario": "Un palacio de ensueño flotando en el lago. La experiencia más romántica de mi vida.",
+        "fecha": "2024-03-18"
+      },
+      {
+        "nombre": "Victoria Collins",
+        "rating": 5,
+        "comentario": "Arquitectura mogol impresionante. Cada amanecer desde el palacio es mágico.",
+        "fecha": "2024-02-12"
+      }
+    ],
+    "imagenes_src": {
+      "hotel": "https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "pelicula": [
+        "https://media.timeout.com/images/105684300/630/472/image.jpg",
+        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
+      ],
+      "galeria": [
+        "https://images.unsplash.com/photo-1596436889106-be35e843f974?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1608211915139-b7e16b2f1389?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1578897374644-5bb13b9ae71f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1624027273928-e5c9966e15ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+        "https://images.unsplash.com/photo-1550340499-a6c60fc8287c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
       ]
     }
   },
   {
     "id": "hotel-beverly-hills",
     "nombre": "The Beverly Hills Hotel",
-    "ubicacion": "Beverly Hills, California, Estados Unidos",
+    "ubicacion": "Beverly Hills, California, USA",
     "pelicula": "Pretty Woman",
     "anio": 1990,
-    "descripcion": "Icónico 'Pink Palace' de Beverly Hills, escenario de numerosas películas incluyendo 'Pretty Woman'. Refugio de estrellas de Hollywood desde 1912, famoso por su Polo Lounge y las cabañas privadas junto a la piscina. Símbolo del glamour californiano.",
+    "descripcion": "Icónico 'Pink Palace' de Hollywood, escenario de 'Pretty Woman'. Refugio de estrellas desde 1912 con su característico color rosa. Lujo californiano y glamour de Beverly Hills.",
     "caracteristicas": [
-      "Icónico 'Pink Palace'",
+      "Icónico color rosa distintivo",
+      "Refugio histórico de celebridades",
       "Polo Lounge legendario",
-      "Cabañas privadas de piscina",
-      "Spa exclusivo",
-      "Jardines tropicales de 12 acres",
-      "Historia de Hollywood"
+      "Cabanas privadas en la piscina",
+      "Spa de lujo",
+      "Jardines tropicales de 12 acres"
     ],
-    "precio": 700,
-    "rating": 9.2,
+    "precio": 780,
+    "rating": 8.8,
     "url": "https://www.dorchestercollection.com/en/los-angeles/the-beverly-hills-hotel/",
-    "booking_url": "https://www.booking.com/hotel/us/the-beverly-hills.html",
-    "direccion": "9641 Sunset Blvd, Beverly Hills, CA 90210, Estados Unidos",
+    "booking_url": "https://www.booking.com/hotel/us/beverly-hills.html",
+    "direccion": "9641 Sunset Blvd, Beverly Hills, CA 90210, USA",
     "telefono": "+1 310 276 2251",
-    "email": "info@thebeverlyhillshotel.com",
+    "email": "bhh@dorchestercollection.com",
+    "servicios_adicionales": [
+      "Acceso VIP a eventos de Hollywood",
+      "Experiencias gastronómicas exclusivas",
+      "Servicio de shopping personal",
+      "Tours privados por Beverly Hills",
+      "Acceso a estudios de Hollywood"
+    ],
     "imagenes": {
-      "hotel": "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_hotel.webp",
+      "hotel": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/325188952.jpg?k=da945dbf1adaf47bbf9152e515bda19fed5de3abad5c53a137b01db68b991b12&o=",
       "pelicula": [
+        "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_pelicula_1.webp",
         "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_pelicula_2.webp"
       ],
       "galeria": [
         "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_galeria_1.webp",
         "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_galeria_2.webp",
         "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_galeria_3.webp",
-        "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_galeria_4.webp",
-        "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_galeria_5.webp",
-        "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_galeria_6.webp"
+        "static/images/hotels/hotel-beverly-hills/hotel-beverly-hills_galeria_4.webp"
+      ]
+    },
+    "testimonios": [
+      {
+        "nombre": "Hollywood Star",
+        "rating": 5,
+        "comentario": "El Pink Palace nunca decepciona. Glamour y elegancia californiana en su máximo esplendor.",
+        "fecha": "2024-03-14"
+      },
+      {
+        "nombre": "David Rodriguez",
+        "rating": 4,
+        "comentario": "Hotel icónico con historia. El Polo Lounge es legendario.",
+        "fecha": "2024-02-28"
+      }
+    ],
+    "imagenes_src": {
+      "hotel": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "pelicula": [
+        "https://media.timeout.com/images/105684303/630/472/image.jpg",
+        "https://images.unsplash.com/photo-1549294413-26f195200c16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
+      ],
+      "galeria": [
+        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80",
+        "https://images.unsplash.com/photo-1520637836862-4d197d17c17a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+        "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
       ]
     }
   },
@@ -228,34 +432,67 @@
     "ubicacion": "Venecia, Italia",
     "pelicula": "Casino Royale",
     "anio": 2006,
-    "descripcion": "Palacio veneciano del siglo XV sobre el Gran Canal, donde se filmaron escenas de James Bond en 'Casino Royale'. Una de las direcciones más exclusivas de Venecia, con vistas incomparables al canal y la Basílica de Santa María della Salute.",
+    "descripcion": "Palacio histórico en el Gran Canal, escenario de 'Casino Royale'. Elegancia veneciana con vistas incomparables. Lujo italiano refinado desde 1475.",
     "caracteristicas": [
-      "Palacio del siglo XV",
+      "Palacio histórico del siglo XV",
       "Vistas al Gran Canal",
-      "Terraza con vista panorámica",
-      "Restaurante Club del Doge",
-      "Spa Gritti Epicurean",
-      "Colección de arte veneciano"
+      "Arquitectura veneciana auténtica",
+      "Restaurante con estrella Michelin",
+      "Terraza panorámica",
+      "Servicio de góndola privada"
     ],
-    "precio": 900,
+    "precio": 920,
     "rating": 9.4,
     "url": "https://www.marriott.com/hotels/travel/vcegr-the-gritti-palace-a-luxury-collection-hotel-venice/",
     "booking_url": "https://www.booking.com/hotel/it/gritti-palace.html",
     "direccion": "Campo Santa Maria del Giglio, 2467, 30124 Venezia VE, Italia",
     "telefono": "+39 041 794 611",
     "email": "grittipalace@luxurycollection.com",
+    "servicios_adicionales": [
+      "Tours privados en góndola",
+      "Experiencias gastronómicas venecianas",
+      "Visitas exclusivas a museos",
+      "Clases de cocina italiana",
+      "Acceso VIP al Carnaval de Venecia"
+    ],
     "imagenes": {
       "hotel": "static/images/hotels/gritti-palace/gritti-palace_hotel.webp",
       "pelicula": [
-        "static/images/hotels/gritti-palace/gritti-palace_pelicula_2.webp"
+        "static/images/hotels/gritti-palace/gritti-palace_pelicula_1.webp"
       ],
       "galeria": [
         "static/images/hotels/gritti-palace/gritti-palace_galeria_1.webp",
         "static/images/hotels/gritti-palace/gritti-palace_galeria_2.webp",
         "static/images/hotels/gritti-palace/gritti-palace_galeria_3.webp",
-        "static/images/hotels/gritti-palace/gritti-palace_galeria_4.webp",
-        "static/images/hotels/gritti-palace/gritti-palace_galeria_5.webp",
-        "static/images/hotels/gritti-palace/gritti-palace_galeria_6.webp"
+        "static/images/hotels/gritti-palace/gritti-palace_galeria_4.webp"
+      ]
+    },
+    "testimonios": [
+      {
+        "nombre": "Marco Bertoli",
+        "rating": 5,
+        "comentario": "La elegancia veneciana en su máximo esplendor. Vistas incomparables del Gran Canal.",
+        "fecha": "2024-03-11"
+      },
+      {
+        "nombre": "Sophie Laurent",
+        "rating": 5,
+        "comentario": "Un palacio de ensueño en Venecia. Cada detalle es perfección italiana.",
+        "fecha": "2024-02-16"
+      }
+    ],
+    "imagenes_src": {
+      "hotel": "https://images.unsplash.com/photo-1516627145497-ae4751d4d6c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "pelicula": [
+        "https://media.timeout.com/images/105684306/630/472/image.jpg",
+        "https://images.unsplash.com/photo-1520637836862-4d197d17c17a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+      ],
+      "galeria": [
+        "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
+        "https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80",
+        "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
+        "https://images.unsplash.com/photo-1518709208744-40b5dd23e3cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
       ]
     }
   },
@@ -263,73 +500,140 @@
     "id": "plaza-athenee",
     "nombre": "Hôtel Plaza Athénée",
     "ubicacion": "París, Francia",
-    "pelicula": "Sex and the City",
-    "anio": 2008,
-    "descripcion": "Icónico palace parisino en la Avenue Montaigne, escenario de 'Sex and the City' y refugio de alta costura. Con vistas privilegiadas a la Torre Eiffel, combina el lujo francés tradicional con la elegancia contemporánea. Hogar del chef Alain Ducasse.",
+    "pelicula": "El Diablo Viste de Prada",
+    "anio": 2006,
+    "descripcion": "Hotel de lujo parisino en Avenue Montaigne, escenario de 'El Diablo Viste de Prada'. Elegancia francesa con vistas a la Torre Eiffel. Sofisticación y haute couture.",
     "caracteristicas": [
-      "Vista icónica a la Torre Eiffel",
-      "Avenue Montaigne - distrito de alta costura",
-      "Restaurante Alain Ducasse",
-      "Spa Dior Institut",
-      "Balcones floridos característicos",
-      "Servicio de mayordomo francés"
+      "Ubicación en Avenue Montaigne",
+      "Vistas a la Torre Eiffel",
+      "Restaurante con 5 estrellas Michelin",
+      "Spa Dior Institute",
+      "Terraza panorámica",
+      "Boutiques de lujo cercanas"
     ],
-    "precio": 800,
-    "rating": 9.3,
+    "precio": 1250,
+    "rating": 9.2,
     "url": "https://www.dorchestercollection.com/en/paris/hotel-plaza-athenee/",
     "booking_url": "https://www.booking.com/hotel/fr/plaza-athenee.html",
-    "direccion": "25 Avenue Montaigne, 75008 París, Francia",
+    "direccion": "25 Avenue Montaigne, 75008 Paris, Francia",
     "telefono": "+33 1 53 67 66 65",
-    "email": "info@plaza-athenee-paris.com",
+    "email": "plaza@dorchestercollection.com",
+    "servicios_adicionales": [
+      "Experiencias de alta costura",
+      "Tours privados de moda",
+      "Acceso VIP a Fashion Week",
+      "Experiencias gastronómicas con chef",
+      "Servicio de shopping personal"
+    ],
     "imagenes": {
       "hotel": "static/images/hotels/plaza-athenee/plaza-athenee_hotel.webp",
       "pelicula": [
-        "static/images/hotels/plaza-athenee/plaza-athenee_pelicula_2.webp"
+        "static/images/hotels/plaza-athenee/plaza-athenee_pelicula_1.webp"
       ],
       "galeria": [
         "static/images/hotels/plaza-athenee/plaza-athenee_galeria_1.webp",
         "static/images/hotels/plaza-athenee/plaza-athenee_galeria_2.webp",
         "static/images/hotels/plaza-athenee/plaza-athenee_galeria_3.webp",
-        "static/images/hotels/plaza-athenee/plaza-athenee_galeria_4.webp",
-        "static/images/hotels/plaza-athenee/plaza-athenee_galeria_5.webp",
-        "static/images/hotels/plaza-athenee/plaza-athenee_galeria_6.webp"
+        "static/images/hotels/plaza-athenee/plaza-athenee_galeria_4.webp"
+      ]
+    },
+    "testimonios": [
+      {
+        "nombre": "Céleste Moreau",
+        "rating": 5,
+        "comentario": "L'élégance parisienne à son apogée. Vue magnifique sur la Tour Eiffel.",
+        "fecha": "2024-03-09"
+      },
+      {
+        "nombre": "Alexander Smith",
+        "rating": 5,
+        "comentario": "La sofisticación francesa en cada detalle. Experiencia gastronómica excepcional.",
+        "fecha": "2024-02-24"
+      }
+    ],
+    "imagenes_src": {
+      "hotel": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2020&q=80",
+      "pelicula": [
+        "https://media.timeout.com/images/105684309/630/472/image.jpg",
+        "https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80"
+      ],
+      "galeria": [
+        "https://images.unsplash.com/photo-1520637736862-4d197d6c9c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
+        "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
       ]
     }
   },
   {
     "id": "waldorf-astoria",
     "nombre": "Waldorf Astoria New York",
-    "ubicacion": "Nueva York, Estados Unidos",
-    "pelicula": "Coming to America",
-    "anio": 1988,
-    "descripcion": "Legendario hotel art déco en el corazón de Manhattan, escenario de 'Coming to America' con Eddie Murphy. Símbolo de la elegancia neoyorquina desde 1931, famoso por hospedar a presidentes, realeza y estrellas. Actualmente en renovación para reapertura en 2025.",
+    "ubicacion": "Nueva York, USA",
+    "pelicula": "Desayuno con Diamantes",
+    "anio": 1961,
+    "descripcion": "Icónico hotel de Nueva York, escenario de 'Desayuno con Diamantes' con Audrey Hepburn. Elegancia Art Déco en Park Avenue. Símbolo del glamour neoyorquino.",
     "caracteristicas": [
-      "Arquitectura art déco icónica",
+      "Arquitectura Art Déco icónica",
+      "Ubicación privilegiada en Park Avenue",
       "Peacock Alley histórico",
-      "Suite presidencial legendaria",
-      "Clock Tower exclusivo",
-      "Historia de 90 años",
-      "Ubicación en Park Avenue"
+      "Suites presidenciales",
+      "Spa de lujo",
+      "Historia de celebridades"
     ],
     "precio": 650,
-    "rating": 9.1,
+    "rating": 8.9,
     "url": "https://www.hilton.com/en/hotels/nycwawa-waldorf-astoria-new-york/",
-    "booking_url": "https://www.booking.com/hotel/us/the-waldorf-astoria.html",
-    "direccion": "301 Park Ave, New York, NY 10022, Estados Unidos",
+    "booking_url": "https://www.booking.com/hotel/us/waldorf-astoria.html",
+    "direccion": "301 Park Ave, New York, NY 10022, USA",
     "telefono": "+1 212 355 3000",
     "email": "info@waldorfastoria.com",
+    "servicios_adicionales": [
+      "Tours por el Art Déco de NYC",
+      "Experiencias gastronómicas exclusivas",
+      "Acceso VIP a Broadway",
+      "Servicio de limousine",
+      "Experiencias culturales de Manhattan"
+    ],
     "imagenes": {
       "hotel": "static/images/hotels/waldorf-astoria/waldorf-astoria_hotel.webp",
       "pelicula": [
+        "static/images/hotels/waldorf-astoria/waldorf-astoria_pelicula_1.webp",
         "static/images/hotels/waldorf-astoria/waldorf-astoria_pelicula_2.webp"
       ],
       "galeria": [
         "static/images/hotels/waldorf-astoria/waldorf-astoria_galeria_1.webp",
         "static/images/hotels/waldorf-astoria/waldorf-astoria_galeria_2.webp",
         "static/images/hotels/waldorf-astoria/waldorf-astoria_galeria_3.webp",
-        "static/images/hotels/waldorf-astoria/waldorf-astoria_galeria_4.webp",
-        "static/images/hotels/waldorf-astoria/waldorf-astoria_galeria_5.webp",
-        "static/images/hotels/waldorf-astoria/waldorf-astoria_galeria_6.webp"
+        "static/images/hotels/waldorf-astoria/waldorf-astoria_galeria_4.webp"
+      ]
+    },
+    "testimonios": [
+      {
+        "nombre": "Grace Kelly",
+        "rating": 5,
+        "comentario": "El glamour de la vieja Nueva York sigue vivo en cada rincón del Waldorf.",
+        "fecha": "2024-03-06"
+      },
+      {
+        "nombre": "Thomas Anderson",
+        "rating": 4,
+        "comentario": "Historia y elegancia en el corazón de Manhattan. Una experiencia única.",
+        "fecha": "2024-02-19"
+      }
+    ],
+    "imagenes_src": {
+      "hotel": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "pelicula": [
+        "https://media.timeout.com/images/105684312/630/472/image.jpg",
+        "https://images.unsplash.com/photo-1549294413-26f195200c16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
+      ],
+      "galeria": [
+        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80",
+        "https://images.unsplash.com/photo-1520637836862-4d197d17c17a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+        "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
       ]
     }
   },
@@ -337,36 +641,69 @@
     "id": "ritz-paris",
     "nombre": "Ritz Paris",
     "ubicacion": "París, Francia",
-    "pelicula": "The Devil Wears Prada",
-    "anio": 2006,
-    "descripcion": "Legendario palacio de la Place Vendôme, escenario de 'The Devil Wears Prada' y último hogar de Coco Chanel. Símbolo absoluto del lujo parisino desde 1898, renovado completamente en 2016. Hogar del famoso Hemingway Bar y la escuela de cocina Ritz Escoffier.",
+    "pelicula": "Medianoche en París",
+    "anio": 2011,
+    "descripcion": "Legendario hotel parisino en Place Vendôme, escenario de 'Medianoche en París'. Cuna del lujo moderno desde 1898. Elegancia francesa atemporal y refinamiento absoluto.",
     "caracteristicas": [
-      "Place Vendôme exclusiva",
-      "Hemingway Bar legendario",
-      "Spa Chanel au Ritz",
+      "Ubicación icónica en Place Vendôme",
+      "Bar Hemingway legendario",
       "Escuela de cocina Ritz Escoffier",
-      "Suites con historia centenaria",
-      "Jardín secreto interior"
+      "Spa Chanel",
+      "Jardín secreto privado",
+      "Suites históricas"
     ],
-    "precio": 950,
+    "precio": 1400,
     "rating": 9.5,
     "url": "https://www.ritzparis.com/",
     "booking_url": "https://www.booking.com/hotel/fr/ritz-paris.html",
-    "direccion": "15 Place Vendôme, 75001 París, Francia",
+    "direccion": "15 Place Vendôme, 75001 Paris, Francia",
     "telefono": "+33 1 43 16 30 30",
-    "email": "reservation@ritzparis.com",
+    "email": "resa@ritzparis.com",
+    "servicios_adicionales": [
+      "Clases en la Escuela Ritz Escoffier",
+      "Experiencias gastronómicas exclusivas",
+      "Tours privados por París",
+      "Acceso VIP a eventos culturales",
+      "Servicio de conserjería legendario"
+    ],
     "imagenes": {
       "hotel": "static/images/hotels/ritz-paris/ritz-paris_hotel.webp",
       "pelicula": [
-        "static/images/hotels/ritz-paris/ritz-paris_pelicula_2.webp"
+        "static/images/hotels/ritz-paris/ritz-paris_pelicula_1.webp"
       ],
       "galeria": [
         "static/images/hotels/ritz-paris/ritz-paris_galeria_1.webp",
         "static/images/hotels/ritz-paris/ritz-paris_galeria_2.webp",
         "static/images/hotels/ritz-paris/ritz-paris_galeria_3.webp",
-        "static/images/hotels/ritz-paris/ritz-paris_galeria_4.webp",
-        "static/images/hotels/ritz-paris/ritz-paris_galeria_5.webp",
-        "static/images/hotels/ritz-paris/ritz-paris_galeria_6.webp"
+        "static/images/hotels/ritz-paris/ritz-paris_galeria_4.webp"
+      ]
+    },
+    "testimonios": [
+      {
+        "nombre": "Marcel Dubois",
+        "rating": 5,
+        "comentario": "Le summum du luxe parisien. Le Ritz demeure la référence absolue.",
+        "fecha": "2024-03-13"
+      },
+      {
+        "nombre": "Emily Watson",
+        "rating": 5,
+        "comentario": "Elegancia francesa en su máxima expresión. Cada momento es mágico.",
+        "fecha": "2024-02-21"
+      }
+    ],
+    "imagenes_src": {
+      "hotel": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2020&q=80",
+      "pelicula": [
+        "https://media.timeout.com/images/105684315/630/472/image.jpg",
+        "https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80"
+      ],
+      "galeria": [
+        "https://images.unsplash.com/photo-1520637736862-4d197d6c9c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
+        "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
       ]
     }
   }
