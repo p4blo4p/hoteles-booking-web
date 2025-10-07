@@ -28,6 +28,9 @@ Este proyecto es un generador de sitios web estáticos para hoteles que:
 
 - ✅ Generación automática de páginas HTML
 - ✅ Gestión de imágenes de hoteles
+- ✅ **Sistema de testimonios interactivos**
+- ✅ **Layout responsivo y moderno**
+- ✅ **Galería de imágenes con modal**
 - ✅ Verificación de estructura y archivos
 - ✅ Corrección automática de rutas
 - ✅ Organización de archivos y directorios
@@ -50,7 +53,7 @@ hoteles-booking-web/
 │   ├── templates/                # Plantillas Jinja2
 │   │   ├── base.html             # Plantilla base
 │   │   ├── index.html            # Página principal
-│   │   └── hotel.html            # Página individual de hotel
+│   │   └── hotel.html            # Página individual de hotel (con testimonios y galería)
 │   ├── static/                   # Recursos estáticos
 │   │   ├── css/
 │   │   │   └── styles.css        # Estilos CSS
@@ -201,23 +204,66 @@ El archivo `src/data/hotels.json` debe seguir esta estructura:
 ```json
 [
   {
-    "name": "Nombre del Hotel",
-    "description": "Descripción del hotel",
-    "location": "Ciudad, País",
-    "price": 100,
+    "id": "hotel-ejemplo",
+    "nombre": "Nombre del Hotel",
+    "descripcion": "Descripción del hotel",
+    "ubicacion": "Ciudad, País",
+    "pelicula": "Película Famosa",
+    "anio": 2023,
+    "precio": 100,
     "rating": 4.5,
-    "amenities": ["WiFi", "Piscina", "Gimnasio"],
-    "images": [
-      "https://ejemplo.com/imagen1.jpg",
-      "https://ejemplo.com/imagen2.jpg"
+    "caracteristicas": ["WiFi", "Piscina", "Gimnasio"],
+    "servicios_adicionales": ["Spa", "Room Service", "Concierge"],
+    "imagenes": {
+      "hotel": "static/images/hotels/hotel-ejemplo/hotel-ejemplo_hotel.webp",
+      "pelicula": ["static/images/hotels/hotel-ejemplo/pelicula_1.webp"],
+      "galeria": [
+        "static/images/hotels/hotel-ejemplo/galeria_1.webp",
+        "static/images/hotels/hotel-ejemplo/galeria_2.webp"
+      ]
+    },
+    "testimonios": [
+      {
+        "nombre": "Juan Pérez",
+        "rating": 5,
+        "comentario": "Excelente experiencia, muy recomendado.",
+        "fecha": "2024-03-15"
+      },
+      {
+        "nombre": "María García",
+        "rating": 4,
+        "comentario": "Muy buen servicio y instalaciones.",
+        "fecha": "2024-02-28"
+      }
     ],
-    "contact": {
-      "phone": "+1234567890",
-      "email": "info@hotel.com"
-    }
+    "direccion": "Dirección completa del hotel",
+    "telefono": "+1234567890",
+    "email": "info@hotel.com",
+    "url": "https://www.hotel-ejemplo.com",
+    "booking_url": "https://www.booking.com/hotel-ejemplo"
   }
 ]
 ```
+
+## 🎨 Funcionalidades de las Páginas de Hotel
+
+### Testimonios Interactivos
+- **Estructura completa**: Nombre, fecha, rating con estrellas y comentario
+- **Diseño tipo tarjeta**: Con efectos hover y gradientes
+- **Layout responsivo**: Se adapta automáticamente a diferentes pantallas
+- **Sistema de estrellas**: Visualización dinámica del rating
+
+### Galería de Imágenes
+- **Modal interactivo**: Click en cualquier imagen para ampliarla
+- **Navegación intuitiva**: Cerrar con X, Escape o click fuera
+- **Imágenes organizadas**: Hotel, película y galería general
+- **Responsive design**: Optimizado para móviles y tablets
+
+### Layout Moderno
+- **Hero section**: Imagen principal con overlay de información
+- **Grid layout**: Contenido principal + sidebar
+- **Secciones organizadas**: Descripción, características, contacto, etc.
+- **Call-to-action**: Botón de reserva destacado
 
 ## 🤝 Contribución
 
@@ -327,16 +373,36 @@ python scripts/fix_json_paths.py && python scripts/generate.py
 ### Estructura de Datos Esperada
 
 ```python
-# Estructura básica de un hotel en JSON
+# Estructura completa de un hotel en JSON (actualizada 2024)
 hotel = {
-    "name": "string",           # Nombre del hotel
-    "description": "string",    # Despción larga
-    "location": "string",       # "Ciudad, País"
-    "price": float,            # Precio por noche
-    "rating": float,           # Calificación 0-5
-    "amenities": list,         # Lista de servicios
-    "images": list,            # URLs o rutas locales
-    "contact": dict           # Teléfono, email, etc.
+    "id": "string",                    # ID único del hotel
+    "nombre": "string",                # Nombre del hotel
+    "descripcion": "string",           # Descripción larga
+    "ubicacion": "string",             # "Ciudad, País"
+    "pelicula": "string",              # Película asociada
+    "anio": int,                       # Año de la película
+    "precio": float,                   # Precio por noche
+    "rating": float,                   # Calificación 0-5
+    "caracteristicas": list,           # Lista de características
+    "servicios_adicionales": list,     # Servicios extra
+    "imagenes": {                      # Imágenes organizadas por tipo
+        "hotel": "string",             # Imagen principal
+        "pelicula": list,              # Imágenes de película
+        "galeria": list                # Galería general
+    },
+    "testimonios": [                   # Lista de testimonios
+        {
+            "nombre": "string",        # Nombre del huésped
+            "rating": int,             # Rating 1-5
+            "comentario": "string",    # Comentario
+            "fecha": "string"          # Fecha en formato YYYY-MM-DD
+        }
+    ],
+    "direccion": "string",             # Dirección completa
+    "telefono": "string",              # Teléfono
+    "email": "string",                 # Email
+    "url": "string",                   # Sitio web oficial
+    "booking_url": "string"            # URL de reserva
 }
 ```
 
@@ -359,7 +425,17 @@ hotel = {
 4. **"Error al descargar imágenes"**
    - Verificar URLs en JSON
    - Comprobar conexión a internet
-   - Revisar permisos de directorio `src/static/images/hotels/`
+   - Revistar permisos de directorio `src/static/images/hotels/`
+
+5. **"Los testimonios no se muestran"** *(Corregido en 2024)*
+   - Verificar estructura de `testimonios` en JSON
+   - Asegurar que tiene campos: `nombre`, `rating`, `comentario`, `fecha`
+   - Template `hotel.html` actualizado con soporte completo
+
+6. **"Layout se ve mal en móviles"** *(Corregido en 2024)*
+   - CSS actualizado con diseño responsive
+   - Grid layout adaptativo implementado
+   - Estilos específicos para tablets y móviles
 
 ### Extensiones Futuras Sugeridas
 
@@ -369,6 +445,32 @@ hotel = {
 - Integrar sistema de reservas
 - Añadir modo oscuro/claro
 - Implementar caching para mejor rendimiento
+
+## 📋 Actualizaciones Recientes
+
+### v2.0 - Octubre 2024
+- ✅ **Template hotel.html completamente reescrito**
+  - Código limpio y bien estructurado
+  - Soporte completo para testimonios
+  - Layout responsivo con sidebar
+  - Modal de galería interactivo
+
+- ✅ **Sistema de testimonios mejorado**
+  - Extracción correcta de datos del JSON
+  - Diseño tipo tarjeta con efectos hover
+  - Rating con estrellas dinámicas
+  - Información completa (nombre, fecha, comentario)
+
+- ✅ **CSS modernizado**
+  - Grid layout responsivo
+  - Estilos para testimonios
+  - Modal de galería
+  - Mejoras en mobile y tablet
+
+- ✅ **JavaScript interactivo**
+  - Funcionalidad de modal
+  - Efectos hover en testimonios
+  - Manejo de errores en imágenes
 
 ---
 

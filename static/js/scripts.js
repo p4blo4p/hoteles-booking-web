@@ -69,3 +69,95 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.hotel-card, .testimonial-card, .gallery-item').forEach(el => {
     observer.observe(el);
 });
+
+// Gallery Modal functionality
+function openModal(imageSrc) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    
+    if (modal && modalImg) {
+        modal.style.display = 'block';
+        modalImg.src = imageSrc;
+    }
+}
+
+// Close modal when clicking the X or outside the image
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('imageModal');
+    const closeBtn = document.querySelector('.close');
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+    }
+    
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+
+// Testimonials enhanced functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Add hover effects and interaction to testimonials
+    const testimonials = document.querySelectorAll('.testimonial-item');
+    
+    testimonials.forEach(testimonial => {
+        testimonial.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+        
+        testimonial.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // Enhanced rating display for testimonials
+    const ratingElements = document.querySelectorAll('.testimonial-rating');
+    
+    ratingElements.forEach(rating => {
+        const stars = rating.querySelectorAll('.star');
+        
+        stars.forEach((star, index) => {
+            star.addEventListener('mouseenter', function() {
+                for (let i = 0; i <= index; i++) {
+                    stars[i].style.transform = 'scale(1.2)';
+                    stars[i].style.transition = 'transform 0.2s ease';
+                }
+            });
+            
+            star.addEventListener('mouseleave', function() {
+                stars.forEach(s => {
+                    s.style.transform = 'scale(1)';
+                });
+            });
+        });
+    });
+});
+
+// Enhanced image loading
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('img');
+    
+    images.forEach(img => {
+        img.addEventListener('load', function() {
+            this.style.opacity = '1';
+        });
+        
+        img.addEventListener('error', function() {
+            this.src = 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';
+            this.alt = 'Imagen no disponible';
+        });
+    });
+});
