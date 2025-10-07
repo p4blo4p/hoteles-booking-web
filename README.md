@@ -309,6 +309,7 @@ Cuando se solicite ayuda con este proyecto:
    - Problemas de datos → `fix_json_paths.py`
    - Generación → `generate.py`
 4. **Verificar resultado**: Sugerir ejecutar `check_images_exist.py` después de cambios
+5. **Correcciones completas**: Cuando corrijas algo pasa el archivo completo corregido, no solo las partes a cambiar.
 
 ### Comandos Rápidos de Referencia
 
