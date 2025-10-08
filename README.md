@@ -358,6 +358,8 @@ Cuando se solicite ayuda con este proyecto:
 5. **Correcciones completas**: Cuando corrijas algo pasa el archivo completo corregido, no solo las partes a cambiar.
 6. **URL temporal para verificacion**: https://p4blo4p.github.io/hoteles-booking-web-pages/
 7. **Actualiza README**: Siempre que hagas algun cambio signifcativo haz las modificaciones que debas en el readme para que siga siendo util y si hay algo que no lo sea quitalo o muevelo a otro .md
+8. **Codigo**: no insertes codigos directamente en archivos .py usa templates o archivos
+9. **Usar archivos existentes**: En la medida de lo posible no crees nuevos archivos y dejes los antiguos como backup. Crea solo nuevos archivos cuando sea necesario para claridad del proyecto. El proyecto no esta en produccion, esta en desarrollo y tiene git como backup.
 
 ### Comandos Rápidos de Referencia
 

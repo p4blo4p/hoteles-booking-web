@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Página principal -->
+    <url>
+        <loc>{{ base_url }}/</loc>
+        <lastmod>{{ current_date }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Páginas de hoteles -->
+{% for hotel in hotels %}
+    <url>
+        <loc>{{ base_url }}/hotel/{{ hotel.clean_id }}/</loc>
+        <lastmod>{{ current_date }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        
+        <!-- Imágenes del hotel para SEO -->
+        {% if hotel.imagenes %}
+            {% if hotel.imagenes.hotel %}
+        <image:image>
+            <image:loc>{{ base_url }}/{{ hotel.imagenes.hotel }}</image:loc>
+            <image:caption>{{ hotel.nombre }} - Imagen principal</image:caption>
+            <image:title>{{ hotel.nombre }}</image:title>
+        </image:image>
+            {% endif %}
+            
+            {% if hotel.imagenes.pelicula %}
+                {% for pelicula_img in hotel.imagenes.pelicula %}
+        <image:image>
+            <image:loc>{{ base_url }}/{{ pelicula_img }}</image:loc>
+            <image:caption>{{ hotel.nombre }} - Escena de {{ hotel.pelicula }}</image:caption>
+            <image:title>{{ hotel.nombre }} en {{ hotel.pelicula }}</image:title>
+        </image:image>
+                {% endfor %}
+            {% endif %}
+            
+            {% if hotel.imagenes.galeria %}
+                {% for galeria_img in hotel.imagenes.galeria[:3] %}
+        <image:image>
+            <image:loc>{{ base_url }}/{{ galeria_img }}</image:loc>
+            <image:caption>{{ hotel.nombre }} - Galería</image:caption>
+            <image:title>{{ hotel.nombre }}</image:title>
+        </image:image>
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+    </url>
+{% endfor %}
+    
+</urlset>

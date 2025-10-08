@@ -1,0 +1,52 @@
+# Robots.txt para {{ site_name | default('Hoteles de Cine') }}
+# Generado automáticamente el {{ current_date }} {{ current_time }}
+# Sitio web: {{ base_url }}
+
+# Directivas para todos los bots
+User-agent: *
+Allow: /
+
+# === DIRECTORIOS PERMITIDOS ===
+# Páginas de hoteles
+Allow: /hotel/
+
+# Recursos estáticos
+Allow: /static/
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# === TIPOS DE ARCHIVOS PERMITIDOS ===
+# Páginas HTML
+Allow: /index.html
+Allow: /*.html
+
+# Hojas de estilo y scripts
+Allow: /*.css
+Allow: /*.js
+
+# Imágenes
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.webp
+Allow: /*.gif
+Allow: /*.svg
+
+# === CONFIGURACIONES ESPECÍFICAS POR BOT ===
+
+# Google Bot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing Bot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# === CRAWL DELAY GENERAL ===
+Crawl-delay: 1
+
+# === SITEMAP ===
+Sitemap: {{ base_url }}/sitemap.xml
