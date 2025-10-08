@@ -356,6 +356,8 @@ Cuando se solicite ayuda con este proyecto:
    - Generación → `generate.py`
 4. **Verificar resultado**: Sugerir ejecutar `check_images_exist.py` después de cambios
 5. **Correcciones completas**: Cuando corrijas algo pasa el archivo completo corregido, no solo las partes a cambiar.
+6. **URL temporal para verificacion**: https://p4blo4p.github.io/hoteles-booking-web-pages/
+7. **Actualiza README**: Siempre que hagas algun cambio signifcativo haz las modificaciones que debas en el readme para que siga siendo util y si hay algo que no lo sea quitalo o muevelo a otro .md
 
 ### Comandos Rápidos de Referencia
 
