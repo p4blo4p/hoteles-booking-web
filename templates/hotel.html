@@ -2,202 +2,161 @@
 {% block title %}{{ hotel.nombre }} - Hoteles de Cine{% endblock %}
 {% block content %}
 
-<!-- Hero Section -->
-<div class="hotel-hero">
-    {% if hotel.imagenes and hotel.imagenes.hotel %}
-        {% if hotel.imagenes.hotel.startswith('http') %}
-            <img src="{{ hotel.imagenes.hotel }}" alt="{{ hotel.nombre }}" class="hero-image">
+<article class="hotel-detail">
+    <div class="hotel-hero">
+        {% if hotel.imagenes and hotel.imagenes.hotel %}
+            {% if hotel.imagenes.hotel.startswith('http') %}
+                <img src="{{ hotel.imagenes.hotel }}" alt="{{ hotel.nombre }}" class="hero-image">
+            {% else %}
+                <img src="{{ base_url }}/{{ hotel.imagenes.hotel }}" alt="{{ hotel.nombre }}" class="hero-image">
+            {% endif %}
         {% else %}
-            <img src="{{ base_url }}/{{ hotel.imagenes.hotel }}" alt="{{ hotel.nombre }}" class="hero-image">
+            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="{{ hotel.nombre }}" class="hero-image">
         {% endif %}
-    {% else %}
-        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="{{ hotel.nombre }}" class="hero-image">
-    {% endif %}
-    <div class="hero-overlay">
-        <h1 class="hero-title">{{ hotel.nombre }}</h1>
-        <p class="hero-subtitle">{{ hotel.pelicula }} ({{ hotel.anio }})</p>
-        <p class="hero-location">{{ hotel.ubicacion }}</p>
-    </div>
-</div>
-
-<!-- Main Content -->
-<div class="hotel-content-wrapper">
-    <main class="hotel-main-content">
-        <!-- Hotel Info Card -->
-        <div class="hotel-card">
-            <div class="hotel-rating">
-                <div class="stars">
-                    {% for i in range(5) %}
-                        {% if i < hotel.rating|float|int %}
-                            <span class="star filled">★</span>
-                        {% else %}
-                            <span class="star">☆</span>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <span class="rating-value">{{ hotel.rating }}/5</span>
-            </div>
-            
-            <div class="price-section">
-                <span class="price-symbol">$</span>
-                <span class="price-amount">{{ hotel.precio }}</span>
-                <span class="price-period">por noche</span>
-            </div>
+        
+        <div class="hero-content">
+            <h1>{{ hotel.nombre }}</h1>
+            <p class="movie-info">{{ hotel.pelicula }} ({{ hotel.anio }})</p>
+            <p class="location">{{ hotel.ubicacion }}</p>
         </div>
-        
-        <!-- Description -->
-        <section class="hotel-section">
-            <h2>Descripción</h2>
-            <p class="hotel-description">{{ hotel.descripcion }}</p>
-        </section>
-        
-        <!-- Características -->
-        <section class="hotel-section">
-            <h2>Características</h2>
-            <div class="features-grid">
-                {% for caracteristica in hotel.caracteristicas %}
-                    <div class="feature-item">{{ caracteristica }}</div>
-                {% endfor %}
-            </div>
-        </section>
-        
-        <!-- Movie Info -->
-        <section class="hotel-section">
-            <h2>Escenas de Película</h2>
-            <div class="movie-info">
-                <p><strong>Película:</strong> {{ hotel.pelicula }}</p>
-                <p><strong>Año:</strong> {{ hotel.anio }}</p>
-                {% if hotel.imagenes and hotel.imagenes.pelicula %}
-                    <div class="movie-gallery">
-                        {% for imagen in hotel.imagenes.pelicula %}
-                            {% if imagen.startswith('http') %}
-                                <img src="{{ imagen }}" alt="Escena de {{ hotel.pelicula }}" class="movie-image">
-                            {% else %}
-                                <img src="{{ base_url }}/{{ imagen }}" alt="Escena de {{ hotel.pelicula }}" class="movie-image">
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </div>
-        </section>
-        
-        <!-- Galería -->
-        {% if hotel.imagenes and hotel.imagenes.galeria %}
-        <section class="hotel-section">
-            <h2>Galería</h2>
-            <div class="gallery-grid">
-                {% for imagen in hotel.imagenes.galeria %}
-                    {% if imagen.startswith('http') %}
-                        <img src="{{ imagen }}" alt="{{ hotel.nombre }}" class="gallery-image" onclick="openModal('{{ imagen }}')">
+    </div>
+
+    <div class="hotel-summary">
+        <div class="rating">
+            <div class="stars">
+                {% for i in range(5) %}
+                    {% if i < hotel.rating|float|int %}
+                        <span class="star filled">★</span>
                     {% else %}
-                        <img src="{{ base_url }}/{{ imagen }}" alt="{{ hotel.nombre }}" class="gallery-image" onclick="openModal('{{ base_url }}/{{ imagen }}')">
+                        <span class="star">☆</span>
                     {% endif %}
                 {% endfor %}
             </div>
-        </section>
-        {% endif %}
-        
-        <!-- Testimonios -->
-        {% if hotel.testimonios %}
-        <section class="hotel-section">
-            <h2>Testimonios de Huéspedes</h2>
-            <div class="testimonials">
-                {% for testimonio in hotel.testimonios %}
-                    <div class="testimonial-item">
-                        <div class="testimonial-header">
-                            <div class="testimonial-author">
-                                <strong>{{ testimonio.nombre }}</strong>
-                                {% if testimonio.fecha %}
-                                    <span class="testimonial-date">{{ testimonio.fecha }}</span>
-                                {% endif %}
-                            </div>
-                            <div class="testimonial-rating">
-                                {% for i in range(5) %}
-                                    {% if i < testimonio.rating %}
-                                        <span class="star filled">★</span>
-                                    {% else %}
-                                        <span class="star">☆</span>
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
-                        </div>
-                        <p class="testimonial-comment">{{ testimonio.comentario }}</p>
-                    </div>
-                {% endfor %}
-            </div>
-        </section>
-        {% endif %}
-        
-        <!-- Servicios Adicionales -->
-        {% if hotel.servicios_adicionales %}
-        <section class="hotel-section">
-            <h2>Servicios Adicionales</h2>
-            <div class="services-grid">
-                {% for servicio in hotel.servicios_adicionales %}
-                    <div class="service-item">{{ servicio }}</div>
-                {% endfor %}
-            </div>
-        </section>
-        {% endif %}
-        
-        <!-- Información de Contacto -->
-        <section class="hotel-section">
-            <h2>Información de Contacto</h2>
-            <div class="contact-info">
-                {% if hotel.direccion %}
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>{{ hotel.direccion }}</span>
-                    </div>
-                {% endif %}
-                {% if hotel.telefono %}
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>{{ hotel.telefono }}</span>
-                    </div>
-                {% endif %}
-                {% if hotel.email %}
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>{{ hotel.email }}</span>
-                    </div>
-                {% endif %}
-                {% if hotel.url %}
-                    <div class="contact-item">
-                        <i class="fas fa-globe"></i>
-                        <a href="{{ hotel.url }}" target="_blank" rel="noopener">Sitio Web Oficial</a>
-                    </div>
-                {% endif %}
-            </div>
-        </section>
-        
-        <!-- Call to Action -->
-        <section class="hotel-section cta-section">
-            <h2>¿Listo para vivir tu propia escena de cine?</h2>
-            <p>Reserva ahora en {{ hotel.nombre }} y experimenta el lujo que vieron tus personajes favoritos.</p>
-            {% if hotel.booking_url %}
-                <a href="{{ hotel.booking_url }}" target="_blank" rel="noopener" class="cta-button">Reservar Ahora</a>
-            {% else %}
-                <button class="cta-button" onclick="alert('Contacta directamente con el hotel para realizar una reserva.')">Reservar Ahora</button>
-            {% endif %}
-        </section>
-    </main>
-    
-    <!-- Sidebar -->
-    <aside class="hotel-sidebar">
-        <div class="sidebar-card">
-            <h3>Hoteles Similares</h3>
-            <div class="similar-hotels">
-                <p>Cargando hoteles similares...</p>
-            </div>
+            <span class="rating-value">{{ hotel.rating }}/5</span>
         </div>
-    </aside>
-</div>
+        
+        <div class="price">
+            <span class="price-amount">${{ hotel.precio }}</span>
+            <span class="price-unit">por noche</span>
+        </div>
+    </div>
 
-<!-- Modal para la galería -->
-<div id="imageModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImage">
-</div>
+    <section class="description">
+        <h2>Descripción</h2>
+        <p>{{ hotel.descripcion }}</p>
+    </section>
+
+    <section class="features">
+        <h2>Características</h2>
+        <ul class="features-list">
+            {% for caracteristica in hotel.caracteristicas %}
+                <li>{{ caracteristica }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="movie-scenes">
+        <h2>Escenas de Película</h2>
+        <div class="movie-info">
+            <p><strong>Película:</strong> {{ hotel.pelicula }}</p>
+            <p><strong>Año:</strong> {{ hotel.anio }}</p>
+        </div>
+        
+        {% if hotel.imagenes and hotel.imagenes.pelicula %}
+            <div class="movie-gallery">
+                {% for imagen in hotel.imagenes.pelicula %}
+                    {% if imagen.startswith('http') %}
+                        <img src="{{ imagen }}" alt="Escena de {{ hotel.pelicula }}" loading="lazy">
+                    {% else %}
+                        <img src="{{ base_url }}/{{ imagen }}" alt="Escena de {{ hotel.pelicula }}" loading="lazy">
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </section>
+
+    {% if hotel.imagenes and hotel.imagenes.galeria %}
+    <section class="gallery">
+        <h2>Galería</h2>
+        <div class="image-gallery">
+            {% for imagen in hotel.imagenes.galeria %}
+                {% if imagen.startswith('http') %}
+                    <img src="{{ imagen }}" alt="{{ hotel.nombre }}" loading="lazy">
+                {% else %}
+                    <img src="{{ base_url }}/{{ imagen }}" alt="{{ hotel.nombre }}" loading="lazy">
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {% if hotel.testimonios %}
+    <section class="testimonials">
+        <h2>Testimonios de Huéspedes</h2>
+        {% for testimonio in hotel.testimonios %}
+        <div class="testimonial">
+            <div class="testimonial-header">
+                <strong>{{ testimonio.nombre }}</strong>
+                {% if testimonio.fecha %}
+                    <span class="date">{{ testimonio.fecha }}</span>
+                {% endif %}
+            </div>
+            <div class="testimonial-rating">
+                {% for i in range(5) %}
+                    {% if i < testimonio.rating %}
+                        <span class="star filled">★</span>
+                    {% else %}
+                        <span class="star">☆</span>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <p class="testimonial-text">{{ testimonio.comentario }}</p>
+        </div>
+        {% endfor %}
+    </section>
+    {% endif %}
+
+    {% if hotel.servicios_adicionales %}
+    <section class="additional-services">
+        <h2>Servicios Adicionales</h2>
+        <ul class="services-list">
+            {% for servicio in hotel.servicios_adicionales %}
+                <li>{{ servicio }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endif %}
+
+    <section class="contact-info">
+        <h2>Información de Contacto</h2>
+        {% if hotel.direccion %}
+            <p><strong>Dirección:</strong> {{ hotel.direccion }}</p>
+        {% endif %}
+        {% if hotel.telefono %}
+            <p><strong>Teléfono:</strong> {{ hotel.telefono }}</p>
+        {% endif %}
+        {% if hotel.email %}
+            <p><strong>Email:</strong> {{ hotel.email }}</p>
+        {% endif %}
+        {% if hotel.url %}
+            <p><a href="{{ hotel.url }}" target="_blank">Sitio Web Oficial</a></p>
+        {% endif %}
+    </section>
+
+    <section class="booking-cta">
+        <h2>¿Listo para vivir tu propia escena de cine?</h2>
+        <p>Reserva ahora en {{ hotel.nombre }} y experimenta el lujo que vieron tus personajes favoritos.</p>
+        {% if hotel.booking_url %}
+            <a href="{{ hotel.booking_url }}" class="btn-booking" target="_blank">Reservar Ahora</a>
+        {% else %}
+            <button class="btn-booking">Reservar Ahora</button>
+        {% endif %}
+    </section>
+
+    <section class="similar-hotels">
+        <h3>Hoteles Similares</h3>
+        <p>Cargando hoteles similares...</p>
+    </section>
+</article>
 
 {% endblock %}

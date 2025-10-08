@@ -93,7 +93,7 @@ def generate_seo_files(hotels, base_url):
     
     try:
         # Configurar Jinja2 para templates SEO
-        templates_dir = Path('templates')
+        templates_dir = Path('src/templates')
         env = Environment(loader=FileSystemLoader(str(templates_dir)))
         
         # Preparar datos para templates
@@ -206,7 +206,7 @@ def generate_site():
         return False
 
     # Verificar estructura de directorios
-    templates_dir = Path('templates')
+    templates_dir = Path('src/templates')
     if not templates_dir.exists():
         print(f"❌ El directorio {templates_dir} no existe")
         return False
@@ -236,9 +236,16 @@ def generate_site():
         # Generar página principal
         try:
             print("📝 Generando página principal...")
+            # Preparar hoteles con IDs limpios para el template principal
+            hoteles_con_clean_id = []
+            for hotel in hotels:
+                hotel_copy = hotel.copy()
+                hotel_copy['clean_id'] = clean_hotel_id(hotel.get('id', ''))
+                hoteles_con_clean_id.append(hotel_copy)
+            
             # Preparar contexto para la plantilla
             context = {
-                'hoteles': hotels,
+                'hoteles': hoteles_con_clean_id,
                 'base_url': base_url
             }
             index_content = template.render(**context)
