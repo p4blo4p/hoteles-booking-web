@@ -642,3 +642,225 @@ nav li a:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
+/* ==================== CORRECCIONES DE PROBLEMAS ==================== */
+
+/* 1. Hero con imagen de fondo */
+.hero {
+    background: linear-gradient(135deg, rgba(26, 58, 82, 0.8), rgba(226, 88, 34, 0.8)), 
+                url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    padding: 120px 20px 80px;
+    margin-top: 70px;
+}
+
+/* 2. Footer mejorado */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 60px 0 20px;
+    margin-top: 80px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    color: var(--secondary);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-section ul li a:hover {
+    color: var(--secondary);
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding: 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--secondary);
+}
+
+.newsletter input,
+.newsletter button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.newsletter button {
+    background: var(--secondary);
+    color: var(--dark);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* 3. Imágenes de testimonios mejoradas */
+.testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--secondary);
+    background: var(--light);
+}
+
+/* Placeholder para imágenes rotas */
+.testimonial-author {
+    position: relative;
+}
+
+.testimonial-author img[src=""],
+.testimonial-author img:not([src]) {
+    display: none;
+}
+
+.testimonial-author img[src=""]:before,
+.testimonial-author img:not([src]):before {
+    content: "👤";
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: var(--secondary);
+    border-radius: 50%;
+    color: white;
+}
+
+/* 4. Cards de hoteles mejoradas */
+.hotels-grid .hotel-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.hotels-grid .hotel-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    border-color: var(--secondary);
+}
+
+.hotel-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    background: var(--light);
+}
+
+.hotel-image::before {
+    content: "🏨";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.movie-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0,0,0,0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    z-index: 2;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.btn-details {
+    background: var(--accent);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: 600;
+    transition: var(--transition);
+    margin-top: auto;
+    display: block;
+    box-shadow: 0 3px 10px rgba(226, 88, 34, 0.3);
+}
+
+.btn-details:hover {
+    background: #d14a15;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(226, 88, 34, 0.4);
+    text-decoration: none;
+    color: white;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-links {
+        justify-content: center;
+    }
+    
+    .hero {
+        background-attachment: scroll;
+    }
+}
