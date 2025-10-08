@@ -93,7 +93,7 @@ def generate_seo_files(hotels, base_url):
     
     try:
         # Configurar Jinja2 para templates SEO
-        templates_dir = Path('src/templates')
+        templates_dir = Path('templates')
         env = Environment(loader=FileSystemLoader(str(templates_dir)))
         
         # Preparar datos para templates
@@ -206,7 +206,7 @@ def generate_site():
         return False
 
     # Verificar estructura de directorios
-    templates_dir = Path('src/templates')
+    templates_dir = Path('templates')
     if not templates_dir.exists():
         print(f"❌ El directorio {templates_dir} no existe")
         return False
